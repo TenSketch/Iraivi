@@ -2,3 +2,14 @@ baseURL = ''
 languageCode = 'en-us'
 title = 'Iravi | Celebrating Mothehood'
 theme = 'iraivi-hugo-theme'
+
+############################# Plugins ##############################
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  link = "plugins/css/main.css"
+  
+  # JS Plugins
+  [[params.plugins.js]]
+  link = "plugins/js/main.js"

@@ -36,13 +36,11 @@
     <meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}" />
     {{ end }}
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <!-- {{ "Main Stylesheet" | safeHTML }} -->
-    <!-- {{ $style := resources.Get "scss/main.scss" | toCSS }} -->
-    <!-- <link rel="stylesheet" href="{{ $style.Permalink }}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/themes/iraivi-hugo-theme/static/css/main.css"> -->
 
-    <!-- {{ "Main Stylesheet" | safeHTML }} -->
-    {{ $options := (dict "transpiler" "dartsass" "outputStyle" "expanded" "enableSourceMap" true) }}
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
+    {{ "<!-- Plugins -->" | safeHTML }}
+    {{ range site.Params.plugins.css }}
+    <link rel="stylesheet" href="{{ .link | absURL }}">
+    {{ end }}
 </head>

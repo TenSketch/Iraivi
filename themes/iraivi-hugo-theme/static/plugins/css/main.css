@@ -12,7 +12,6 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: pink;
 }
 
 html {
@@ -26,6 +25,7 @@ html {
 }
 
 body {
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.5;
   overflow-x: hidden;
@@ -41,6 +41,7 @@ a:hover {
 ul,
 li {
   list-style: none;
+  font-size: 1.2rem;
 }
 
 img {
@@ -56,6 +57,7 @@ section {
 .container {
   width: min(991px, 80%);
   margin: 0 auto;
+  background-color: blue;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,6 @@
-@use 'abstracts/fonts';
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,14 +12,12 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: pink;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 12px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 14px;
@@ -26,16 +25,15 @@ html {
 }
 
 body {
+  font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.5;
   overflow-x: hidden;
 }
-
 a {
   text-decoration: none;
   transition: opacity 250ms ease-in;
 }
-
 a:hover {
   opacity: 0.85;
 }
@@ -43,6 +41,7 @@ a:hover {
 ul,
 li {
   list-style: none;
+  font-size: 1.2rem;
 }
 
 img {
@@ -56,8 +55,9 @@ section {
 }
 
 .container {
-  width: Min(991px, 80%);
+  width: min(991px, 80%);
   margin: 0 auto;
+  background-color: blue;
 }
 
 /*# sourceMappingURL=main.css.map */
