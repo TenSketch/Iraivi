@@ -1,0 +1,22 @@
+@use "../abstracts" as a;
+
+nav {
+  background-color: a.$clr-light;
+//   box-shadow: 0 1px 3px rgba(a.$clr-accent, 0.6);
+
+}
+
+.navbar-brand {
+  // border: 2px solid blue;
+  // padding: 1rem 1.5rem;
+  margin: 0;
+  width: fit-content;
+  img {
+    width: clamp(12rem, 300px, 21.5vw);
+    // outline: 2px solid red;
+  }
+}
+.nav-link {
+  color: a.$clr-accent !important;
+  font-weight: a.$font_weight-medium;
+}

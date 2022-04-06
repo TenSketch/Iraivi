@@ -1,0 +1,22 @@
+// @use '../abstracts' as *;
+@use 'colors' as *;
+.m-1{
+    margin: 1;
+}
+.mx-auto{
+    margin-inline: auto;
+}
+.ml-auto{
+    margin-left: auto;
+}
+
+.container {
+    width: min(991px, 80%);
+    @extend .mx-auto;
+    // background-color: blue;
+    // border: 1px solid red;
+  }
+// bootstrap modified
+.bg_primary{
+    background-color: $clr-primary-500;
+}

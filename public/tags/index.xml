@@ -5,6 +5,25 @@
     <link>/tags/</link>
     <description>Recent content in Tags on Iravi | Celebrating Mothehood</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Apr 2022 19:51:03 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>courses</title>
+      <link>/tags/courses/</link>
+      <pubDate>Sun, 03 Apr 2022 19:51:03 +0530</pubDate>
+      
+      <guid>/tags/courses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>/tags/about/</link>
+      <pubDate>Sun, 03 Apr 2022 12:54:59 +0530</pubDate>
+      
+      <guid>/tags/about/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

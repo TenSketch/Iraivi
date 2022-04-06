@@ -1,0 +1,93 @@
+############################ banner ##########################
+banner:
+  enable : true
+  title : "IRAIVI"
+  subtitle : "Celebrate Motherhood"
+  content : "Hi, I’m Gayathri Suresh. Founder of Iraivi. I’m an internationally certified childbirth educator."
+  image : "images/logo.png"
+  # button
+  button:
+    enable : true
+    label : "Read more"
+    link : "#"
+ 
+
+########################## About ##############################
+about:
+  enable : false
+
+# content from content/about-me/_index.md
+
+
+###################### Call to action ########################
+cta:
+  enable : false
+  title : "Buy one Get One Free Taba Cream"
+  content : "Available for limited time only. Grab one while you still can!"
+  image : "images/cta.png"
+  overlayImage : "images/cta-overlay.png"
+  button:
+    label : "All Products"
+    link : "products/"
+
+######################## raw material #######################
+Courses:
+  enable : true
+  title : "Courses Offered"
+  subtitle : "Over the course of 6 weeks, 2 hours each week, we explore our hopes and fears, birth in our current culture, the normal process and stages of labor and birth, natural comfort measures and coping skills, pharmacologic options for managing pain, when birth doesn’t go as expected, medical procedures, cesarean delivery, partner preparation, birth plans, baby procedures and practices, bonding, postpartum recovery and more."
+  CourseItem:
+    # courses item loop
+    - title : "Pregnancy nutrition"
+      image : "images/about.jpg"
+      content: "During pregnancy, to nourish your body, you have to take nutritious foods with a well- balanced diet. Good nutrition helps you handle the extra demands on your body as your pregnancy progresses. To balance a healthy weight & remain active during pregnancy regular exercise is required.Diet Chart will be provided."
+    
+    # courses item loop
+    - title : "Labor & birth"
+      image : "images/about.jpg"
+      content: "This session will help pregnant women in overcoming their fear of birth. With all the right support & knowledge you can make your birth memorable.
+  The session includes:
+•	Stages of Labor 
+•	Pain Management techniques
+•	Medical Procedures
+•	Cesarean Delivery 
+•	Decision-Making"
+      
+    # courses item loop
+    - title : Informed decision making"
+      image : "images/about.jpg"
+      content: ""
+      
+    # courses item loop
+    - title : "Prenatal bonding"
+      image : "images/about.jpg"
+
+########################## Testimonial ########################
+testimonial:
+  enable : true
+  title : "Feedback from our Mothers"
+  testimonialItem:
+    # testimonial item loop
+    - name : "Kowsalya Balamurugan"
+      content : "Thank you so much sister.
+      Your sessions helped me alot 😍😍. You have covered everything from giving birth to postpartum health especially diet plan. I felt more prepared. You told me to ask doubts anytime. I have followed all your breathing techniques, relaxation and visualization for handling pain and coping with contractions. My labour journey was stressless and I was more confident because of you. I'm happy to be part of your sessions.❤️❤️❤️"
+
+      # testimonial item loop
+    - name : "Tamilarasi Mangalaraj"
+      content : "Mrs. Gayathri Suresh is wife of my Friend Suresh, she is my good sister, when I was working at Qatar. But after my marriage I moved to Mumbai, and by 2020 March we came to know that we are gonna become Father and Mother for a cutie child. Globally March 2020 was hit by Covid19 1st wave, and we were getting trouble even to visit Doctors, and hospitals for our initial stage of pregnancy tests. India was affected toobad by Covid 19 1st wave. So, Mumbai got complete lockdown. No buses, trains, or even flights to return to our hometown. We were alone at Mumbai, at that moment our sister Ms Gayathri Suresh explained about Child berth education, and its importance for the Mom and Dad to be. Without any hesitation we joined the program, and our online classes were started, by the next day.As the whole world got shutdown, and no meet and greet were happen. But in that time through this pregnancy classes we got a opportunity to be connected with our trainer and other attendees too over online classes. Throughout this training period I was wondering about my sister and our Trainer Mrs Gayathri Suresh that how nicely she handled, explained the details easily, and understandable through her experiences and results. By god’s grace we received our baby girl and what we learned from that pregnancy training sessions were helpful to care our baby girl. So, I recommend you too to attend this wonderful class for your children."
+
+      # testimonial item loop
+    - name : "Alagu Monikka"
+      content : "Thank u so much Sister!!💐💐We will not forget ever. 😊😊I am happy to inform u that we are blessed with baby girls on 19th Oct 2020🥳, It was normal delivery. Baby name is Dhiya Sri👸🏻😊. We attended the labour management classes through online and Classes started by end June 2020. Really we don't have any idea about sessions, Day 1; The via of ur presentation and discussed about the subject in the class, totally awesome and we enjoyed it. And also your exercises practice, story writing to baby, breathing techniques, and knowledge shared during the class were really helpful to mom and baby. Thanks a lot for your guidance 😊💐💐"
+
+      # testimonial item loop
+    - name : "Pandikala"
+      content : "It was a wonderful experience for every mom to be. It will be more helpful to women who really worried about their labour, food diet and prenatal exercises. It will also will be enthusiastic classes that we can have during our pregnancy, has cleared all my doubts and creates Bonding with my baby before birth. It really help me to enjoy my pregnancy, delivery time and also my postpartum. Its just because I didn't find anything hard as she explained everything before. Birth educate trainer is more friendly with all and she always gives us more and more tips to overcome in all your three semesters of pregnancy. She will be clearing all doubts that we have. Most commonly, many of us can think why we need if this session..? So for them they might miss the experience while they are fully frustrated and concentrating on their diet plans etc.. It will bring you enjoyable pregnancy time in life. Because Women in this world, have more things to struggle.. In between of all these they can spend a very good time with their new Born. Proud to be a Women! Enjoy every single minute of your pregnancy that makes your baby health more good. I have acquired all these with this class. Thanks Gayathri for all the effort!"
+      
+    # testimonial item loop
+    - name : "Priya Karthik"
+      content : "Hi sis first I like to say thanks for giving hope at the time of pregnancy .your all sessions classes are very informative I learned to take care of our health during pregnancy by taking nutrition food for baby growth,baby brain development by doing exercise,activity, meditation, listening music . Explanation about natural delivery and c- section, mindfulness, about newborn and postpartum care , breastfeeding etc...You had thought so many things akka i followed everything upto the end you are giving positive approach to me thank you akka."
+
+    # testimonial item loop
+    - name : "Subha Arun"
+      content : "Pregnancy is god’s precious gift that a women gets in her life and also it’s the perfect time for her to enjoy motherhood. Yes!!! I enjoyed every cycle of it and my biggest support for this to happen was our IRAIVI founder and my trainer Mrs.Gayathri Suresh. The Actual course covers major six topics (nutrition,labor&birth process,comfort measures& positions, labor coping techniques, prenatal exercise, breastfeeding, newborn care and postpartum) in 6 sessions like 2hrs a week which is so comfortable for any couple to attend that too in our convenient time and batch. All the topics were covered very well and she makes us more comfortable in learning and understanding them. We used to ask too many doubts and we got it cleared every time,not only during sessions but whenever we are bothered by anything we used to call her and get it sorted immediately. I felt this course is necessary for every pregnant women and it’ll be more effective if you attend it as a couple. Mrs.Gayathri gives us lot of tips and it works well, you can feel it post giving birth too.Yes our girl baby is 1year now and we are very happy parenting her. Really we are gifted to have this course at the right time. 🥰 I would like to recommend this course to my friends and family and feel so happy for that."
+    

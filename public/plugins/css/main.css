@@ -1,63 +1,93 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap");
+.m-1 {
+  margin: 1;
+}
+
+.mx-auto, .container {
+  margin-inline: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.container {
+  width: min(991px, 80%);
+}
+
+.bg_primary {
+  background-color: #f1cbd9;
+}
+
+.btn {
+  border: none;
+  box-shadow: none;
+}
+.btn:hover {
+  color: #fff !important;
+}
+
+.btn_primary {
+  background-color: #7f0648;
+  color: #fff;
 }
 
 html,
 body {
   -webkit-font-smoothing: antialiased;
-  position: relative;
-  height: 100%;
-  width: 100%;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 12px;
+  font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 body {
-  font-size: 1.2rem;
-  font-weight: 300;
   line-height: 1.5;
   overflow-x: hidden;
 }
+
 a {
-  text-decoration: none;
   transition: opacity 250ms ease-in;
 }
-a:hover {
-  opacity: 0.85;
-}
 
-ul,
-li {
-  list-style: none;
-  font-size: 1.2rem;
+h1, h2, h3 {
+  font-family: "IM Fell French Canon", serif;
+  letter-spacing: 1.5;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
   display: block;
 }
 
-section {
-  padding-block: 6rem;
+nav {
+  background-color: #fbeff3;
 }
 
-.container {
-  width: min(991px, 80%);
-  margin: 0 auto;
-  background-color: blue;
+.navbar-brand {
+  margin: 0;
+  width: fit-content;
+}
+.navbar-brand img {
+  width: clamp(12rem, 300px, 21.5vw);
+}
+
+.nav-link {
+  color: #7f0648 !important;
+  font-weight: 500;
+}
+
+.banner {
+  background-color: #fbeff3;
+}
+
+.courses p {
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,14 @@
+@use "../abstracts" as a;
+
+.btn {
+  border: none;
+  box-shadow: none;
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.btn_primary {
+  background-color: a.$clr-accent;
+  color: #fff;
+}
