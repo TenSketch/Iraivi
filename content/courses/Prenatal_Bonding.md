@@ -2,7 +2,7 @@
 title: "Prenatal Bonding"
 description: ""
 keywords: ""
-image: "images/about.jpg"
+image: "images/Prenatal_Bonding.jpg"
 tags: ["courses"]
 date: 2022-04-03T19:47:03+05:30
 draft: false
