@@ -9,7 +9,9 @@
 .ml-auto{
     margin-left: auto;
 }
-
+.py-section{
+    padding-block: 5rem;
+}
 .container {
     width: min(991px, 80%);
     @extend .mx-auto;

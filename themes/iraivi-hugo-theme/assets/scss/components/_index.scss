@@ -1,1 +1,12 @@
+@use "../abstracts" as a;
 @forward '../components/buttons';
+
+.courses{
+    @extend .py-section;
+    // background-image: url('/images/newborn-baby.jpg');
+    // background-size:contain;
+    // background-position: top center;
+    // background-repeat: no-repeat;
+    // // background-color: a.$clr-light;
+    // background-blend-mode: overlay;
+}

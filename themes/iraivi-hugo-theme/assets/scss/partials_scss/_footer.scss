@@ -1,0 +1,6 @@
+@use "../abstracts" as a;
+
+footer{
+    @extend .py-section;
+    background-color: a.$clr-light;
+}
