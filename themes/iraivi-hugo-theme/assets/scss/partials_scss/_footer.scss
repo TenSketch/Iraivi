@@ -1,6 +1,6 @@
-@use "../abstracts" as a;
+@use "../abstracts" as *;
 
-footer{
-    @extend .py-section;
-    background-color: a.$clr-light;
+footer {
+  @extend .py-section;
+  background-color: $clr-light;
 }

@@ -1,12 +1,13 @@
-@use "../abstracts" as a;
-@forward '../components/buttons';
+@use "../abstracts" as *;
+@forward "../components/buttons";
+@forward "../components/forms";
 
-.courses{
-    @extend .py-section;
-    // background-image: url('/images/newborn-baby.jpg');
-    // background-size:contain;
-    // background-position: top center;
-    // background-repeat: no-repeat;
-    // // background-color: a.$clr-light;
-    // background-blend-mode: overlay;
+.courses {
+  @extend .py-section;
+  // background-image: url('/images/newborn-baby.jpg');
+  // background-size:contain;
+  // background-position: top center;
+  // background-repeat: no-repeat;
+  // // background-color: $clr-light;
+  // background-blend-mode: overlay;
 }

@@ -1,4 +1,4 @@
-@use "../abstracts" as a;
+@use "../abstracts" as *;
 
 .btn {
   border: none;
@@ -9,6 +9,6 @@
 }
 
 .btn_primary {
-  background-color: a.$clr-accent;
+  background-color: $clr-accent;
   color: #fff;
 }

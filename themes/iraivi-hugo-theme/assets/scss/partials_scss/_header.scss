@@ -1,9 +1,8 @@
-@use "../abstracts" as a;
+@use "../abstracts" as *;
 
 nav {
-  background-color: a.$clr-light;
-//   box-shadow: 0 1px 3px rgba(a.$clr-accent, 0.6);
-
+  background-color: $clr-light;
+  //   box-shadow: 0 1px 3px rgba(a.$clr-accent, 0.6);
 }
 
 .navbar-brand {
@@ -17,6 +16,6 @@ nav {
   }
 }
 .nav-link {
-  color: a.$clr-accent !important;
-  font-weight: a.$font_weight-medium;
+  color: $clr-accent !important;
+  font-weight: $font_weight-medium;
 }

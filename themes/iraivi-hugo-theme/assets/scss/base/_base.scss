@@ -1,10 +1,9 @@
-@use '../abstracts' as a;
-@use '../components' as *;
+@use "../abstracts" as *;
+@use "../components" as *;
 // tag selectors
 html,
 body {
   -webkit-font-smoothing: antialiased;
-
 }
 html {
   scroll-behavior: smooth;
@@ -13,29 +12,37 @@ html {
     font-size: 16px;
   }
 }
-body {  
-//   font-size: a.$font_size-body;
+body {
+  //   font-size: $font_size-body;
   line-height: 1.5;
   overflow-x: hidden;
 }
 a {
-  
   transition: opacity 250ms ease-in;
-
 }
-h1,h2,h3{
-    font-family: a.$font_family-heading;
-    letter-spacing: 1.5;
+h1,
+h2,
+h3 {
+  font-family: $font_family-heading;
+  letter-spacing: 1.5;
 }
 ul,
 li {
-//   list-style: none;
-//   font-size: a.$font_size-body;
+  //   list-style: none;
+  //   font-size: $font_size-body;
 }
 img {
   display: block;
 }
 
-.icon{
+.icon {
   display: unset;
+  width: 20px;
+}
+
+blockquote {
+  font-weight: $font_weight-bold;
+  font-size: $font_size-header;
+  position: relative;
+
 }

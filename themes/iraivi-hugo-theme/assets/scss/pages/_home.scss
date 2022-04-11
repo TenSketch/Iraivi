@@ -1,20 +1,23 @@
-@use "../abstracts" as a;
+@use "../abstracts" as *;
 
-.banner{
-
-  background-color: a.$clr-light;
-
+.banner {
+  background-color: $clr-light;
 }
 
-
-.courses{
-    p{
-        font-size: .9rem;
-    }
-}
-.testimonial{
-
-  .container{
-    
+.courses {
+  p {
+    font-size: 0.9rem;
   }
+}
+.testimonial {
+  .container {
+  }
+}
+
+.quotes{
+  // background-color: aqua;
+  background: url('/images/newborn-baby.jpg') center no-repeat fixed rgba($clr-primary-500, 0.7);
+  background-size: cover;
+  background-blend-mode: overlay;
+  @extend .py-section;
 }

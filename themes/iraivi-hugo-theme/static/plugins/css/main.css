@@ -11,7 +11,7 @@
   margin-left: auto;
 }
 
-.py-section, footer, .courses {
+.py-section, .quotes, footer, .courses {
   padding-block: 5rem;
 }
 
@@ -34,6 +34,11 @@
 .btn_primary {
   background-color: #7f0648;
   color: #fff;
+}
+
+.form-control:focus {
+  border-color: #f1cbd9;
+  box-shadow: inset 0 0 4px #7f0648;
 }
 
 html,
@@ -60,7 +65,9 @@ a {
   transition: opacity 250ms ease-in;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "IM Fell French Canon", serif;
   letter-spacing: 1.5;
 }
@@ -71,6 +78,13 @@ img {
 
 .icon {
   display: unset;
+  width: 20px;
+}
+
+blockquote {
+  font-weight: 800;
+  font-size: 2rem;
+  position: relative;
 }
 
 nav {
@@ -100,6 +114,30 @@ footer {
 
 .courses p {
   font-size: 0.9rem;
+}
+
+.quotes {
+  background: url("/images/newborn-baby.jpg") center no-repeat fixed rgba(241, 203, 217, 0.7);
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+.about blockquote {
+  background-color: #7f0648;
+  color: #fff;
+  padding: 4% 5%;
+  border-radius: 10px;
+  animation: slideIn 1000ms ease 5000ms normal forwards;
+  text-align: center;
+  font-size: 1.5rem;
+}
+@keyframes slideIn {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -24,7 +24,6 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- banner -->
 
 <!-- about -->
 
@@ -51,10 +50,20 @@
     </div>
 </section>
 
-<!-- about -->
-
+{{ with site.Data.home.quotes }}
+<section class="quotes">
+    <div class="container">
+        {{range first 1 .quoteItem}}
+        <img class="img-fluid icon" src="/images/icons/quote-left-solid.svg" alt="">
+        <blockquote class="text-center d-inline-block">
+            {{.title | markdownify}}
+        </blockquote>
+        {{end}}
+    </div>
+</section>
+{{end}}
 <!-- courses -->
-<section class="courses">
+<section id="courses" class="courses">
     <div class="container">
         {{ if site.Data.home.Courses.enable }}
         {{ with site.Data.home.Courses }}
@@ -78,10 +87,11 @@
             </div>
         </div>
         {{ end }}
+        <a href="{{.Site.BaseURL}}enquiry" class="btn btn_primary w-50 d-grid mx-auto">Enquire about our courses</a>
+
     </div>
 </section>
 
-<!-- /courses -->
 
 <!-- advantage -->
 {{ if site.Data.home.advantage.enable }}
@@ -106,7 +116,8 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- /advantage -->
+
+
 
 
 <!-- testimonial -->
@@ -128,8 +139,9 @@
 </section>
 {{ end }}
 {{ end }}
-<!-- /testimonial -->
 
+
+<!-- CTA -->
 {{ if site.Data.home.cta.enable }}
 {{ partial "cta.html" . }}
 {{ end }}

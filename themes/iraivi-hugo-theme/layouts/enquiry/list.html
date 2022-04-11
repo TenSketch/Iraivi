@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+<div class="container my-5 py-5">
+    <div class="row">
+        {{ range $index, $val := .Site.Taxonomies.tags.enquiry }}
+
+        <div class="col-md-5">
+            <img src="{{.Page.Params.image}}" class="img-fluid rounded-3" alt="{{.Name}}">
+        </div>
+        <div class="col-lg-6 ml-auto">
+            <h3>Place an enquiry for our courses. We'll get back to you.</h3>
+            <form action="">
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
+                    placeholder="Enter your full Name">
+                    <label for="Name">Full Name</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="tel" class="form-control" name="Mobile number" id="Mobile number"
+                    aria-describedby="Mobile number" placeholder="10 digit Mobie no.">
+                    <label for="Mobile number">Mobile number</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="email" class="form-control" name="Email Id" id="Email Id" aria-describedby="Email Id"
+                    placeholder="abc@email.com">
+                    <label for="Email Id">Email Id</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <select class="form-select" name="Course Name" id="Course Name">
+                        <option value="Select a course" disabled>Select a course</option>
+                        <option value="Breastfeeding">Breastfeeding</option>
+                        <option value="Labour and birth">Labour and birth</option>
+                        <option value="Newborn care">Newborn care</option>
+                        <option value="Postpartum care">Postpartum care</option>
+                        <option value="pregnancy nutrition">pregnancy nutrition</option>
+                        <option value="Parental Bonding">Parental Bonding</option>
+                    </select>
+                    <label for="Course Name">Course name</label>
+
+                </div>
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" name="Message" id="Message" rows="2"></textarea>
+                    <label for="Message">Message</label>
+                </div>
+                <button class="btn btn_primary">Submit</button>
+
+            </form>
+
+        </div>
+        {{end}}
+    </div>
+</div>
+
+{{ end }}

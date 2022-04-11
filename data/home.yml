@@ -30,36 +30,24 @@ cta:
     label : "All Products"
     link : "products/"
 
-######################## raw material #######################
-Courses:
+######################## Quotes #######################
+quotes:
   enable : true
-  title : "Courses Offered"
-  subtitle : "Over the course of 6 weeks, 2 hours each week, we explore our hopes and fears, birth in our current culture, the normal process and stages of labor and birth, natural comfort measures and coping skills, pharmacologic options for managing pain, when birth doesn’t go as expected, medical procedures, cesarean delivery, partner preparation, birth plans, baby procedures and practices, bonding, postpartum recovery and more."
-  CourseItem:
-    # courses item loop
-    - title : "Pregnancy nutrition"
+  quoteItem:
+    # Quote item 1
+    - title : "You can't know what you don't know unless you know what you don't know."
       image : "images/about.jpg"
-      content: "During pregnancy, to nourish your body, you have to take nutritious foods with a well- balanced diet. Good nutrition helps you handle the extra demands on your body as your pregnancy progresses. To balance a healthy weight & remain active during pregnancy regular exercise is required.Diet Chart will be provided."
+    # Quote item 2
+    - title : "Birth is the epicenter of women's power."
+      image : "images/about.jpg"
+    # Quote item 3
+    - title : "There is a secret in our culture and it’s not that birth is painful. It’s that women are strong"
+      image : "images/about.jpg"
+    # Quote item 4
+    - title : "When you change the way you view birth, the way you birth will change"
+      image : "images/about.jpg"
     
-    # courses item loop
-    - title : "Labor & birth"
-      image : "images/about.jpg"
-      content: "This session will help pregnant women in overcoming their fear of birth. With all the right support & knowledge you can make your birth memorable.
-  The session includes:
-•	Stages of Labor 
-•	Pain Management techniques
-•	Medical Procedures
-•	Cesarean Delivery 
-•	Decision-Making"
-      
-    # courses item loop
-    - title : Informed decision making"
-      image : "images/about.jpg"
-      content: ""
-      
-    # courses item loop
-    - title : "Prenatal bonding"
-      image : "images/about.jpg"
+
 
 ########################## Testimonial ########################
 testimonial:

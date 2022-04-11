@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.about{
+    blockquote{
+        background-color: $clr-accent;
+        color: $white;
+        padding: 4% 5%;
+        border-radius: 10px;
+        animation: slideIn 1000ms ease 5000ms normal forwards;
+        text-align: center;
+        font-size: $font_size-body;
+    }
+    @keyframes slideIn {
+        0%{
+            right: -100%;
+        }
+        100%{
+            right: 0;
+        }
+    }
+}

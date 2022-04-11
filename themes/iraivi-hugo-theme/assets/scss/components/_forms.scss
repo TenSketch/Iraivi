@@ -1,0 +1,8 @@
+@use "../abstracts" as *;
+
+.form-control {
+  &:focus {
+    border-color: $clr-primary-500;
+    box-shadow: inset 0 0 4px $clr-accent;
+  }
+}
