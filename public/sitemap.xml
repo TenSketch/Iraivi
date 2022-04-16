@@ -2,28 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
-    <loc>/faq/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
-    <loc>/tags/sample/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
-    <loc>/categories/sample/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-04-16T15:16:23+05:30</lastmod>
-  </url><url>
     <loc>/enquiry/</loc>
     <lastmod>2022-04-10T11:03:56+05:30</lastmod>
   </url><url>
     <loc>/tags/enquiry/</loc>
+    <lastmod>2022-04-10T11:03:56+05:30</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-04-10T11:03:56+05:30</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
     <lastmod>2022-04-10T11:03:56+05:30</lastmod>
   </url><url>
     <loc>/tags/courses/</loc>
@@ -58,5 +46,7 @@
   </url><url>
     <loc>/courses/</loc>
     <lastmod>2022-04-03T12:54:59+05:30</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
   </url>
 </urlset>
