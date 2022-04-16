@@ -2,9 +2,9 @@
 title: "Newborn care"
 description: ""
 keywords: ""
-image: "images/newborn_care.jpg"
+image: "images/newborn_care1.jpg"
 tags: ["courses"]
-date: 2022-04-03T19:49:03+05:30
+date: 2022-04-03T19:45:06+05:30
 draft: false
 ---
 
@@ -13,10 +13,8 @@ The newborn care session for expectant parents helps to build confidence by bett
 #### The session includes
 
 - Newborn procedures
-- Bathing
-- Diapering
+- Bathing & Diapering
 - Feeding pattern
 - Sleeping pattern
-- Baby cues
-- Debunking the myths
 - Newborn Warning signs
+- Debunking the myths

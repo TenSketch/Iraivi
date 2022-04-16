@@ -4,11 +4,11 @@ description: ""
 keywords: ""
 image: "images/Prenatal_Bonding.jpg"
 tags: ["courses"]
-date: 2022-04-03T19:47:03+05:30
+date: 2022-04-03T19:51:04+05:30
 draft: false
 ---
 
-The Prenatal bonding is the establishment of bonding between mother and baby when the baby is in womb. Baby’s behavior depends upon the mental & emotional state of her mother during pregnancy. Prenatal bonding helps you to deliver a smart & healthy baby.
+Prenatal bonding occurs when a mother and her baby form a bond while the infant is still in the womb. The mental and emotional state of the mother during pregnancy has an impact on the baby's behavior. Prenatal bonding aids in the delivery of a healthy and intelligent baby.
 
 ##### The session includes
 

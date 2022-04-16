@@ -2,17 +2,18 @@
 title: "Pregnancy Nutrition"
 description: ""
 keywords: ""
-image: "images/pregnancy_nutrition.jpg"
+image: "images/pregnant-smiling-woman-eating-salad.jpg"
 tags: ["courses"]
 date: 2022-04-03T19:51:03+05:30
 draft: false
 ---
 
-During pregnancy, to nourish your body, you have to take nutritious foods with a well- balanced diet. Good nutrition helps you handle the extra demands on your body as your pregnancy progresses. To balance a healthy weight & remain active during pregnancy regular exercise is required. Diet Chart will be provided.
+To nourish your body during pregnancy, you must eat nutritious meals and follow a well-balanced diet. As your pregnancy advances, good diet will help you cope with the increased demands on your body. Regular exercise is necessary to maintain a healthy weight and stay active throughout pregnancy. There will be a diet chart available.
 
 ##### The session includes
 
 - Diet & Nutrition
-- Mindfulness
-- Understand your body during pregnancy
-- Exercise& Meditation
+- Lifestyle choices that promote health
+- Exercise & weight management
+- Mindfulness & Visualization
+- Breathing exercises

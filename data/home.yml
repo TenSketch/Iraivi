@@ -1,10 +1,11 @@
 ############################ banner ##########################
 banner:
   enable : true
-  title : "IRAIVI"
+  title : "Giving birth should be your greatest achievement not your greatest fear."
   subtitle : "Celebrate Motherhood"
   content : "Hi, I’m Gayathri Suresh. Founder of Iraivi. I’m an internationally certified childbirth educator."
-  image : "images/logo.png"
+  content1 : ""
+  image : "images/about.jpg"
   # button
   button:
     enable : true
@@ -18,6 +19,22 @@ about:
 
 # content from content/about-me/_index.md
 
+########################## courses ##############################
+courses:
+  enable : false
+  title: "Iraivi's courses for celebrating Motherhood"
+  content: "We provide the following services to best accompany you on your journey:"
+  courseItem:
+    - Pregnancy nutrition
+    - Prenatal bonding
+    - Labor & birth	
+    - Pre & postnatal fitness
+    - Breastfeeding
+    - Newborn care
+    - Postpartum care
+  subtitle: "Expectant parents can attend personalized & group childbirth education classes."
+
+# content from content/courses
 
 ###################### Call to action ########################
 cta:
@@ -57,7 +74,7 @@ testimonial:
     # testimonial item loop
     - name : "Kowsalya Balamurugan"
       content : "Thank you so much sister.
-      Your sessions helped me alot 😍😍. You have covered everything from giving birth to postpartum health especially diet plan. I felt more prepared. You told me to ask doubts anytime. I have followed all your breathing techniques, relaxation and visualization for handling pain and coping with contractions. My labour journey was stressless and I was more confident because of you. I'm happy to be part of your sessions.❤️❤️❤️"
+      Your sessions helped me alot. You have covered everything from giving birth to postpartum health especially diet plan. I felt more prepared. You told me to ask doubts anytime. I have followed all your breathing techniques, relaxation and visualization for handling pain and coping with contractions. My labour journey was stressless and I was more confident because of you. I'm happy to be part of your sessions."
 
       # testimonial item loop
     - name : "Tamilarasi Mangalaraj"
@@ -65,7 +82,7 @@ testimonial:
 
       # testimonial item loop
     - name : "Alagu Monikka"
-      content : "Thank u so much Sister!!💐💐We will not forget ever. 😊😊I am happy to inform u that we are blessed with baby girls on 19th Oct 2020🥳, It was normal delivery. Baby name is Dhiya Sri👸🏻😊. We attended the labour management classes through online and Classes started by end June 2020. Really we don't have any idea about sessions, Day 1; The via of ur presentation and discussed about the subject in the class, totally awesome and we enjoyed it. And also your exercises practice, story writing to baby, breathing techniques, and knowledge shared during the class were really helpful to mom and baby. Thanks a lot for your guidance 😊💐💐"
+      content : "Thank u so much Sister!. We will not forget ever. I am happy to inform u that we are blessed with baby girls on 19th Oct 2020, It was normal delivery. Baby name is Dhiya Sri. We attended the labour management classes through online and Classes started by end June 2020. Really we don't have any idea about sessions, Day 1; The via of ur presentation and discussed about the subject in the class, totally awesome and we enjoyed it. And also your exercises practice, story writing to baby, breathing techniques, and knowledge shared during the class were really helpful to mom and baby. Thanks a lot for your guidance "
 
       # testimonial item loop
     - name : "Pandikala"
@@ -77,5 +94,5 @@ testimonial:
 
     # testimonial item loop
     - name : "Subha Arun"
-      content : "Pregnancy is god’s precious gift that a women gets in her life and also it’s the perfect time for her to enjoy motherhood. Yes!!! I enjoyed every cycle of it and my biggest support for this to happen was our IRAIVI founder and my trainer Mrs.Gayathri Suresh. The Actual course covers major six topics (nutrition,labor&birth process,comfort measures& positions, labor coping techniques, prenatal exercise, breastfeeding, newborn care and postpartum) in 6 sessions like 2hrs a week which is so comfortable for any couple to attend that too in our convenient time and batch. All the topics were covered very well and she makes us more comfortable in learning and understanding them. We used to ask too many doubts and we got it cleared every time,not only during sessions but whenever we are bothered by anything we used to call her and get it sorted immediately. I felt this course is necessary for every pregnant women and it’ll be more effective if you attend it as a couple. Mrs.Gayathri gives us lot of tips and it works well, you can feel it post giving birth too.Yes our girl baby is 1year now and we are very happy parenting her. Really we are gifted to have this course at the right time. 🥰 I would like to recommend this course to my friends and family and feel so happy for that."
+      content : "Pregnancy is god’s precious gift that a women gets in her life and also it’s the perfect time for her to enjoy motherhood. Yes!!! I enjoyed every cycle of it and my biggest support for this to happen was our IRAIVI founder and my trainer Mrs.Gayathri Suresh. The Actual course covers major six topics (nutrition,labor&birth process,comfort measures& positions, labor coping techniques, prenatal exercise, breastfeeding, newborn care and postpartum) in 6 sessions like 2hrs a week which is so comfortable for any couple to attend that too in our convenient time and batch. All the topics were covered very well and she makes us more comfortable in learning and understanding them. We used to ask too many doubts and we got it cleared every time,not only during sessions but whenever we are bothered by anything we used to call her and get it sorted immediately. I felt this course is necessary for every pregnant women and it’ll be more effective if you attend it as a couple. Mrs.Gayathri gives us lot of tips and it works well, you can feel it post giving birth too.Yes our girl baby is 1year now and we are very happy parenting her. Really we are gifted to have this course at the right time. I would like to recommend this course to my friends and family and feel so happy for that."
     

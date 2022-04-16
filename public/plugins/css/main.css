@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap");
+.p-0, .navbar, .navbar-brand {
+  padding: 0;
+}
+
 .m-1 {
   margin: 1;
 }
@@ -87,16 +91,12 @@ blockquote {
   position: relative;
 }
 
-nav {
-  background-color: #fbeff3;
-}
-
 .navbar-brand {
   margin: 0;
   width: fit-content;
 }
 .navbar-brand img {
-  width: clamp(12rem, 300px, 21.5vw);
+  width: clamp(13rem, 300px, 22vw);
 }
 
 .nav-link {
@@ -109,9 +109,119 @@ footer {
 }
 
 .banner {
-  background-color: #fbeff3;
+  background: #fbeff3;
+  background: linear-gradient(307deg, #fbeff3 0%, #f1cbd9 43%, #bb0249 96%);
+}
+.banner img {
+  border-radius: 0% 100% 35% 65%/53% 55% 45% 47%;
+  box-shadow: 19px 20px 32px -17px #5e0225;
 }
 
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.bubbles .bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: #bb0249;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: rise 10s infinite ease-in;
+}
+.bubbles .bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 8s;
+}
+.bubbles .bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+.bubbles .bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+.bubbles .bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 11s;
+  animation-delay: 0s;
+}
+.bubbles .bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 55%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+.bubbles .bubble:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  left: 65%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+.bubbles .bubble:nth-child(7) {
+  width: 90px;
+  height: 90px;
+  left: 70%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+.bubbles .bubble:nth-child(8) {
+  width: 25px;
+  height: 25px;
+  left: 80%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+.bubbles .bubble:nth-child(9) {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+.bubbles .bubble:nth-child(10) {
+  width: 90px;
+  height: 90px;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(100px);
+  }
+  100% {
+    bottom: 1080px;
+    transform: translateX(-200px);
+  }
+}
+.courses .container {
+  position: relative;
+  z-index: 10;
+}
 .courses p {
   font-size: 0.9rem;
 }
@@ -120,6 +230,25 @@ footer {
   background: url("/images/newborn-baby.jpg") center no-repeat fixed rgba(241, 203, 217, 0.7);
   background-size: cover;
   background-blend-mode: overlay;
+}
+
+.accordion-button:focus {
+  border: none;
+  box-shadow: none;
+}
+.accordion-button::after {
+  background-color: #bb0249;
+  -webkit-mask-image: url("/images/icons/accordian_down-icon.svg");
+  mask-image: url("/images/icons/accordian_down-icon.svg");
+  background-image: none;
+  width: 2rem;
+  height: 2rem;
+}
+.accordion-button:not(.collapsed) {
+  color: #7f0648;
+  background-color: #fbeff3;
+  box-shadow: none;
+  font-size: 1.5rem;
 }
 
 .about blockquote {

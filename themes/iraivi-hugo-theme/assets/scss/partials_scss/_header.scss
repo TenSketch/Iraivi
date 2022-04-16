@@ -1,17 +1,20 @@
 @use "../abstracts" as *;
 
 nav {
-  background-color: $clr-light;
-  //   box-shadow: 0 1px 3px rgba(a.$clr-accent, 0.6);
+  // background-color: $clr-light;
+  // box-shadow: inset 3px 0 3px rgba($clr-accent, 0.6);
 }
-
+.navbar {
+  @extend .p-0;
+}
 .navbar-brand {
   // border: 2px solid blue;
   // padding: 1rem 1.5rem;
+  @extend .p-0;
   margin: 0;
   width: fit-content;
   img {
-    width: clamp(12rem, 300px, 21.5vw);
+    width: clamp(13rem, 300px, 22vw);
     // outline: 2px solid red;
   }
 }

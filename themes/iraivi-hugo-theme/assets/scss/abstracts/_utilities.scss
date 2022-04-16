@@ -1,5 +1,8 @@
 // @use '../abstracts' as *;
 @use 'colors' as *;
+.p-0{
+    padding: 0;
+}
 .m-1{
     margin: 1;
 }
@@ -12,6 +15,7 @@
 .py-section{
     padding-block: 5rem;
 }
+
 .container {
     width: min(991px, 80%);
     @extend .mx-auto;

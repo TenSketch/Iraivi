@@ -8,7 +8,7 @@ date: 2022-04-03T12:54:59+05:30
 draft: false
 ---
 
-I'm Gayathri, wife of Suresh and mother of Nani Harshavardhan. An engineer by profession and now childbirth educator by passion.
+I'm Gayathri Suresh. An engineer by profession and now childbirth educator by passion.
 Iraivi is the result of my interest to assist pregnant couples in preparing for labor, delivery, and postpartum adjustment with confidence. Iraivi is here to assist with the transition, laying the groundwork for confident childbirth and parenthood. <!--more-->
 Pregnancy is both an exciting and nerve-wracking experience. It's the same with postpartum. I'm here to support you to manage your dreams and worries about starting a family.
 As an ICEA Certified Childbirth Educator (ICCE), I've had significant training in pregnancy, childbirth, and newborn care. There is nothing more humbling, primal, strong, or wonderful than childbirth in my opinion.

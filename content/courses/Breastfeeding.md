@@ -4,13 +4,13 @@ description: ""
 keywords: ""
 image: "images/woman-breastfeeding-baby.jpg"
 tags: ["courses"]
-date: 2022-04-03T19:47:03+05:30
+date: 2022-04-03T19:49:04+05:30
 draft: false
 ---
 
-Breastfeeding is an innate ability within Mom & baby dyad. Though it is natural, it is really complex nowadays towards a successful breastfeeding journey.
+Breastfeeding is a natural talent for both mom and infant. Even though it is the fact that nursing is natural, it is extremely difficult to achieve success in recent years. To provide you with the necessary support and guidance to help you succeed in this process.
 
-##### To help you succeed in this process with right support & guidance, you will learn the following
+##### The session includes
 
 - Golden hour after birth
 - Latching positions & techniques
