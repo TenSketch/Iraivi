@@ -1,16 +1,24 @@
 {{ define "main" }}
 
-    <section class="about py-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">{{ .Content }}</div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 ml-auto">
-                    <blockquote>Giving birth should be your greatest achievement not your greatest fear</blockquote>
-                </div>
+<header class="about__header d-flex align-items-end">
+    <div class="container">
+
+        <h1 class="display-3">About me</h1>
+
+    </div>
+</header>
+<section class="about py-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">{{ .Content }}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <blockquote>Giving birth should be your greatest achievement not your greatest fear</blockquote>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 {{ end }}

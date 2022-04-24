@@ -26,7 +26,11 @@
     <link rel="stylesheet" href="plugins/css/main.css">
     
 </head>
-<body><nav class="navbar navbar-expand-lg navbar-light ">
+<body>
+        <ul class="social_media_icons list-unstyled">
+            <li class="social_media_icons-list__item whatsapp"title="Iraivi's whatsapp page"><a href=""><img class="img-fluid svg svg-social" src="/images/icons/whatsapp-brands.svg" alt="whatsapp-brands"></a></li>
+            <li class="social_media_icons-list__item facebook"title="Iraivi's facebook page"><a href=""><img class="img-fluid svg svg-social" src="/images/icons/facebook-f-brands.svg" alt="facebook-brands"></a></li>
+        </ul><nav class="navbar navbar-expand-lg navbar-light ">
     
   <div class="container">
       <a class="navbar-brand" href=""><img class="img-fluid" src="/images/Iraivi_logo-1.png" alt=""></a>
@@ -54,10 +58,18 @@
     </div>
   </nav><div id="content">
 
-    <section class="about py-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto"><p>I&rsquo;m Gayathri Suresh. An engineer by profession and now childbirth educator by passion.
+<header class="about__header d-flex align-items-end">
+    <div class="container">
+
+        <h1 class="display-3">About me</h1>
+
+    </div>
+</header>
+<section class="about py-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 mx-auto"><p>I&rsquo;m Gayathri Suresh. An engineer by profession and now childbirth educator by passion.
 Iraivi is the result of my interest to assist pregnant couples in preparing for labor, delivery, and postpartum adjustment with confidence. Iraivi is here to assist with the transition, laying the groundwork for confident childbirth and parenthood.</p>
 <p>Pregnancy is both an exciting and nerve-wracking experience. It&rsquo;s the same with postpartum. I&rsquo;m here to support you to manage your dreams and worries about starting a family.
 As an ICEA Certified Childbirth Educator (ICCE), I&rsquo;ve had significant training in pregnancy, childbirth, and newborn care. There is nothing more humbling, primal, strong, or wonderful than childbirth in my opinion.
@@ -82,14 +94,14 @@ I feel that surrounding Mom with a circle of support, with her at the center, is
 <li>Choice:
 I feel that information is essential for couples to make sound decisions. My approach is built on the presentation of evidence-based research in order for couples to have the flexibility to make informed decisions.</li>
 </ul></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 ml-auto">
-                    <blockquote>Giving birth should be your greatest achievement not your greatest fear</blockquote>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <blockquote>Giving birth should be your greatest achievement not your greatest fear</blockquote>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
         </div><footer>
@@ -97,7 +109,7 @@ I feel that information is essential for couples to make sound decisions. My app
         <div class="row">
             <div class="col-md-4">
                 <h3>Who should join Iraivi courses</h3>
-                <ul class="">
+                <ul class="list-unstyled">
                     
                     <li>If your pregnancy has just been confirmed, and thinking about the next steps</li>
                     <li>If you are confused between tips from various sources about pregancy care</li>
@@ -111,8 +123,8 @@ I feel that information is essential for couples to make sound decisions. My app
             </div>
             <div class="col-md-4">
                 <h3>Links</h3>
-                <ul>
-                    <li><a href="about-me">about Gayathri</a></li>
+                <ul class="list-unstyled">
+                    <li><a href="about-me">About Gayathri</a></li>
                     <li><a href="enquiry">Enquiry</a></li>
                     <li><a href="">Home</a></li>
                 </ul>
@@ -129,10 +141,34 @@ I feel that information is essential for couples to make sound decisions. My app
                             target="_top">gayathrisuresh8992@gmail.com</a>
                     </li>
                 </ul>
+                <h3 class="mt-3">Send us a message.</h3>
+                <form action="">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
+                        placeholder="Enter your full Name" required>
+                        <label for="Name">Full Name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="tel" class="form-control" name="Mobile number" id="Mobile number"
+                        aria-describedby="Mobile number" placeholder="10 digit Mobie no." required>
+                        <label for="Mobile number">Mobile number</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control" name="Message" id="Message" rows="2" required></textarea>
+                        <label for="Message">Message</label>
+                    </div>
+                    <button class="btn btn_primary w-100">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 </footer>
+<div class="copyrights py-3">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <p>&#169; Iraivi 2022</p>
+        <p>Made with <img class="svg" src="/images/icons/heart-solid.svg" alt="heart love icon"> by <a href="https://www.tensketch.com/" target="_blank">TenSketch</a></p>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 

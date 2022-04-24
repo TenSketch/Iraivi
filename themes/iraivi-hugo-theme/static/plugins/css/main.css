@@ -76,6 +76,11 @@ h3 {
   letter-spacing: 1.5;
 }
 
+a {
+  text-decoration: none;
+  color: #7f0648;
+}
+
 img {
   display: block;
 }
@@ -83,6 +88,46 @@ img {
 .icon {
   display: unset;
   width: 20px;
+}
+
+.social_media_icons {
+  position: fixed;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.social_media_icons-list__item {
+  padding: 1px;
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  transition: box-shadow 250ms ease;
+}
+.social_media_icons-list__item.whatsapp {
+  background-color: #25D366;
+}
+.social_media_icons-list__item.facebook {
+  background-color: #4267B2;
+}
+.social_media_icons-list__item:not(:first-child) {
+  margin-top: 0.5rem;
+}
+.social_media_icons-list__item:hover {
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+.svg {
+  width: 30px;
+  aspect-ratio: 1;
+}
+
+.svg-social {
+  filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(209deg) brightness(105%) contrast(101%);
 }
 
 blockquote {
@@ -106,6 +151,20 @@ blockquote {
 
 footer {
   background-color: #fbeff3;
+}
+
+.copyrights {
+  background-color: #bb0249;
+  color: #fff;
+}
+.copyrights img {
+  display: unset;
+}
+.copyrights p {
+  margin-bottom: 0;
+}
+.copyrights a {
+  color: #fbeff3;
 }
 
 .banner {
@@ -218,9 +277,10 @@ footer {
     transform: translateX(-200px);
   }
 }
-.courses .container {
-  position: relative;
-  z-index: 10;
+.courses-row:nth-of-type(odd) {
+  border-radius: 34px;
+  background: linear-gradient(145deg, #c8024e, #f1cbd9);
+  box-shadow: 5px 5px 9px #c8024e, -5px -5px 9px #f1cbd9;
 }
 .courses p {
   font-size: 0.9rem;
@@ -251,14 +311,32 @@ footer {
   font-size: 1.5rem;
 }
 
+.about__header {
+  background: url("/images/newborn_care.jpg") no-repeat center center fixed;
+  min-height: 60vh;
+  background-size: cover;
+}
+.about__header h1 {
+  font-weight: 800;
+  color: #1e0111;
+}
+
+.about {
+  background: #fbeff3;
+  background: radial-gradient(circle, #fbeff3 0%, rgba(187, 2, 73, 0.397) 100%);
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+}
 .about blockquote {
-  background-color: #7f0648;
+  border-radius: 50px;
+  background: rgba(187, 2, 73, 0.9584208683);
+  box-shadow: 20px 20px 60px rgba(187, 2, 73, 0.9584208683), -20px -20px 60px rgba(187, 2, 73, 0.9584208683);
   color: #fff;
   padding: 4% 5%;
   border-radius: 10px;
   animation: slideIn 1000ms ease 5000ms normal forwards;
   text-align: center;
   font-size: 1.5rem;
+  margin-top: 1rem;
 }
 @keyframes slideIn {
   0% {
@@ -267,6 +345,21 @@ footer {
   100% {
     right: 0;
   }
+}
+
+.enquiry ol:not(:first-child) {
+  margin-top: 3rem;
+}
+.enquiry ul {
+  padding-left: 4rem;
+  position: relative;
+}
+.enquiry ul::after {
+  content: "";
+  position: absolute;
+  box-shadow: 0 0 1px 1px #7f0648;
+  margin: 1rem 0;
+  width: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

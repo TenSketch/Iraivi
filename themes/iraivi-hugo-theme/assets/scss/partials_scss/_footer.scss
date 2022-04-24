@@ -4,3 +4,17 @@ footer {
   @extend .py-section;
   background-color: $clr-light;
 }
+.copyrights{
+background-color: $clr-primary;
+color: $white;
+  img{
+    display: unset;
+  }
+  p{
+    // flex-grow: 1;
+    margin-bottom: 0;
+  }
+  a{
+    color: $clr-light;
+  }
+}

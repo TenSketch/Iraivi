@@ -14,6 +14,7 @@ The newborn care session for expectant parents helps to build confidence by bett
 
 - Newborn procedures
 - Bathing & Diapering
+- Infant Massage
 - Feeding pattern
 - Sleeping pattern
 - Newborn Warning signs

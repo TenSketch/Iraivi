@@ -2,6 +2,10 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
+        <ul class="social_media_icons list-unstyled">
+            <li class="social_media_icons-list__item whatsapp"title="Iraivi's whatsapp page"><a href=""><img class="img-fluid svg svg-social" src="/images/icons/whatsapp-brands.svg" alt="whatsapp-brands"></a></li>
+            <li class="social_media_icons-list__item facebook"title="Iraivi's facebook page"><a href=""><img class="img-fluid svg svg-social" src="/images/icons/facebook-f-brands.svg" alt="facebook-brands"></a></li>
+        </ul>
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}

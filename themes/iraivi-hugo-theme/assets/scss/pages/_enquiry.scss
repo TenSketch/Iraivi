@@ -1,0 +1,25 @@
+@use "../abstracts"as *;
+
+.enquiry {
+
+
+    ol{
+        &:not(:first-child){
+            margin-top: 3rem;
+        }
+    }
+
+    ul {
+        padding-left: 4rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            // border-bottom: 2px solid;
+            box-shadow: 0 0 1px 1px $clr-accent;
+            margin: 1rem 0;
+            width: 50%;
+        }
+    }
+}

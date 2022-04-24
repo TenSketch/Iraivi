@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 .banner {
   // background-color: $clr-light;
@@ -10,126 +10,145 @@
     box-shadow: 19px 20px 32px -17px rgba(94, 2, 37, 1);
   }
 }
-.course_intro{
+
+.course_intro {
   // @extend .py-section;
-  // background-color: $clr-primary;
   // color: $white;
+
 }
-.bubbles{
-  position:relative;
-  width:100%;
+
+.bubbles {
+  position: relative;
+  width: 100%;
   height: 100%;
-  z-index:0;
+  z-index: 0;
   // overflow:hidden;
-  top:0;
-  left:0;
-  .bubble{
+  top: 0;
+  left: 0;
+
+  .bubble {
     position: absolute;
-    bottom:-100px;
-    width:40px;
+    bottom: -100px;
+    width: 40px;
     height: 40px;
-    background:$clr-primary;
-    border-radius:50%;
-    opacity:0.5;
+    background: $clr-primary;
+    border-radius: 50%;
+    opacity: 0.5;
     animation: rise 10s infinite ease-in;
-    &:nth-child(1){
-      width:40px;
-      height:40px;
-      left:10%;
-      animation-duration:8s;
+
+    &:nth-child(1) {
+      width: 40px;
+      height: 40px;
+      left: 10%;
+      animation-duration: 8s;
     }
-    &:nth-child(2){
-      width:20px;
-      height:20px;
-      left:20%;
-      animation-duration:5s;
-      animation-delay:1s;
+
+    &:nth-child(2) {
+      width: 20px;
+      height: 20px;
+      left: 20%;
+      animation-duration: 5s;
+      animation-delay: 1s;
     }
-    &:nth-child(3){
-      width:50px;
-      height:50px;
-      left:35%;
-      animation-duration:7s;
-      animation-delay:2s;
+
+    &:nth-child(3) {
+      width: 50px;
+      height: 50px;
+      left: 35%;
+      animation-duration: 7s;
+      animation-delay: 2s;
     }
-    &:nth-child(4){
-      width:80px;
-      height:80px;
-      left:50%;
-      animation-duration:11s;
-      animation-delay:0s;
+
+    &:nth-child(4) {
+      width: 80px;
+      height: 80px;
+      left: 50%;
+      animation-duration: 11s;
+      animation-delay: 0s;
     }
-    &:nth-child(5){
-      width:35px;
-      height:35px;
-      left:55%;
-      animation-duration:6s;
-      animation-delay:1s;
+
+    &:nth-child(5) {
+      width: 35px;
+      height: 35px;
+      left: 55%;
+      animation-duration: 6s;
+      animation-delay: 1s;
     }
-    &:nth-child(6){
-      width:45px;
-      height:45px;
-      left:65%;
-      animation-duration:8s;
-      animation-delay:3s;
+
+    &:nth-child(6) {
+      width: 45px;
+      height: 45px;
+      left: 65%;
+      animation-duration: 8s;
+      animation-delay: 3s;
     }
-    &:nth-child(7){
-      width:90px;
-      height:90px;
-      left:70%;
-      animation-duration:12s;
-      animation-delay:2s;
+
+    &:nth-child(7) {
+      width: 90px;
+      height: 90px;
+      left: 70%;
+      animation-duration: 12s;
+      animation-delay: 2s;
     }
-    &:nth-child(8){
-      width:25px;
-      height:25px;
-      left:80%;
-      animation-duration:6s;
-      animation-delay:2s;
+
+    &:nth-child(8) {
+      width: 25px;
+      height: 25px;
+      left: 80%;
+      animation-duration: 6s;
+      animation-delay: 2s;
     }
-    &:nth-child(9){
-      width:15px;
-      height:15px;
-      left:70%;
-      animation-duration:5s;
-      animation-delay:1s;
+
+    &:nth-child(9) {
+      width: 15px;
+      height: 15px;
+      left: 70%;
+      animation-duration: 5s;
+      animation-delay: 1s;
     }
-    &:nth-child(10){
-      width:90px;
-      height:90px;
-      left:25%;
-      animation-duration:10s;
-      animation-delay:4s;
+
+    &:nth-child(10) {
+      width: 90px;
+      height: 90px;
+      left: 25%;
+      animation-duration: 10s;
+      animation-delay: 4s;
     }
   }
 }
-@keyframes rise{
-  0%{
-    bottom:-100px;
-    transform:translateX(0);
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
   }
-  50%{
-    transform:translate(100px);
+
+  50% {
+    transform: translate(100px);
   }
-  100%{
-    bottom:1080px;
-    transform:translateX(-200px);
+
+  100% {
+    bottom: 1080px;
+    transform: translateX(-200px);
   }
 }
 
 
 .courses {
-  .container{
-    position: relative;
-    z-index: 10;
+  &-row:nth-of-type(odd) {
+    border-radius: 34px;
+    background: linear-gradient(145deg, #c8024e, #f1cbd9);
+    box-shadow: 5px 5px 9px #c8024e,
+      -5px -5px 9px #f1cbd9;
   }
+
   p {
     font-size: 0.9rem;
   }
 }
+
 .testimonial {
-  .container {
-  }
+  .container {}
 }
 
 .quotes {
@@ -142,14 +161,15 @@
 
 
 
-.accordion-button{
+.accordion-button {
 
   // outline: 2px solid red;
-  &:focus{
+  &:focus {
     border: none;
     box-shadow: none;
   }
-  &::after{
+
+  &::after {
     background-color: $clr-primary;
     -webkit-mask-image: url('/images/icons/accordian_down-icon.svg');
     mask-image: url('/images/icons/accordian_down-icon.svg');
@@ -157,6 +177,7 @@
     width: 2rem;
     height: 2rem;
   }
+
   &:not(.collapsed) {
     color: $clr-accent;
     background-color: $clr-light;
