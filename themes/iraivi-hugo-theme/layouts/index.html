@@ -64,7 +64,7 @@
 </section>
 {{end}}
 <!-- courses -->
-<section class="course_intro pt-5">
+<section id="courses" class="course_intro pt-5">
     <!-- <div class="bubbles">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -86,27 +86,26 @@
             </div>
             {{ end }}
         </div>
+        <hr>
     </div>
 </section>
-<section id="courses" class="pb-5">
-    <div class="container">
+<section class="courses">
 
         {{ range $index, $val := .Site.Taxonomies.tags.courses }}
-        <div class="courses-row row justify-content-between my-5">
+        <div class="courses__row row justify-content-between align-items-center my-5">
 
 
-            <h2 class="text-center mb-5">{{ .Page.Params.title }}</h2>
-            <div class="col-lg-4">
+            <h2 class="courses__row-heading">{{ .Page.Params.title }}</h2>
+            <div class="col-lg-5">
                 <img class="img-fluid rounded-3" src="{{ .Page.Params.image }}" alt="{{.Name}}">
             </div>
-            <div class="col-lg-7 mt-5 mt-lg-0">
+            <div class="col-lg-5 mt-5 mt-lg-0 content">
                 <p>{{ .Content }} </p>
             </div>
         </div>
         {{ end }}
         <a href="{{.Site.BaseURL}}enquiry" class="btn btn_primary w-50 d-grid mx-auto">Enquire about our courses</a>
 
-    </div>
 </section>
 
 

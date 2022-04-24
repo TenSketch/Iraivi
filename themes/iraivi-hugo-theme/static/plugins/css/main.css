@@ -277,10 +277,50 @@ footer {
     transform: translateX(-200px);
   }
 }
-.courses-row:nth-of-type(odd) {
-  border-radius: 34px;
-  background: linear-gradient(145deg, #c8024e, #f1cbd9);
-  box-shadow: 5px 5px 9px #c8024e, -5px -5px 9px #f1cbd9;
+.courses {
+  padding: 2% 0;
+}
+.courses__row {
+  padding: 5% 10%;
+}
+.courses__row .content {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ffffffb7, rgba(255, 255, 255, 0.7));
+  box-shadow: 20px 20px 60px #fff, -20px -20px 60px #ffffff;
+  padding: 1rem 2rem;
+}
+.courses__row:nth-child(1) {
+  background: #fbeff3 url(/images/baby-teddy-bear-rear-view-with-design-space.jpg) no-repeat center center/cover fixed;
+}
+.courses__row:nth-child(3) {
+  background: #fbeff3;
+}
+.courses__row:nth-child(5) {
+  background: #fbeff3 url(/images/young-mom-holding-her-baby-air-blank-space.jpg) no-repeat center center/cover fixed;
+}
+.courses__row h2 {
+  position: relative;
+  cursor: pointer;
+}
+.courses__row h2::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  background-color: #7f0648;
+  display: inline-block;
+  left: 0.8rem;
+  bottom: 0;
+  margin-top: 1rem;
+  transform: scale(0.2);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+.courses__row h2:hover::after {
+  transform: scale(100%);
+}
+.courses__row ul {
+  margin-bottom: 0;
 }
 .courses p {
   font-size: 0.9rem;

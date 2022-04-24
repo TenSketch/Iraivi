@@ -135,11 +135,63 @@
 
 
 .courses {
-  &-row:nth-of-type(odd) {
-    border-radius: 34px;
-    background: linear-gradient(145deg, #c8024e, #f1cbd9);
-    box-shadow: 5px 5px 9px #c8024e,
-      -5px -5px 9px #f1cbd9;
+  padding: 2% 0;
+
+  &__row {
+    padding: 5% 10%;
+
+    .content {
+      border-radius: 50px;
+      background: linear-gradient(145deg, #ffffffb7, rgba(255, 255, 255, 0.7));
+      box-shadow: 20px 20px 60px #fff,
+        -20px -20px 60px #ffffff;
+        padding: 1rem 2rem;
+    }
+
+    &:nth-child(1) {
+      background: $clr-light url(/images/baby-teddy-bear-rear-view-with-design-space.jpg) no-repeat center center/cover fixed;
+      // background-blend-mode: multiply;
+    }
+    &:nth-child(3) {
+      // background: $clr-light url(/images/funny-infant-baby-holds-head-up.jpg) no-repeat center center/cover fixed;
+      background: $clr-light;
+      // background-blend-mode: multiply;
+    }
+    &:nth-child(5) {
+      background: $clr-light url(/images/young-mom-holding-her-baby-air-blank-space.jpg) no-repeat center center/cover fixed;
+      // background-blend-mode: multiply;
+    }
+
+    h2 {
+      // padding-left: 0;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 50%;
+        background-color: $clr-accent;
+        display: inline-block;
+        left: 0.8rem;
+        bottom: 0;
+        margin-top: 1rem;
+        transform: scale(0.2);
+        transform-origin: left;
+        transition: transform 500ms ease;
+      }
+
+      &:hover {
+        &::after {
+          transform: scale(100%);
+        }
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
   }
 
   p {
