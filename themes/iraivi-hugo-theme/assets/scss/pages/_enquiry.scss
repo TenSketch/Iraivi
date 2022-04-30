@@ -2,14 +2,20 @@
 
 .enquiry {
 
+    background: $clr-light url('/images/newborn_care1.jpg') no-repeat center center/cover fixed;
+    background-blend-mode: overlay;
+    p{
+        margin-bottom: .5rem;   
+    }
 
     ol{
         &:not(:first-child){
             margin-top: 3rem;
         }
     }
-
+    
     ul {
+        margin-bottom: 3rem;
         padding-left: 4rem;
         position: relative;
 
@@ -19,7 +25,8 @@
             // border-bottom: 2px solid;
             box-shadow: 0 0 1px 1px $clr-accent;
             margin: 1rem 0;
-            width: 50%;
+            width: 60%;
+            left: 0;
         }
     }
 }

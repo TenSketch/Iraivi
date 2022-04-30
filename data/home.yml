@@ -52,7 +52,7 @@ quotes:
   enable : true
   quoteItem:
     # Quote item 1
-    - title : "You can't know what you don't know unless you know what you don't know."
+    - title : "When you change the way you view birth, the way you birth will change."
       image : "images/about.jpg"
     # Quote item 2
     - title : "Birth is the epicenter of women's power."

@@ -139,7 +139,8 @@
 
   &__row {
     padding: 5% 10%;
-
+    background-color: $clr-light;
+    // background-image: radial-gradient(rgba($clr-primary,0.8) 0%, $clr-light 100%);
     .content {
       border-radius: 50px;
       background: linear-gradient(145deg, #ffffffb7, rgba(255, 255, 255, 0.7));
@@ -154,11 +155,16 @@
     }
     &:nth-child(3) {
       // background: $clr-light url(/images/funny-infant-baby-holds-head-up.jpg) no-repeat center center/cover fixed;
-      background: $clr-light;
+      background: $clr-light url(/images/labour-and-birth-bg.jpg) no-repeat center center/cover fixed;
+
       // background-blend-mode: multiply;
     }
     &:nth-child(5) {
       background: $clr-light url(/images/young-mom-holding-her-baby-air-blank-space.jpg) no-repeat center center/cover fixed;
+      // background-blend-mode: multiply;
+    }
+    &:nth-child(7) {
+      background: $clr-light url(/images/lactation_bg_breastfeeding-pic.jpg) no-repeat center center/cover fixed;
       // background-blend-mode: multiply;
     }
 

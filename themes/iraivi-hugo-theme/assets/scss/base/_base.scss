@@ -32,10 +32,12 @@ h3 {
   font-family: $font_family-heading;
   letter-spacing: 1.5;
 }
-a{
+
+a {
   text-decoration: none;
   color: $clr-accent;
 }
+
 // ul,
 // li {
 //   //   list-style: none;
@@ -69,12 +71,18 @@ img {
     display: grid;
     place-items: center;
     transition: box-shadow 250ms ease;
+
     &.whatsapp {
       background-color: #25D366;
     }
 
     &.facebook {
       background-color: #4267B2;
+    }
+
+    &.instagram {
+      background: #d6249f;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
 
     &:not(:first-child) {
@@ -91,13 +99,13 @@ img {
 }
 
 .svg {
-  width: 30px;
+  width: 20px;
   aspect-ratio: 1;
 }
 
 .svg-social {
   filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(209deg) brightness(105%) contrast(101%);
-
+  width: 30px;
 }
 
 blockquote {

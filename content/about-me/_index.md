@@ -11,7 +11,8 @@ draft: false
 I'm Gayathri Suresh. An engineer by profession and now childbirth educator by passion.
 Iraivi is the result of my interest to assist pregnant couples in preparing for labor, delivery, and postpartum adjustment with confidence. Iraivi is here to assist with the transition, laying the groundwork for confident childbirth and parenthood. <!--more-->
 Pregnancy is both an exciting and nerve-wracking experience. It's the same with postpartum. I'm here to support you to manage your dreams and worries about starting a family.
-As an ICEA Certified Childbirth Educator (ICCE), I've had significant training in pregnancy, childbirth, and newborn care. There is nothing more humbling, primal, strong, or wonderful than childbirth in my opinion.
+As an ICEA Certified Childbirth Educator (ICCE), I've had significant training in pregnancy, childbirth, and newborn care. There is nothing more humbling, primal, strong, or wonderful than childbirth in my opinion.  As a Lactation certified professional I will offer support, advice and guidance for solving issues in breastfeeding of a new mother.
+
 I consider it an honor and a pleasure to work with you and I eagerly await the opportunity to get to know you. Let us embrace the birthing process and beyond as a family.
 
 ### We provide the following services to best accompany you on your journey

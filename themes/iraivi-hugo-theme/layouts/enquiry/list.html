@@ -1,13 +1,20 @@
 {{ define "main" }}
 
-<div class="enquiry container my-5 py-5">
-
-
-    <div class="row">
+<section class="enquiry py-5">
+    <div class="container">
         {{ range $index, $val := .Site.Taxonomies.tags.enquiry }}
         <div class="col-md-8 mx-auto">
             {{.Content}}
         </div>
+        {{end}}
+    </div>
+</section>
+<div class="container my-5 py-5">
+
+
+    <div class="row">
+        {{ range $index, $val := .Site.Taxonomies.tags.enquiry }}
+       
         <div class="row mt-5">
             <div class="col-lg-6">
                 <img src="{{.Page.Params.image}}" class="img-fluid rounded-3" alt="{{.Name}}">

@@ -9,6 +9,8 @@ background-color: $clr-primary;
 color: $white;
   img{
     display: unset;
+    filter: invert(1);
+    margin: 0 .25rem;
   }
   p{
     // flex-grow: 1;
