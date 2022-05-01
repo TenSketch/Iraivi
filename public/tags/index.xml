@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Iravi | Celebrating Mothehood</title>
-    <link>/tags/</link>
+    <link>https://iraivi.netlify.app/tags/</link>
     <description>Recent content in Tags on Iravi | Celebrating Mothehood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 11:03:56 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 11:03:56 +0530</lastBuildDate><atom:link href="https://iraivi.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>enquiry</title>
-      <link>/tags/enquiry/</link>
+      <link>https://iraivi.netlify.app/tags/enquiry/</link>
       <pubDate>Sun, 10 Apr 2022 11:03:56 +0530</pubDate>
       
-      <guid>/tags/enquiry/</guid>
+      <guid>https://iraivi.netlify.app/tags/enquiry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>courses</title>
-      <link>/tags/courses/</link>
+      <link>https://iraivi.netlify.app/tags/courses/</link>
       <pubDate>Sun, 03 Apr 2022 19:51:04 +0530</pubDate>
       
-      <guid>/tags/courses/</guid>
+      <guid>https://iraivi.netlify.app/tags/courses/</guid>
       <description></description>
     </item>
     
     <item>
       <title>about</title>
-      <link>/tags/about/</link>
+      <link>https://iraivi.netlify.app/tags/about/</link>
       <pubDate>Sun, 03 Apr 2022 12:54:59 +0530</pubDate>
       
-      <guid>/tags/about/</guid>
+      <guid>https://iraivi.netlify.app/tags/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>courseintro</title>
-      <link>/tags/courseintro/</link>
+      <link>https://iraivi.netlify.app/tags/courseintro/</link>
       <pubDate>Sun, 03 Apr 2022 12:54:59 +0530</pubDate>
       
-      <guid>/tags/courseintro/</guid>
+      <guid>https://iraivi.netlify.app/tags/courseintro/</guid>
       <description></description>
     </item>
     
