@@ -112,5 +112,22 @@ blockquote {
   font-weight: $font_weight-bold;
   font-size: $font_size-header;
   position: relative;
+  // &::before,&::after{
+  //   position: absolute;
+  //   content: '';
+  //   display: inline-block;
+  //   height: 20px;
+  //   width: 20px;
+  // }
+  // &::before{
+  //   background: url('/images/icons/quote-left-solid.svg') no-repeat top left;
+  //   top: 0;
+  //   left: 0;
+  // }
+  // &::after{
+  //   background: url('/images/icons/quote-right-solid.svg') no-repeat top left;
+  //   bottom: 0;
+  //   right: 0;
+  // }
 
 }

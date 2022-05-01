@@ -17,5 +17,6 @@ We provide the following services to best accompany you on your journey:
 - Breastfeeding
 - Newborn care
 - Postpartum care
+- Lactation Counselling
 
 Expectant parents can attend personalized & group childbirth education classes.
