@@ -290,6 +290,7 @@ footer {
 .courses__row {
   padding: 5% 10%;
   background-color: #fbeff3;
+  margin: 0;
 }
 .courses__row .content {
   border-radius: 50px;
