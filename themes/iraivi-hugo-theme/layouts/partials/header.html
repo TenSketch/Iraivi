@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
     <!-- container is flexbox-->
   <div class="container">
-      <a class="navbar-brand" href="{{.Site.BaseURL}}"><img class="img-fluid" src="/images/Iraivi_logo-1.png" alt=""></a>
+      <a class="navbar-brand" href="{{.Site.BaseURL | absURL}}">
+        <img class="img-fluid" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}">
+        <!-- <img class="img-fluid" src="/images/Iraivi_logo-1.png" alt=""> -->
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

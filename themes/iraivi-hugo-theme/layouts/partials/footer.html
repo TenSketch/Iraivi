@@ -36,7 +36,8 @@
                     </li>
                 </ul>
                 <h3 class="mt-3">Send us a message.</h3>
-                <form action="">
+                <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+
                     <div class="form-floating mb-4">
                         <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
                         placeholder="Enter your full Name" required>
@@ -51,6 +52,7 @@
                         <textarea class="form-control" name="Message" id="Message" rows="2" required></textarea>
                         <label for="Message">Message</label>
                     </div>
+                    <div data-netlify-recaptcha="true"></div>
                     <button class="btn btn_primary w-100">Submit</button>
                 </form>
             </div>

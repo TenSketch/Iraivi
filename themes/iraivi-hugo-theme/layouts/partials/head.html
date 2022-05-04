@@ -1,9 +1,10 @@
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=egde">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }}{{ end }}</title>
+    
+    <!-- meta tags -->
     {{ if .Params.Description }}
     <meta name="description" content="{{ .Params.Description }}">
     {{ else if .Site.Params.Description }}
@@ -14,6 +15,10 @@
     {{ else if .Site.Params.Keywords }}
     <meta name="keywords" content="{{ .Site.Params.Keywords }}">
     {{ end }}
+    {{ with site.Params.author }}
+    <meta name="author" content="{{ . }}">{{ end }}
+    {{ hugo.Generator }}
+
     <!-- og meta tags -->
     <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ end }}">
     <meta property="og:type" content="website">

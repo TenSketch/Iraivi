@@ -1,7 +1,22 @@
-baseURL = "https://iraivi.netlify.app/"
+baseURL = "https://birthwithiraivi.com/"
 languageCode = 'en-us'
 title = 'Iraivi | Celebrating Mothehood'
 theme = 'iraivi-hugo-theme'
+
+
+#################### default parameters ################################
+[params]
+logo = "images/Iraivi_logo-1.png"
+og_image = "images/iraivi-icon.jpg"
+home = "Home"
+# Meta data
+description = "I’m Gayathri Suresh, a childbirth educator. Iraivi is here to assist with the transition, laying the groundwork for confident childbirth and parenthood."
+keywords = "childbirth, pregnancy, pregancy care, how to get a normal delivery, normal delivery videos, birthcare, normal delivery, childbirth educator, Pregnancy nutrition, Prenatal bonding, Labor and birth, Pre and postnatal fitness, Breastfeeding, Newborn care, Postpartum care, Lactation Counselling, parenting"
+author = "TenSketch"
+# Google Analitycs
+googleAnalitycsID = "" # Your ID
+# copyright
+copyright = "| Copyright &copy; 2019 [Gethugothemes](https://gethugothemes.com) All Rights Reserved |"
 
 ############################# Plugins ##############################
 [params.plugins]
