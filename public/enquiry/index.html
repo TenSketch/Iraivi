@@ -105,6 +105,9 @@ Topics covered in “Labor Management” session</p>
 <li>Newborn Warning signs</li>
 <li>Debunking the myths</li>
 </ul>
+<p><strong>5. Lactation Counselling:</strong></p>
+<p>Who can attend lactation counselling?</p>
+<p>Breastfeeding Moms and new Moms with issues and doubts in breastfeeding can attend lactation counselling.</p>
 
         </div>
         
@@ -115,31 +118,31 @@ Topics covered in “Labor Management” session</p>
 
     <div class="row">
         
-       
+
         <div class="row mt-5">
             <div class="col-lg-6">
                 <img src="/images/baby-smiling.jpg" class="img-fluid rounded-3" alt="Enquire about our courses">
             </div>
             <div class="col-lg-6 mt-3 mt-lg-0">
                 <h3>Place an enquiry for our courses. We'll get back to you.</h3>
-                <form action="">
+                <form name="enquiry" method="POST" data-netlify-recaptcha="true" data-netlify="true">
                     <div class="form-floating mb-4">
                         <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
-                        placeholder="Enter your full Name">
+                            placeholder="Enter your full Name" required>
                         <label for="Name">Full Name</label>
                     </div>
                     <div class="form-floating mb-4">
                         <input type="tel" class="form-control" name="Mobile number" id="Mobile number"
-                        aria-describedby="Mobile number" placeholder="10 digit Mobie no.">
+                            aria-describedby="Mobile number" placeholder="10 digit Mobie no." required>
                         <label for="Mobile number">Mobile number</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control" name="Email Id" id="Email Id" aria-describedby="Email Id"
-                        placeholder="abc@email.com">
+                        <input type="email" class="form-control" name="Email Id" id="Email Id"
+                            aria-describedby="Email Id" placeholder="abc@email.com">
                         <label for="Email Id">Email Id</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <select class="form-select form-control" name="Course Name" id="Course Name">
+                        <select class="form-select form-control" name="Course Name" id="Course Name" required>
                             <option value="Select a course" disabled>Select a course</option>
                             <option value="Early pregnancy care">Early pregnancy care</option>
                             <option value="Labour Management">Labour Management</option>
@@ -150,10 +153,12 @@ Topics covered in “Labor Management” session</p>
                         <label for="Course Name">Course name</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <textarea class="form-control" name="Message" id="Message" rows="2"></textarea>
+                        <textarea class="form-control" name="Message" id="Message" rows="2" required></textarea>
                         <label for="Message">Message</label>
                     </div>
-                    <button class="btn btn_primary">Submit</button>
+                    <div data-netlify-recaptcha="true"></div>
+
+                    <button type="submit" class="btn btn_primary w-100">Submit</button>
                 </form>
             </div>
         </div>

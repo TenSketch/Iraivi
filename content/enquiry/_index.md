@@ -58,3 +58,9 @@ Topics covered in “Labor Management” session
 - Sleeping pattern
 - Newborn Warning signs
 - Debunking the myths
+
+**5. Lactation Counselling:**
+
+Who can attend lactation counselling?
+
+Breastfeeding Moms and new Moms with issues and doubts in breastfeeding can attend lactation counselling.

@@ -298,17 +298,24 @@ footer {
   box-shadow: 20px 20px 60px #fff, -20px -20px 60px #ffffff;
   padding: 1rem 2rem;
 }
+.courses__row:nth-of-type(odd) {
+  background-color: #fbeff3;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .courses__row:nth-child(1) {
-  background: #fbeff3 url(/images/baby-teddy-bear-rear-view-with-design-space.jpg) no-repeat center center/cover fixed;
+  background-image: url(/images/baby-teddy-bear-rear-view-with-design-space.jpg);
 }
 .courses__row:nth-child(3) {
-  background: #fbeff3 url(/images/labour-and-birth-bg.jpg) no-repeat center center/cover fixed;
+  background-image: url(/images/labour-and-birth-bg.jpg);
 }
 .courses__row:nth-child(5) {
-  background: #fbeff3 url(/images/young-mom-holding-her-baby-air-blank-space.jpg) no-repeat center center/cover fixed;
+  background-image: url(/images/young-mom-holding-her-baby-air-blank-space.jpg);
 }
 .courses__row:nth-child(7) {
-  background: #fbeff3 url(/images/lactation_bg_breastfeeding-pic.jpg) no-repeat center center/cover fixed;
+  background-image: url(/images/lactation_bg_breastfeeding-pic.jpg);
 }
 .courses__row h2 {
   position: relative;

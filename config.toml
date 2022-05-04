@@ -1,6 +1,6 @@
 baseURL = "https://iraivi.netlify.app/"
 languageCode = 'en-us'
-title = 'Iravi | Celebrating Mothehood'
+title = 'Iraivi | Celebrating Mothehood'
 theme = 'iraivi-hugo-theme'
 
 ############################# Plugins ##############################
