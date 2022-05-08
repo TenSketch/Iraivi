@@ -3,20 +3,74 @@
 footer {
   @extend .py-section;
   background-color: $clr-light;
+
+  li {
+    a {
+      font-weight: 500;
+      width: 50%;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: $clr-dark;
+        transform: scale(0);
+        transition: transform 250ms ease;
+
+      }
+
+      &:hover {
+        &::after {
+          transform: scale(1);
+          transform-origin: left;
+
+        }
+      }
+    }
+  }
 }
-.copyrights{
-background-color: $clr-primary;
-color: $white;
-  img{
+
+.copyrights {
+  background-color: $clr-primary;
+  color: $white;
+
+  img {
     display: unset;
     filter: invert(1);
     margin: 0 .25rem;
   }
-  p{
+
+  p {
     // flex-grow: 1;
     margin-bottom: 0;
   }
-  a{
+
+  a {
     color: $clr-light;
+  }
+}
+
+.custom-bullet {
+  position: relative;
+  list-style: none;
+  // border: 1px solid red;
+  font-style: italic;
+  &+.custom-bullet{
+    margin-top: 1rem;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    left: -2rem;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    background: url('/images/icons/heart-solid.svg') no-repeat left center/cover;
   }
 }

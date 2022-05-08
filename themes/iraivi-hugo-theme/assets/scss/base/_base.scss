@@ -36,6 +36,11 @@ h3 {
 a {
   text-decoration: none;
   color: $clr-accent;
+  transition: opacity 250ms ease;
+  &:hover{
+    color: inherit;
+    opacity: .9;
+  }
 }
 
 // ul,

@@ -79,6 +79,11 @@ h3 {
 a {
   text-decoration: none;
   color: #7f0648;
+  transition: opacity 250ms ease;
+}
+a:hover {
+  color: inherit;
+  opacity: 0.9;
 }
 
 img {
@@ -157,6 +162,27 @@ blockquote {
 footer {
   background-color: #fbeff3;
 }
+footer li a {
+  font-weight: 500;
+  width: 50%;
+  position: relative;
+}
+footer li a::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #1e0111;
+  transform: scale(0);
+  transition: transform 250ms ease;
+}
+footer li a:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
 
 .copyrights {
   background-color: #bb0249;
@@ -172,6 +198,25 @@ footer {
 }
 .copyrights a {
   color: #fbeff3;
+}
+
+.custom-bullet {
+  position: relative;
+  list-style: none;
+  font-style: italic;
+}
+.custom-bullet + .custom-bullet {
+  margin-top: 1rem;
+}
+.custom-bullet:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  left: -2rem;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  background: url("/images/icons/heart-solid.svg") no-repeat left center/cover;
 }
 
 .banner {
