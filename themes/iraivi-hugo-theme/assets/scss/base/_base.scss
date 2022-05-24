@@ -20,6 +20,7 @@ body {
   //   font-size: $font_size-body;
   line-height: 1.5;
   overflow-x: hidden;
+  padding-top: 4rem;
 }
 
 a {
@@ -135,4 +136,35 @@ blockquote {
   //   right: 0;
   // }
 
+}
+.top_bar{
+  background-color: $clr-dark;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 4rem;
+  padding-inline: 2rem;
+  z-index: 2;
+  &-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $clr-light;
+    padding: 0;
+    // border: 1px solid white;
+    .push-right{
+      margin-left: auto;
+      a{
+        color: inherit;
+      }
+    }
+    li{
+
+
+      &+li{
+        margin-left: 1rem;
+      }
+    }
+  }
 }

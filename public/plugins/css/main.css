@@ -63,6 +63,7 @@ html {
 body {
   line-height: 1.5;
   overflow-x: hidden;
+  padding-top: 4rem;
 }
 
 a {
@@ -144,6 +145,33 @@ blockquote {
   font-weight: 800;
   font-size: 2rem;
   position: relative;
+}
+
+.top_bar {
+  background-color: #1e0111;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 4rem;
+  padding-inline: 2rem;
+  z-index: 2;
+}
+.top_bar-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #fbeff3;
+  padding: 0;
+}
+.top_bar-list .push-right {
+  margin-left: auto;
+}
+.top_bar-list .push-right a {
+  color: inherit;
+}
+.top_bar-list li + li {
+  margin-left: 1rem;
 }
 
 .navbar-brand {
