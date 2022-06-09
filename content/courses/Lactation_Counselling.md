@@ -8,9 +8,7 @@ date: 2022-04-03T19:44:06+05:30
 draft: false
 ---
 
-Consultation sessions for breastfeeding issues. Video consultations available.
-
-#### The session includes
+Personalized Consultation sessions for new moms who are struggling with breastfeeding issues. Video consultations available.
 
 - Latching issues
 - Milk supply issues
@@ -23,4 +21,6 @@ Consultation sessions for breastfeeding issues. Video consultations available.
 - Thrush
 - Slow weight gain
 - Re-Lactation
-- Expression & Storage of breastmilk
+- Expression & Storage of breast-milk
+
+**All of the above can be resolved with good lactation support; it helps new mothers to breastfeed by offering knowledge and assistance.**

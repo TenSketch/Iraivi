@@ -48,7 +48,7 @@ Topics covered in “Labor Management” session
 **4. Postpartum & Infant care:**
 
 Who can attend “Postpartum & Infant care” session?
-Expecting Mom’s & New Moms can attend the session
+Expecting Mom’s & New moms can attend the session
 Topics covered in “Labor Management” session
 
 - Postpartum care tips
@@ -63,4 +63,4 @@ Topics covered in “Labor Management” session
 
 Who can attend lactation counselling?
 
-Breastfeeding Moms and new Moms with issues and doubts in breastfeeding can attend lactation counselling.
+Breastfeeding moms and new moms with issues and doubts in breastfeeding can attend lactation counselling.
