@@ -145,26 +145,50 @@ blockquote {
   height: 4rem;
   padding-inline: 2rem;
   z-index: 2;
+  @media(max-width:600px){
+    height: 5rem;
+  }
+  // position: relative;
+    &::before, &::after{
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('/images/flower.png');
+      filter: invert(1);
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background-size: 20px 20px;
+    }
+    &::before{
+      left: 2%;
+    }
+    &::after{
+      right: 2%;
+
+    }
   &-list{
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     color: $clr-light;
     padding: 0;
+    gap: 1rem;
     // border: 1px solid white;
+   
+    
+    @media(max-width:768px){
+      flex-wrap: wrap;
+    }
     .push-right{
       margin-left: auto;
       a{
         color: inherit;
       }
     }
-    li{
 
-
-      &+li{
-        margin-left: 1rem;
-      }
-    }
   }
 }

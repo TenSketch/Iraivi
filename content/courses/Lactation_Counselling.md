@@ -23,4 +23,4 @@ Personalized Consultation sessions for new moms who are struggling with breastfe
 - Re-Lactation
 - Expression & Storage of breast-milk
 
-**All of the above can be resolved with good lactation support; it helps new mothers to breastfeed by offering knowledge and assistance.**
+All of the above can be resolved with good lactation support; it helps new mothers to breastfeed by offering knowledge and assistance.  
