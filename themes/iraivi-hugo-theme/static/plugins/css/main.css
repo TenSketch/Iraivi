@@ -24,7 +24,7 @@
 }
 
 .bg_primary {
-  background-color: #f1cbd9;
+  background-color: hsl(338, 58%, 87%);
 }
 
 .btn {
@@ -36,13 +36,13 @@
 }
 
 .btn_primary {
-  background-color: #7f0648;
+  background-color: hsl(327, 91%, 26%);
   color: #fff;
 }
 
 .form-control:focus {
-  border-color: #f1cbd9;
-  box-shadow: inset 0 0 4px #7f0648;
+  border-color: hsl(338, 58%, 87%);
+  box-shadow: inset 0 0 4px hsl(327, 91%, 26%);
 }
 
 html,
@@ -79,7 +79,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #7f0648;
+  color: hsl(327, 91%, 26%);
   transition: opacity 250ms ease;
 }
 a:hover {
@@ -89,6 +89,43 @@ a:hover {
 
 img {
   display: block;
+}
+
+blockquote {
+  font-weight: 800;
+  font-size: 2rem;
+  position: relative;
+}
+
+.top_bar {
+  background-color: hsl(326, 93%, 6%);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 4rem;
+  padding-inline: 2rem;
+  z-index: 2;
+}
+.top_bar-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: hsl(340, 60%, 96%);
+  padding: 0;
+  column-gap: 1rem;
+}
+@media (max-width: 768px) {
+  .top_bar-list {
+    flex-wrap: wrap;
+  }
+}
+.top_bar-list .push-right {
+  margin-left: auto;
+}
+.top_bar-list .push-right a {
+  color: inherit;
 }
 
 .icon {
@@ -141,66 +178,6 @@ img {
   width: 33px;
 }
 
-blockquote {
-  font-weight: 800;
-  font-size: 2rem;
-  position: relative;
-}
-
-.top_bar {
-  background-color: #1e0111;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  height: 4rem;
-  padding-inline: 2rem;
-  z-index: 2;
-}
-@media (max-width: 600px) {
-  .top_bar {
-    height: 5rem;
-  }
-}
-.top_bar::before, .top_bar::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  transform: translateY(-50%);
-  background-image: url("/images/flower.png");
-  filter: invert(1);
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  background-size: 20px 20px;
-}
-.top_bar::before {
-  left: 2%;
-}
-.top_bar::after {
-  right: 2%;
-}
-.top_bar-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: #fbeff3;
-  padding: 0;
-  gap: 1rem;
-}
-@media (max-width: 768px) {
-  .top_bar-list {
-    flex-wrap: wrap;
-  }
-}
-.top_bar-list .push-right {
-  margin-left: auto;
-}
-.top_bar-list .push-right a {
-  color: inherit;
-}
-
 .navbar-brand {
   margin: 0;
   width: fit-content;
@@ -210,12 +187,12 @@ blockquote {
 }
 
 .nav-link {
-  color: #7f0648 !important;
+  color: hsl(327, 91%, 26%) !important;
   font-weight: 500;
 }
 
 footer {
-  background-color: #fbeff3;
+  background-color: hsl(340, 60%, 96%);
 }
 footer li a {
   font-weight: 500;
@@ -230,7 +207,7 @@ footer li a::after {
   width: 100%;
   left: 0;
   bottom: 0;
-  background-color: #1e0111;
+  background-color: hsl(326, 93%, 6%);
   transform: scale(0);
   transition: transform 250ms ease;
 }
@@ -240,7 +217,7 @@ footer li a:hover::after {
 }
 
 .copyrights {
-  background-color: #bb0249;
+  background-color: hsl(337, 98%, 37%);
   color: #fff;
 }
 .copyrights img {
@@ -252,7 +229,7 @@ footer li a:hover::after {
   margin-bottom: 0;
 }
 .copyrights a {
-  color: #fbeff3;
+  color: hsl(340, 60%, 96%);
 }
 
 .custom-bullet {
@@ -275,12 +252,12 @@ footer li a:hover::after {
 }
 
 .banner {
-  background: #fbeff3;
-  background: linear-gradient(307deg, #fbeff3 0%, #f1cbd9 43%, #bb0249 96%);
+  background: rgb(251, 239, 243);
+  background: linear-gradient(307deg, rgb(251, 239, 243) 0%, rgb(241, 203, 217) 43%, rgb(187, 2, 73) 96%);
 }
 .banner img {
   border-radius: 0% 100% 35% 65%/53% 55% 45% 47%;
-  box-shadow: 19px 20px 32px -17px #5e0225;
+  box-shadow: 19px 20px 32px -17px rgb(94, 2, 37);
 }
 
 .bubbles {
@@ -296,7 +273,7 @@ footer li a:hover::after {
   bottom: -100px;
   width: 40px;
   height: 40px;
-  background: #bb0249;
+  background: hsl(337, 98%, 37%);
   border-radius: 50%;
   opacity: 0.5;
   animation: rise 10s infinite ease-in;
@@ -389,17 +366,17 @@ footer li a:hover::after {
 }
 .courses__row {
   padding: 5% 10%;
-  background-color: #fbeff3;
+  background-color: hsl(340, 60%, 96%);
   margin: 0;
 }
 .courses__row .content {
   border-radius: 50px;
-  background: linear-gradient(145deg, #ffffffb7, rgba(255, 255, 255, 0.7));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7176470588), rgba(255, 255, 255, 0.7));
   box-shadow: 20px 20px 60px #fff, -20px -20px 60px #ffffff;
   padding: 1rem 2rem;
 }
 .courses__row:nth-of-type(odd) {
-  background-color: #fbeff3;
+  background-color: hsl(340, 60%, 96%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -426,7 +403,7 @@ footer li a:hover::after {
   position: absolute;
   height: 2px;
   width: 50%;
-  background-color: #7f0648;
+  background-color: hsl(327, 91%, 26%);
   display: inline-block;
   left: 0.8rem;
   bottom: 0;
@@ -456,7 +433,7 @@ footer li a:hover::after {
   box-shadow: none;
 }
 .accordion-button::after {
-  background-color: #bb0249;
+  background-color: hsl(337, 98%, 37%);
   -webkit-mask-image: url("/images/icons/accordian_down-icon.svg");
   mask-image: url("/images/icons/accordian_down-icon.svg");
   background-image: none;
@@ -464,8 +441,8 @@ footer li a:hover::after {
   height: 2rem;
 }
 .accordion-button:not(.collapsed) {
-  color: #7f0648;
-  background-color: #fbeff3;
+  color: hsl(327, 91%, 26%);
+  background-color: hsl(340, 60%, 96%);
   box-shadow: none;
   font-size: 1.5rem;
 }
@@ -477,12 +454,12 @@ footer li a:hover::after {
 }
 .about__header h1 {
   font-weight: 800;
-  color: #1e0111;
+  color: hsl(326, 93%, 6%);
 }
 
 .about {
-  background: #fbeff3;
-  background: radial-gradient(circle, #fbeff3 0%, rgba(187, 2, 73, 0.397) 100%);
+  background: rgb(251, 239, 243);
+  background: radial-gradient(circle, rgb(251, 239, 243) 0%, rgba(187, 2, 73, 0.397) 100%);
   box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
 }
 .about blockquote {
@@ -506,7 +483,7 @@ footer li a:hover::after {
 }
 
 .enquiry {
-  background: #fbeff3 url("/images/newborn_care1.jpg") no-repeat center center/cover fixed;
+  background: hsl(340, 60%, 96%) url("/images/newborn_care1.jpg") no-repeat center center/cover fixed;
   background-blend-mode: overlay;
 }
 .enquiry p {
@@ -523,10 +500,8 @@ footer li a:hover::after {
 .enquiry ul::after {
   content: "";
   position: absolute;
-  box-shadow: 0 0 1px 1px #7f0648;
+  box-shadow: 0 0 1px 1px hsl(327, 91%, 26%);
   margin: 1rem 0;
   width: 60%;
   left: 0;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
