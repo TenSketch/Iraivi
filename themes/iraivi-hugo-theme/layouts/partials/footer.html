@@ -38,27 +38,9 @@
                 </ul>
             </div>
             <div class="col-md-4 ml-auto">
-                
                 <h3>Send us a message.</h3>
-                <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
-
-                    <div class="form-floating mb-4">
-                        <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
-                        placeholder="Enter your full Name" required>
-                        <label for="Name">Full Name</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="tel" class="form-control" name="Mobile number" id="Mobile number"
-                        aria-describedby="Mobile number" placeholder="10 digit Mobile no." required>
-                        <label for="Mobile number">Mobile number</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <textarea class="form-control" name="Message" id="Message" rows="2" required></textarea>
-                        <label for="Message">Message</label>
-                    </div>
-                    <div data-netlify-recaptcha="true"></div>
-                    <button class="btn btn_primary w-100">Submit</button>
-                </form>
+                <p class="mb-3">Use the enquiry form to share your details and we will reply by email.</p>
+                <a class="btn btn_primary w-100" href="{{ "enquiry/" | relURL }}">Open enquiry form</a>
             </div>
         </div>
     </div>
