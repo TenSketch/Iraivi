@@ -14,7 +14,7 @@
                         <img src="{{ . | relURL }}" class="img-fluid rounded-3 mb-4" alt="{{ $.Title }}">
                         {{ end }}
                         <div class="content">
-                            {{ .Content }}
+                            {{ .Content | safeHTML }}
                         </div>
                     </div>
                 </div>
