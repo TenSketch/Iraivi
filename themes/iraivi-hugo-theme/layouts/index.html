@@ -26,30 +26,24 @@
 {{ end }}
 {{ end }}
 
-<!-- about -->
-
+{{ with site.GetPage "section" "about-me" }}
 <section id="about" class="about_home my-5 py-5">
     <div class="container">
-
         <div class="row justify-content-between align-items-center">
-            {{ range $index, $val := .Site.Taxonomies.tags.about }}
             <div class="col-md-5">
-                <img src="{{.Page.Params.image}}" class="img-fluid rounded-3" alt="{{.Name}}">
-
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}" class="img-fluid rounded-3" alt="{{ $.Title }}">
+                {{ end }}
             </div>
             <div class="col-md-5 mt-5 mt-md-0">
-                <h1>{{ .Page.Params.title }}</h1>
-                {{.Summary}}
-                <a href="{{ .Permalink }}" class="btn btn_primary">Know more</a>
+                <h1>{{ .Title }}</h1>
+                {{ .Summary }}
+                <a href="{{ .RelPermalink }}" class="btn btn_primary">Know more</a>
             </div>
-
-
-            {{end}}
-
         </div>
-
     </div>
 </section>
+{{ end }}
 
 {{ with site.Data.home.quotes }}
 <section class="quotes">
@@ -81,10 +75,10 @@
       </div> -->
     <div class="container">
         <div class="row">
-            {{ range $index, $val := .Site.Taxonomies.tags.courseintro }}
-            <h1 class="text-center">{{ .Page.Params.title }}</h1>
+            {{ with site.GetPage "section" "courses" }}
+            <h1 class="text-center">{{ .Title }}</h1>
             <div class="col-md-8 mx-auto">
-                <p>{{ .Content }}</p>
+                {{ .Content }}
             </div>
             {{ end }}
         </div>
@@ -92,22 +86,37 @@
     </div>
 </section>
 <section class="courses">
-
-        {{ range $index, $val := .Site.Taxonomies.tags.courses }}
-        <div class="courses__row row justify-content-between align-items-center">
-
-
-            <h2 class="courses__row-heading">{{ .Page.Params.title }}</h2>
-            <div class="col-lg-5">
-                <img class="img-fluid rounded-3" src="{{ .Page.Params.image }}" alt="{{.Name}}">
+    <div class="container">
+        {{ with site.GetPage "section" "courses" }}
+        <div class="row g-4">
+            {{ range $page := .RegularPages.ByWeight }}
+            <div class="col-md-6 col-xl-4">
+                <article class="card h-100 border-0 shadow-sm">
+                    {{ with $page.Params.image }}
+                    <img class="card-img-top" src="{{ . | relURL }}" alt="{{ $page.Title }}">
+                    {{ end }}
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="h5">{{ $page.Title }}</h2>
+                        {{ with $page.Params.description }}
+                        <p class="card-text">{{ . }}</p>
+                        {{ end }}
+                        <div class="mt-auto">
+                            {{ with $page.Params.price }}
+                            <p class="fw-semibold mb-1">{{ . }}</p>
+                            {{ end }}
+                            {{ with $page.Params.qatar_price }}
+                            <p class="text-muted small mb-3">{{ . }}</p>
+                            {{ end }}
+                            <a href="{{ $page.RelPermalink }}" class="btn btn_primary">View details</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="col-lg-5 mt-5 mt-lg-0 content">
-                <p>{{ .Content }} </p>
-            </div>
+            {{ end }}
         </div>
+        <a href="{{ "/enquiry/" | relURL }}" class="btn btn_primary w-50 d-grid mx-auto my-5">Enquire about our courses</a>
         {{ end }}
-        <a href="{{.Site.BaseURL}}enquiry" class="btn btn_primary w-50 d-grid mx-auto my-5">Enquire about our courses</a>
-
+    </div>
 </section>
 
 

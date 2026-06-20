@@ -1,6 +1,6 @@
 baseURL = "https://birthwithiraivi.com/"
 languageCode = 'en-us'
-title = 'Iraivi | Celebrating Mothehood'
+title = 'Iraivi | Celebrating Motherhood'
 theme = 'iraivi-hugo-theme'
 
 
@@ -28,3 +28,8 @@ copyright = "| Copyright &copy; 2019 [Gethugothemes](https://gethugothemes.com) 
   # JS Plugins
   [[params.plugins.js]]
   link = "plugins/js/main.js"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

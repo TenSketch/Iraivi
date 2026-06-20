@@ -11,7 +11,12 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-8 mx-auto">{{ .Content }}</div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}" class="img-fluid rounded-3" alt="{{ $.Title }}">
+                {{ end }}
+            </div>
+            <div class="col-md-8">{{ .Content }}</div>
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">

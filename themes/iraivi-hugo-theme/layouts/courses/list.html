@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section class="courses-page py-5">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <p class="text-uppercase small mb-2">Courses</p>
+                <h1 class="mb-3">{{ .Title }}</h1>
+                {{ with .Content }}
+                <div class="lead">
+                    {{ . }}
+                </div>
+                {{ end }}
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <a href="{{ "/enquiry/" | relURL }}" class="btn btn_primary">Start your enquiry</a>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            {{ range $page := .RegularPages.ByWeight }}
+            <div class="col-md-6 col-xl-4">
+                <article class="card h-100 border-0 shadow-sm">
+                    {{ with $page.Params.image }}
+                    <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $page.Title }}">
+                    {{ end }}
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="h5">{{ $page.Title }}</h2>
+                        {{ with $page.Params.description }}
+                        <p class="card-text">{{ . }}</p>
+                        {{ end }}
+                        <div class="mt-auto">
+                            {{ with $page.Params.price }}
+                            <p class="fw-semibold mb-1">{{ . }}</p>
+                            {{ end }}
+                            {{ with $page.Params.qatar_price }}
+                            <p class="text-muted small mb-3">{{ . }}</p>
+                            {{ end }}
+                            <a href="{{ $page.RelPermalink }}" class="btn btn_primary">View details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

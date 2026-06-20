@@ -2,17 +2,9 @@
 title: "Pregnancy to Parenthood Complete Package"
 description: "A comprehensive program designed to support you through pregnancy, birth, breastfeeding, and the early postpartum period."
 price: "Rs 4999"
-image: "images/package.jpg"
-tags: ["courses", "package"]
-date: 2026-06-20T00:00:00+05:30
-draft: false
----
-
----
-title: "Pregnancy to Parenthood Complete Package"
-description: "A comprehensive program designed to support you through pregnancy, birth, breastfeeding, and the early postpartum period."
-price: "Rs 4999"
-image: "images/package.jpg"
+image: "images/postpartum_care.webp"
+slug: "pregnancy-to-parenthood-complete-package"
+weight: 60
 tags: ["courses", "package"]
 date: 2026-06-20T00:00:00+05:30
 draft: false
@@ -20,7 +12,7 @@ draft: false
 
 A comprehensive program designed to support you through pregnancy, birth, breastfeeding, and the early postpartum period.
 
-[Enroll in Complete Package](/enquiry/course-enrollment-form)
+[Enroll in Complete Package](/enquiry/course-enrollment-form/)
 
 ##### What's Included?
 - ✔ Pregnancy Wellness

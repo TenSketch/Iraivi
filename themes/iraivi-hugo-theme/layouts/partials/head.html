@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=egde">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }}{{ end }}</title>
     
@@ -22,7 +22,7 @@
     <!-- og meta tags -->
     <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ end }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{.Site.BaseURL}}">
+    <meta property="og:url" content="{{ .Permalink }}">
     {{ if .Params.Description }}
     <meta property="og:description" content="{{ .Params.Description }}">
     {{ else if .Site.Params.Description }}
@@ -34,15 +34,15 @@
     <meta property="og:keywords" content="{{ .Site.Params.Keywords }}">
     {{ end }}
     {{ if .Params.og_image }}
-    <meta property="og:image" content="{{.Site.BaseURL}}{{ .Params.og_image | relURL }}" />
+    <meta property="og:image" content="{{ .Params.og_image | absURL }}" />
     <meta property="og:image:secure_url" content="{{ .Params.og_image | absURL }}" />
     {{ else }}
-    <meta property="og:image" content="{{.Site.BaseURL}}{{ .Site.Params.og_image | relURL }}" />
+    <meta property="og:image" content="{{ .Site.Params.og_image | absURL }}" />
     <meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}" />
     {{ end }}
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}plugins/css/main.css">
+    <link rel="stylesheet" href="{{ "plugins/css/main.css" | relURL }}">
 
     <!-- {{ "Plugins" | safeHTML }}
     {{ range site.Params.plugins.css }}

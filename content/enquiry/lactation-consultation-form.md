@@ -2,12 +2,16 @@
 title: "Lactation Consultation Booking"
 description: "Booking form for Lactation Consultation"
 layout: "form"
+image: "images/mother-feeding-baby-with-breast.jpg"
+slug: "lactation-consultation-form"
+weight: 20
 tags: ["enquiry"]
 date: 2026-06-20T00:00:00+05:30
 draft: false
 ---
 
-<form action="https://formspree.io/f/tensketch285@gmail.com" method="POST">
+<form name="lactation-consultation-form" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="lactation-consultation-form">
   <p>Please fill out this form to book your consultation. Once submitted, you will receive payment details via WhatsApp. <strong>Consultation Fee: 799 INR / 100 QAR</strong></p>
 
   <div style="margin-bottom: 15px;">

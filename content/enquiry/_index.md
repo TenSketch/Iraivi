@@ -10,57 +10,56 @@ draft: false
 
 ## Courses FAQ
 
-**1. Early pregnancy care:**
+**1. Pregnancy Wellness:**
 
-Who can attend “Early pregnancy care sessions”?
-The session is open to peoples who are 1 to 6 months pregnant.
-Topics covered in “Early pregnancy care” sessions:
+Who can attend Pregnancy Wellness?
+The session is open to pregnant women from early pregnancy onwards.
+Topics covered in Pregnancy Wellness:
 
+- Pregnancy nutrition
 - Prenatal bonding
-- Pregnancy nutrition & diet
-- Prenatal Exercise
+- Pregnancy-safe movement
+- Relaxation and breathing techniques
 
-**2. Labor Management:**
+**2. Preparing for Birth:**
 
-Who can attend “Labor Management” session?
-Pregnant women from 5+ months of pregnancy can attend
-Topics covered in “Labor Management” session
+Who can attend Preparing for Birth?
+Pregnant women from 5+ months of pregnancy can attend.
+Topics covered in Preparing for Birth:
 
-- Signs & Stages of Labor
-- Breathing & coping techniques
-- Interventions
+- Signs and stages of labor
+- Breathing and coping techniques
 - Birthing positions
-- C-section
+- Comfort measures
+- Common interventions
 
-**3. Breastfeeding:**
+**3. Breastfeeding Preparation:**
 
-Who can attend “Breastfeeding” session?
-Pregnant women from 5 months & New moms can attend
-Topics covered in “Labor Management” session
+Who can attend Breastfeeding Preparation?
+Pregnant women from 5 months and new moms can attend.
+Topics covered in Breastfeeding Preparation:
 
-- Golden hour after birth
-- Latching positions & techniques
-- How to boost up your milk supply
-- Breastfeeding myths & facts
-- Baby’s behavior & hunger cues
-- Milk Expression & Storage
+- The golden hour after birth
+- Latching positions and techniques
+- Milk supply basics
+- Breastfeeding myths and facts
+- Baby cues and feeding patterns
+- Milk expression and storage
 
-**4. Postpartum & Infant care:**
+**4. Fourth Trimester Care:**
 
-Who can attend “Postpartum & Infant care” session?
-Expecting Mom’s & New moms can attend the session
-Topics covered in “Labor Management” session
+Who can attend Fourth Trimester Care?
+Expecting mothers and new moms can attend.
+Topics covered in Fourth Trimester Care:
 
-- Postpartum care tips
-- Newborn procedures
-- Bathing & Diapering
-- Feeding pattern
-- Sleeping pattern
-- Newborn Warning signs
-- Debunking the myths
+- Postpartum recovery
+- Newborn care basics
+- Bathing and diapering
+- Feeding and sleep routines
+- Warning signs and when to seek help
 
-**5. Lactation Counselling:**
+**5. Lactation Consultation:**
 
 Who can attend lactation counselling?
 
-Breastfeeding moms and new moms with issues and doubts in breastfeeding can attend lactation counselling.
+Breastfeeding moms and new moms with issues or doubts in breastfeeding can attend lactation consultation.

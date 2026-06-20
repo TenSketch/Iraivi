@@ -2,64 +2,42 @@
 
 <section class="enquiry py-5">
     <div class="container">
-        {{ range $index, $val := .Site.Taxonomies.tags.enquiry }}
-        <div class="col-md-8 mx-auto">
-            {{.Content}}
+        <div class="row">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="mb-3">{{ .Title }}</h1>
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}" class="img-fluid rounded-3 mb-4" alt="{{ $.Title }}">
+                {{ end }}
+                <div class="text-start">
+                    {{ .Content }}
+                </div>
+            </div>
         </div>
-        {{end}}
+
+        {{ $forms := .RegularPages.ByWeight }}
+        <div class="row g-4 mt-4">
+            {{ range $page := $forms }}
+            <div class="col-lg-6">
+                <article class="card h-100 border-0 shadow-sm">
+                    {{ with $page.Params.image }}
+                    <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $page.Title }}">
+                    {{ end }}
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="h5">{{ $page.Title }}</h2>
+                        {{ with $page.Params.description }}
+                        <p class="card-text">{{ . }}</p>
+                        {{ else }}
+                        <p class="card-text">Open this form to send your enquiry and we will get back to you.</p>
+                        {{ end }}
+                        <div class="mt-auto">
+                            <a href="{{ $page.RelPermalink }}" class="btn btn_primary">Open form</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {{ end }}
+        </div>
     </div>
 </section>
-<div class="container my-5 py-5">
-
-
-    <div class="row">
-        {{ range $index, $val := .Site.Taxonomies.tags.enquiry }}
-
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <img src="{{.Page.Params.image}}" class="img-fluid rounded-3" alt="{{.Name}}">
-            </div>
-            <div class="col-lg-6 mt-3 mt-lg-0">
-                <h3>Place an enquiry for our courses. We'll get back to you.</h3>
-                <form name="enquiry" method="POST" data-netlify="true">
-                    <div class="form-floating mb-4">
-                        <input type="text" class="form-control" name="Name" id="Name" aria-describedby="helpId"
-                            placeholder="Enter your full Name" required>
-                        <label for="Name">Full Name</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="tel" class="form-control" name="Mobile number" id="Mobile number"
-                            aria-describedby="Mobile number" placeholder="10 digit Mobie no." required>
-                        <label for="Mobile number">Mobile number</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="email" class="form-control" name="Email Id" id="Email Id"
-                            aria-describedby="Email Id" placeholder="abc@email.com">
-                        <label for="Email Id">Email Id</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <select class="form-select form-control" name="Course Name" id="Course Name" required>
-                            <option value="Select a course" disabled>Select a course</option>
-                            <option value="Early pregnancy care">Early pregnancy care</option>
-                            <option value="Labour Management">Labour Management</option>
-                            <option value="Breastfeeding">Breastfeeding</option>
-                            <option value="Postpartum & Infant care">Postpartum & Infant care</option>
-                            <option value="Postpartum & Infant care">Lactation Counselling</option>
-                        </select>
-                        <label for="Course Name">Course name</label>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <textarea class="form-control" name="Message" id="Message" rows="2" required></textarea>
-                        <label for="Message">Message</label>
-                    </div>
-                    
-
-                    <button type="submit" class="btn btn_primary w-100">Submit</button>
-                </form>
-            </div>
-        </div>
-        {{end}}
-    </div>
-</div>
 
 {{ end }}

@@ -2,12 +2,16 @@
 title: "Course Enrollment Form"
 description: "Enroll for Iraivi's Motherhood Courses"
 layout: "form"
+image: "images/baby-smiling.jpg"
+slug: "course-enrollment-form"
+weight: 10
 tags: ["enquiry"]
 date: 2026-06-20T00:00:00+05:30
 draft: false
 ---
 
-<form action="https://formspree.io/f/tensketch285@gmail.com" method="POST">
+<form name="course-enrollment-form" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="course-enrollment-form">
   <div style="margin-bottom: 15px;">
     <label for="name">Name *</label><br>
     <input type="text" id="name" name="name" required style="width: 100%; padding: 8px;">
