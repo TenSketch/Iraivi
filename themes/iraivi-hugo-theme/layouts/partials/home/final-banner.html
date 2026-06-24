@@ -1,0 +1,17 @@
+{{ with site.Data.home.final_banner }}
+{{ if .enable }}
+<section class="section section--major final-banner">
+  <div class="container">
+    <div class="final-banner__panel">
+      <img src="{{ .image | relURL }}" alt="{{ .text }}">
+      <div class="final-banner__overlay">
+        <p>{{ .text }}</p>
+        <span>{{ .subtext }}</span>
+        <a href="{{ .cta_link | relURL }}" class="btn btn_primary btn-pill">Enquiry</a>
+        <a href="{{ .secondary_link | relURL }}" class="btn btn-outline-rose btn-pill">{{ .secondary_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

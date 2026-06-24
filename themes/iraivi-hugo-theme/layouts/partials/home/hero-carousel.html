@@ -1,0 +1,44 @@
+{{ with site.Data.home.hero }}
+{{ if .enable }}
+<section class="hero-carousel">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
+    <div class="carousel-inner">
+      {{ range $index, $slide := .slides }}
+      <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+        <div class="hero-slide">
+          <div class="container hero-slide__container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-5 order-2 order-lg-1">
+                <div class="hero-copy">
+                  <p class="hero-kicker">Iraivi Childbirth Education</p>
+                  {{ if eq $index 0 }}
+                  <h1 class="hero-headline">{{ $slide.headline | replaceRE "\n" "<br>" | safeHTML }}</h1>
+                  {{ else }}
+                  <h2 class="hero-headline">{{ $slide.headline | replaceRE "\n" "<br>" | safeHTML }}</h2>
+                  {{ end }}
+                  <p class="hero-caption">{{ $slide.caption }}</p>
+                  {{ if eq $index 0 }}
+                  <a href="{{ $slide.cta_link | relURL }}" class="btn btn_primary btn-pill hero-cta">{{ $slide.cta_label }}</a>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="col-lg-7 order-1 order-lg-2">
+                <div class="hero-image-wrap">
+                  <img src="{{ $slide.image | relURL }}" class="img-fluid hero-image" alt="{{ $slide.headline }}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="carousel-indicators hero-indicators">
+      {{ range $index, $slide := .slides }}
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}" aria-current="{{ if eq $index 0 }}true{{ end }}" aria-label="Slide {{ add $index 1 }}"></button>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

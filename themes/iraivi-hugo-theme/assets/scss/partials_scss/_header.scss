@@ -1,24 +1,30 @@
 @use "../abstracts" as *;
 
-nav {
-  // background-color: $clr-light;
-  // box-shadow: inset 3px 0 3px rgba($clr-accent, 0.6);
+.site-header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 20;
+  min-height: 5rem;
+  background: rgba($white, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba($clr-accent, 0.08);
+  box-shadow: 0 10px 30px rgba($clr-dark, 0.04);
 }
+
 .navbar {
   @extend .p-0;
 }
-.navbar-brand {
-  // border: 2px solid blue;
-  // padding: 1rem 1.5rem;
-  @extend .p-0;
-  margin: 0;
-  width: fit-content;
-  img {
-    width: clamp(13rem, 300px, 22vw);
-    // outline: 2px solid red;
-  }
+
+.navbar-brand img {
+  width: clamp(10.5rem, 18vw, 14rem);
 }
+
 .nav-link {
   color: $clr-accent !important;
-  font-weight: $font_weight-medium;
+  font-weight: 700;
+}
+
+.nav-cta {
+  min-width: 10rem;
 }

@@ -1,0 +1,24 @@
+{{ with site.Data.home.testimonials }}
+{{ if .enable }}
+<section class="section section--medium testimonials-minimal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Stories from mothers</p>
+      <h2 class="section-title">{{ .title }}</h2>
+    </div>
+    <div class="testimonial-minimal-grid">
+      {{ range .items }}
+      <article class="testimonial-minimal-card">
+        <img src="{{ .image | relURL }}" alt="{{ .name }}">
+        <div class="testimonial-minimal-card__body">
+          <h3>{{ .name }}</h3>
+          <p>{{ .quote }}</p>
+          <a href="{{ .link | relURL }}">{{ .link_label }}</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

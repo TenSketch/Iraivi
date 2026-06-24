@@ -1,0 +1,15 @@
+{{ with site.Data.home.story_banner }}
+{{ if .enable }}
+<section class="full-banner section section--major">
+  <div class="container">
+    <div class="full-banner__panel">
+      <img src="{{ .image | relURL }}" class="full-banner__image" alt="{{ .text }}">
+      <div class="full-banner__overlay">
+        <p>{{ .text }}</p>
+        <a href="{{ .cta_link | relURL }}" class="btn btn-outline-rose btn-pill">{{ .cta_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

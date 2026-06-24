@@ -1,0 +1,27 @@
+{{ with site.Data.home.categories }}
+<section id="course-categories" class="section categories-section">
+  <div class="container">
+    <div class="section-heading text-center mx-auto">
+      <span class="section-kicker">Course categories</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .intro }}</p>
+    </div>
+    <div class="row g-3 mt-3">
+      <div class="col-md-6 col-xl-3">
+        <button type="button" class="category-card category-card--active" data-course-filter="all" data-scroll-target="#featured-courses">
+          <span class="category-card__label">All courses</span>
+          <span class="category-card__text">See the full education journey.</span>
+        </button>
+      </div>
+      {{ range .items }}
+      <div class="col-md-6 col-xl-3">
+        <button type="button" class="category-card" data-course-filter="{{ .key }}" data-scroll-target="#featured-courses">
+          <span class="category-card__label">{{ .label }}</span>
+          <span class="category-card__text">{{ .description }}</span>
+        </button>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

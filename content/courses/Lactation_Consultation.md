@@ -1,19 +1,20 @@
 ---
 title: "Lactation Consultation"
 description: "Expert guidance to resolve breastfeeding challenges and ensure a healthy feeding experience for both mother and baby."
+duration: "60 minutes"
 price: "Rs 799"
 qatar_price: "QAR 100"
 image: "images/mother-feeding-baby-with-breast.jpg"
 slug: "lactation-consultation"
 weight: 50
+category: "breastfeeding"
+featured: true
 tags: ["courses"]
 date: 2026-06-20T00:00:00+05:30
 draft: false
 ---
 
 Expert guidance to resolve breastfeeding challenges and ensure a healthy feeding experience for both mother and baby. This focused session provides tailored solutions to specific lactation issues.
-
-[Book this Consultation](/enquiry/lactation-consultation-form/)
 
 ##### Topics Included:
 - Painful Latch & Nipple Pain

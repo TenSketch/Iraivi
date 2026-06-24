@@ -1,0 +1,21 @@
+{{ with site.Data.home.journey }}
+<section id="journey" class="section journey-section">
+  <div class="container">
+    <div class="section-heading text-center mx-auto">
+      <span class="section-kicker">Learning journey</span>
+      <h2>{{ .title }}</h2>
+    </div>
+    <ol class="journey-timeline mt-4">
+      {{ range $index, $step := .steps }}
+      <li class="journey-timeline__item">
+        <div class="journey-timeline__marker">{{ add $index 1 }}</div>
+        <div class="journey-timeline__content">
+          <h3>{{ $step.title }}</h3>
+          <p>{{ $step.text }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}

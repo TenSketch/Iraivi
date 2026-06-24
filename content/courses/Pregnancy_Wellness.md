@@ -1,19 +1,20 @@
 ---
 title: "Pregnancy Wellness"
 description: "Nurture your body, mind, and baby throughout pregnancy with practical guidance on healthy living, nutrition, movement, relaxation, and emotional well-being."
+duration: "2 hours"
 price: "Rs 1299"
 qatar_price: "QAR 125"
 image: "images/pregnant-smiling-woman-eating-salad.jpg"
 slug: "pregnancy-wellness"
 weight: 10
+category: "pregnancy"
+featured: true
 tags: ["courses"]
 date: 2026-06-20T00:00:00+05:30
 draft: false
 ---
 
 Nurture your body, mind, and baby throughout pregnancy with practical guidance on healthy living, nutrition, movement, relaxation, and emotional well-being. This session helps you stay active, build a deeper connection with your baby, and prepare both physically and mentally for a positive birth experience.
-
-[Book this Session](/enquiry/course-enrollment-form/)
 
 ##### Topics Included:
 - Pregnancy nutrition

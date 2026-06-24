@@ -32,57 +32,33 @@
     
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="/plugins/css/main.css">
 
     
 </head>
-<body>
-        <section class="top_bar">
-            <ul class="top_bar-list mb-0 py-1">
-              <li>Pregnancy</li>
-              <li>Postpartum care</li>
-              <li>Newborn care</li>
-              <li>Breastfeeding</li>
-              <li>Lactation Counselling</li>
-              
-            </ul>
-          </section>
-        <ul class="social_media_icons list-unstyled">
-            <li class="social_media_icons-list__item whatsapp"title="Iraivi's whatsapp page"><a href="https://wa.me/917550114682"><img class="img-fluid svg svg-social" src="/images/icons/whatsapp-brands.svg" alt="whatsapp-brands"></a></li>
-            <li class="social_media_icons-list__item instagram"title="Iraivi's instagram page"><a href="https://www.instagram.com/iraivipregnancycare/" target="_blank"><img class="img-fluid svg svg-social" src="/images/icons/instagram-brands.svg" alt="instagram-brands"></a></li>
-        </ul><nav class="navbar navbar-expand-lg navbar-light">
-    
+<body><nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
-      <a class="navbar-brand" href="/">
-        <img class="img-fluid" src="https://birthwithiraivi.com/images/Iraivi_logo-1.png" alt="Iraivi | Celebrating Motherhood">
-        
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about-me/">About Iraivi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#courses">Courses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/enquiry/">Enquiry</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tel:7550114682" title="call" aria-label="Gayathri's (Iraivi) mobile number">7550114682</a>
-          </li>
-
-        </ul>
-
-      </div>
+    <a class="navbar-brand" href="/">
+      <img class="img-fluid" src="https://birthwithiraivi.com/images/Iraivi_logo-1.png" alt="Iraivi | Celebrating Motherhood">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about-me/">Gayathri</a></li>
+        <li class="nav-item"><a class="nav-link" href="/courses/">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="/enquiry/">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
+        <li class="nav-item mt-3 mt-lg-0">
+          <a class="btn btn_primary btn-pill nav-cta" href="/enquiry/">Enquiry</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 <div id="content">
 <section class="py-5">
     <div class="container">
@@ -93,46 +69,70 @@
                 <img src="/images/baby-smiling.jpg" class="img-fluid rounded-3 mb-4" alt="Course Enrollment Form">
                 
                 <div class="content">
-                    <div id="form-container" data-enquiry-form data-form-type="course-enquiry" data-whatsapp-prefix="New Course Enquiry" data-success-message="Success! Your enquiry has been sent.">
-<form data-enquiry-form-element>
+                    <div data-enquiry-form data-form-type="course-enquiry" data-whatsapp-prefix="New Course Enquiry" data-success-message="Success! Your enquiry has been sent.">
+<form data-enquiry-form-element class="needs-validation">
 <!-- Honeypot -->
 <input type="text" name="hp_field" style="display:none" tabindex="-1" autocomplete="off">
-<div style="margin-bottom: 15px;">
-<label for="name">Name *</label><br>
-<input type="text" id="name" name="name" required style="width: 100%; padding: 8px;">
+<div class="mb-3">
+<label for="name" class="form-label fw-bold">Name *</label>
+<input type="text" id="course-name" name="name" required class="form-control">
 </div>
-<div style="margin-bottom: 15px;">
-<label for="mobile">Mobile *</label><br>
-<input type="tel" id="mobile" name="mobile" required style="width: 100%; padding: 8px;">
+<div class="mb-3">
+<label for="mobile" class="form-label fw-bold">Mobile *</label>
+<input type="tel" id="course-mobile" name="mobile" required class="form-control">
 </div>
-<div style="margin-bottom: 15px;">
-<label for="email">Email *</label><br>
-<input type="email" id="email" name="email" required style="width: 100%; padding: 8px;">
+<div class="mb-3">
+<label for="email" class="form-label fw-bold">Email *</label>
+<input type="email" id="course-email" name="email" required class="form-control">
 </div>
-<div style="margin-bottom: 15px;">
-<label for="location">Location *</label><br>
-<input type="text" id="location" name="location" required style="width: 100%; padding: 8px;">
+<div class="mb-3">
+<label for="location" class="form-label fw-bold">Location *</label>
+<input type="text" id="course-location" name="location" required class="form-control">
 </div>
-<div style="margin-bottom: 15px;">
-<label>Which trimester are you currently in? *</label><br>
-<input type="checkbox" name="trimester" value="1st Trimester"> 1st Trimester<br>
-<input type="checkbox" name="trimester" value="2nd Trimester"> 2nd Trimester<br>
-<input type="checkbox" name="trimester" value="3rd Trimester"> 3rd Trimester
+<div class="mb-3">
+<label class="form-label fw-bold d-block">Which trimester are you currently in? *</label>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="trimester" value="1st Trimester" id="course-trim1">
+  <label class="form-check-label" for="course-trim1">1st Trimester</label>
 </div>
-<div style="margin-bottom: 15px;">
-<label>Session *</label><br>
-<input type="radio" name="session" value="Pregnancy Wellness" required> Pregnancy Wellness<br>
-<input type="radio" name="session" value="Preparing for Birth"> Preparing for Birth<br>
-<input type="radio" name="session" value="Breastfeeding Preparation"> Breastfeeding Preparation<br>
-<input type="radio" name="session" value="Fourth Trimester (Postpartum & Newborn Care)"> Fourth Trimester (Postpartum & Newborn Care)<br>
-<input type="radio" name="session" value="Pregnancy to Parenthood Package"> Pregnancy to Parenthood Package
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="trimester" value="2nd Trimester" id="course-trim2">
+  <label class="form-check-label" for="course-trim2">2nd Trimester</label>
 </div>
-<div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
-<button type="submit" data-enquiry-submit style="padding: 10px 20px; background-color: #6a5acd; color: white; border: none; cursor: pointer;">Submit via Email</button>
-<button type="button" data-enquiry-whatsapp style="padding: 10px 20px; background-color: #25D366; color: white; border: none; cursor: pointer;">Send via WhatsApp</button>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="trimester" value="3rd Trimester" id="course-trim3">
+  <label class="form-check-label" for="course-trim3">3rd Trimester</label>
+</div>
+</div>
+<div class="mb-4">
+<label class="form-label fw-bold d-block">Session *</label>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="session" value="Pregnancy Wellness" id="course-sess1" required>
+  <label class="form-check-label" for="course-sess1">Pregnancy Wellness</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="session" value="Preparing for Birth" id="course-sess2">
+  <label class="form-check-label" for="course-sess2">Preparing for Birth</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="session" value="Breastfeeding Preparation" id="course-sess3">
+  <label class="form-check-label" for="course-sess3">Breastfeeding Preparation</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="session" value="Fourth Trimester (Postpartum & Newborn Care)" id="course-sess4">
+  <label class="form-check-label" for="course-sess4">Fourth Trimester (Postpartum & Newborn Care)</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="session" value="Pregnancy to Parenthood Package" id="course-sess5">
+  <label class="form-check-label" for="course-sess5">Pregnancy to Parenthood Package</label>
+</div>
+</div>
+<div class="d-flex gap-3 mt-4 flex-wrap">
+<button type="submit" data-enquiry-submit class="btn btn_primary py-2 px-4">Submit via Email</button>
+<!-- <button type="button" data-enquiry-whatsapp class="btn btn-outline-success py-2 px-4">Send via WhatsApp</button> -->
 </div>
 </form>
-<div data-enquiry-status style="margin-top: 15px; display: none; padding: 10px; border-radius: 4px;"></div>
+<div data-enquiry-status class="mt-3 p-3 rounded" style="display: none;"></div>
 </div>
 
                 </div>
@@ -141,64 +141,46 @@
     </div>
 </section>
 
-        </div><footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center mb-3">
-                <blockquote>Birth is the epicenter of women's power. </blockquote>
-
-            </div>
-            <div class="col-md-4">
-                <h3>Who shall join Iraivi courses</h3>
-                <ul class="">
-                    
-                    <li class="custom-bullet">If your pregnancy has just been confirmed, and thinking about the next steps</li>
-                    <li class="custom-bullet">If you are confused between tips from various sources about pregnancy care</li>
-                    <li class="custom-bullet">If you want a normal delivery but worried about it</li>
-                    <li class="custom-bullet">If you have just delivered a baby and need some help in giving a proper care</li>
-                    
-                    <li class="custom-bullet">and any other doubts related to pregnancy, childbirth, Postpartum and parenting,
-                        contact Iraivi.</li>
-                </ul>
-            </div>
-            <div class="col-md-3 mx-auto">
-                <h3>Links</h3>
-                <ul class="list-unstyled">
-                    <li><a href="/about-me/">About Gayathri</a></li>
-                    <li><a href="/enquiry/">Enquiry</a></li>
-                    <li><a href="/">Home</a></li>
-                </ul>
-                <h3>Contact us</h3>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-2">
-                        <img src="/images/phone_icon.svg" class="img-fluid icon filter" alt="mobile phone icon">
-                        <a href="tel:7550114682" title="call" aria-label="Gayathri's (Iraivi) mobile number">7550114682</a>
-                    </li>
-                    <li class="mb-2"><img src="/images/email_icon.svg" class="img-fluid icon filter" alt="email icon">
-                        <a href="mailto:iraivipregcare@gmail.com" title="Click to send email" aria-label="Gayathri's (Iraivi) email id"
-                            target="_top">iraivipregcare@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 ml-auto">
-                <h3>Send us a message.</h3>
-                <p class="mb-3">Use the enquiry form to share your details and we will reply by email.</p>
-                <a class="btn btn_primary w-100" href="/enquiry/">Open enquiry form</a>
-            </div>
-        </div>
+    </div><footer class="site-footer">
+  <div class="container">
+    <div class="footer-simple footer-accordion">
+      <div>
+        <img class="footer-simple__logo" src="https://birthwithiraivi.com/images/Iraivi_logo-1.png" alt="Iraivi | Celebrating Motherhood">
+        <p class="mt-3">A calm, premium motherhood journey for pregnancy, birth, breastfeeding and early parenthood.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Quick Links</summary>
+          <ul class="list-unstyled footer-simple__links mt-3">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-me/">Gayathri</a></li>
+            <li><a href="/enquiry/">Enquiry</a></li>
+          </ul>
+        </details>
+      </div>
+      <div>
+        <details open>
+          <summary>Contact</summary>
+          <ul class="list-unstyled footer-simple__links mt-3">
+            <li><a href="https://www.instagram.com/iraivipregnancycare/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="mailto:iraivipregcare@gmail.com">iraivipregcare@gmail.com</a></li>
+            <li><a href="tel:7550114682">7550114682</a></li>
+          </ul>
+        </details>
+      </div>
     </div>
+  </div>
 </footer>
 <div class="copyrights py-3">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-        <p>&#169; Iraivi 2022</p>
-        <p>Made with <img class="svg" src="/images/icons/heart-solid.svg" alt="heart love icon"> by <a href="https://www.tensketch.com/" target="_blank">TenSketch</a></p>
+  <div class="container">
+    <div class="copyrights__inner">
+      <p>&#169; Iraivi 2026</p>
+      <p>Website delivered by <a href="https://tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
     </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<!-- JS Plugins -->
 
 <script src="https://birthwithiraivi.com/plugins/js/main.js"></script>
 

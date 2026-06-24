@@ -1,0 +1,73 @@
+{{ with site.Data.home.journey }}
+{{ if .enable }}
+<section class="section section--medium journey-minimal" data-journey-section>
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Journey</p>
+      <h2 class="section-title">{{ .title }}</h2>
+      <p class="section-copy">A soft five-step path that keeps the experience calm, reassuring, and easy to follow.</p>
+    </div>
+
+    <div class="journey-minimal__layout">
+      <div class="journey-minimal__visual" data-journey-visual>
+        <img src="{{ .image | relURL }}" alt="{{ .title }}">
+        <div class="journey-minimal__visual-badge">Baby-first learning journey</div>
+      </div>
+
+      <div class="journey-minimal__cards">
+        {{ range $index, $step := .steps }}
+        <article class="journey-minimal__item" data-journey-card>
+          <span>{{ add $index 1 }}</span>
+          <h3>{{ $step.title }}</h3>
+          <p>{{ default "Gentle support for this stage of motherhood." $step.text }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  const section = document.querySelector('[data-journey-section]');
+  const visual = document.querySelector('[data-journey-visual]');
+  const cards = document.querySelectorAll('[data-journey-card]');
+
+  if (!section || !visual || !cards.length || typeof gsap === 'undefined') {
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(visual, {
+    clipPath: 'inset(14% 16% 14% 16% round 28px)',
+    scale: 0.96
+  }, {
+    clipPath: 'inset(0% 0% 0% 0% round 28px)',
+    scale: 1,
+    duration: 1.1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 78%'
+    }
+  });
+
+  gsap.from(cards, {
+    y: 24,
+    opacity: 0,
+    clipPath: 'inset(10% 0 10% 0 round 24px)',
+    duration: 0.75,
+    ease: 'power3.out',
+    stagger: 0.08,
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 76%'
+    }
+  });
+})();
+</script>
+{{ end }}
+{{ end }}

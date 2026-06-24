@@ -1,0 +1,21 @@
+{{ with site.Data.home.final_cta }}
+<section id="contact" class="section final-cta-section">
+  <div class="container">
+    <div class="final-cta-card">
+      <div class="final-cta-card__content">
+        <span class="section-kicker">Let’s begin</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .content }}</p>
+      </div>
+      <div class="final-cta-card__actions">
+        {{ with .primary_button }}
+        <a href="{{ .link | relURL }}" class="btn btn_primary btn-pill">{{ .label }}</a>
+        {{ end }}
+        {{ with .secondary_button }}
+        <a href="{{ .link }}" class="btn btn-outline-rose btn-pill" target="_blank" rel="noopener noreferrer">{{ .label }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,27 @@
+{{ with site.Data.home.testimonials }}
+<section id="testimonials" class="section testimonials-section">
+  <div class="container">
+    <div class="section-heading text-center mx-auto">
+      <span class="section-kicker">Testimonials</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .intro }}</p>
+    </div>
+    <div class="testimonial-track mt-4" role="list">
+      {{ range .items }}
+      <article class="testimonial-card" role="listitem">
+        <div class="testimonial-card__top">
+          <div class="testimonial-avatar">{{ .initials }}</div>
+          <div>
+            <h3>{{ .name }}</h3>
+            <div class="testimonial-stars" aria-label="{{ .rating }} out of 5 stars">
+              {{ range seq .rating }}<span>★</span>{{ end }}
+            </div>
+          </div>
+        </div>
+        <p>{{ .quote }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

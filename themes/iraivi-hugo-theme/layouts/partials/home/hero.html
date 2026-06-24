@@ -1,0 +1,49 @@
+{{ with site.Data.home.banner }}
+<section id="top" class="banner hero-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <p class="hero-eyebrow mb-3">{{ .eyebrow }}</p>
+        <h1 class="hero-title mb-4">{{ .title }}</h1>
+        <p class="hero-copy mb-4">{{ .content }}</p>
+        <div class="hero-actions d-flex flex-wrap gap-3">
+          {{ with .primary_button }}
+          <a href="{{ .link | relURL }}" class="btn btn_primary btn-pill">{{ .label }}</a>
+          {{ end }}
+          {{ with .secondary_button }}
+          <a href="{{ .link }}" class="btn btn-outline-rose btn-pill">{{ .label }}</a>
+          {{ end }}
+        </div>
+        <div class="hero-trust row g-3 mt-4">
+          {{ range .trust_badges }}
+          <div class="col-sm-4">
+            <div class="trust-pill">{{ . }}</div>
+          </div>
+          {{ end }}
+        </div>
+        <div class="hero-stats row g-3 mt-4">
+          {{ range .stats }}
+          <div class="col-sm-4">
+            <div class="stat-card">
+              <div class="stat-value">{{ .value }}</div>
+              <div class="stat-label">{{ .label }}</div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          {{ with .image }}
+          <img src="{{ . | relURL }}" class="img-fluid hero-image" alt="Gayathri Suresh of Iraivi">
+          {{ end }}
+          <div class="hero-card hero-card--floating">
+            <span class="hero-card__eyebrow">Support that feels personal</span>
+            <strong>Online guidance for pregnancy, birth, breastfeeding, and recovery</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

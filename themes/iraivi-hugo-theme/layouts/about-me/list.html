@@ -1,26 +1,21 @@
 {{ define "main" }}
 
-<header class="about__header d-flex align-items-end">
+<section class="about-page section">
     <div class="container">
-
-        <h1 class="display-3">About me</h1>
-
-    </div>
-</header>
-<section class="about py-section">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-4 mb-4 mb-md-0">
+        <div class="section-heading text-center mx-auto">
+            <span class="section-kicker">About Gayathri</span>
+            <h1>{{ .Title }}</h1>
+        </div>
+        <div class="row g-5 align-items-center mt-2">
+            <div class="col-lg-5">
                 {{ with .Params.image }}
-                <img src="{{ . | relURL }}" class="img-fluid rounded-3" alt="{{ $.Title }}">
+                <img src="{{ . | relURL }}" class="img-fluid about-page__image" alt="{{ $.Title }}">
                 {{ end }}
             </div>
-            <div class="col-md-8">{{ .Content }}</div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mx-auto">
-                <blockquote>Giving birth should be your greatest achievement not your greatest fear</blockquote>
+            <div class="col-lg-7">
+                <div class="content-card">
+                    {{ .Content }}
+                </div>
             </div>
         </div>
     </div>

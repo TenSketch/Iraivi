@@ -1,33 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <!-- container is flexbox-->
+<nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relURL }}">
-        <img class="img-fluid" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}">
-        <!-- <img class="img-fluid" src="/images/Iraivi_logo-1.png" alt=""> -->
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ "/" | relURL }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "about-me/" | relURL }}">About Iraivi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "/" | relURL }}#courses">Courses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "enquiry/" | relURL }}">Enquiry</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tel:7550114682" title="call" aria-label="Gayathri's (Iraivi) mobile number">7550114682</a>
-          </li>
-
-        </ul>
-
-      </div>
+    <a class="navbar-brand" href="{{ "/" | relURL }}">
+      <img class="img-fluid" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="{{ "/" | relURL }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ "/about-me/" | relURL }}">Gayathri</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ "/courses/" | relURL }}">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ "/enquiry/" | relURL }}">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ "/#faq" | relURL }}">FAQ</a></li>
+        <li class="nav-item mt-3 mt-lg-0">
+          <a class="btn btn_primary btn-pill nav-cta" href="{{ "/enquiry/" | relURL }}">Enquiry</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

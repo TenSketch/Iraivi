@@ -1,0 +1,24 @@
+{{ with site.Data.home.choose }}
+<section id="why-choose" class="section why-choose-section">
+  <div class="container">
+    <div class="section-heading text-center mx-auto">
+      <span class="section-kicker">Why Iraivi</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .intro }}</p>
+    </div>
+    <div class="row g-4 mt-2">
+      {{ range $index, $item := .items }}
+      <div class="col-md-6">
+        <article class="reason-card h-100">
+          <div class="reason-card__number">0{{ add $index 1 }}</div>
+          <div>
+            <h3>{{ $item.title }}</h3>
+            <p>{{ $item.text }}</p>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

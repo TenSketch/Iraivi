@@ -1,0 +1,21 @@
+{{ with site.Data.home.gallery }}
+{{ if .enable }}
+<section class="section section--medium gallery-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Image gallery</p>
+      <h2 class="section-title">{{ .title }}</h2>
+    </div>
+    <div class="gallery-grid">
+      {{ range .items }}
+      <a href="{{ .link | relURL }}" class="gallery-card">
+        <img src="{{ .image | relURL }}" alt="{{ .title }}">
+        <span>{{ .title }}</span>
+        <em>{{ .caption }}</em>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

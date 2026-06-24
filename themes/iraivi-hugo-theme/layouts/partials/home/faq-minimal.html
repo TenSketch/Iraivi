@@ -1,0 +1,30 @@
+{{ with site.Data.home.faq }}
+{{ if .enable }}
+<section id="faq" class="section section--medium faq-minimal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">FAQ</p>
+      <h2 class="section-title">{{ .title }}</h2>
+    </div>
+    <div class="accordion faq-minimal__accordion" id="faqMinimal">
+      {{ range $index, $item := .items }}
+      {{ if lt $index 5 }}
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faqHead{{ $index }}">
+          <button class="accordion-button {{ if ne $index 0 }}collapsed{{ end }}" type="button" data-bs-toggle="collapse" data-bs-target="#faqBody{{ $index }}" aria-expanded="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="faqBody{{ $index }}">
+            {{ $item.question }}
+          </button>
+        </h3>
+        <div id="faqBody{{ $index }}" class="accordion-collapse collapse {{ if eq $index 0 }}show{{ end }}" aria-labelledby="faqHead{{ $index }}" data-bs-parent="#faqMinimal">
+          <div class="accordion-body">
+            {{ $item.answer }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

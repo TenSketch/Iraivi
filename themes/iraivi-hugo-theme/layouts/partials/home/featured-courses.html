@@ -1,0 +1,49 @@
+{{ $featured := site.Data.home.featured }}
+{{ with $featured }}
+{{ $courses := site.GetPage "section" "courses" }}
+<section id="featured-courses" class="section featured-courses-section">
+  <div class="container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <span class="section-kicker">Featured courses</span>
+        <h2>{{ .title }}</h2>
+        <p>{{ .intro }}</p>
+      </div>
+      <div class="section-note">{{ .filter_note }}</div>
+    </div>
+    <div class="featured-track mt-4" data-course-grid>
+      {{ range $page := $courses.RegularPages.ByWeight }}
+      {{ $category := default "general" $page.Params.category }}
+      {{ $enquiryAnchor := "#course-enrollment-form" }}
+      {{ if eq $page.Params.slug "lactation-consultation" }}
+      {{ $enquiryAnchor = "#lactation-consultation-form" }}
+      {{ end }}
+      <article class="course-card" data-course-card data-course-category="{{ $category }}">
+        <div class="course-card__media">
+          {{ with $page.Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+          {{ end }}
+          <span class="course-card__badge">{{ title $category }}</span>
+        </div>
+        <div class="course-card__body">
+          <div class="course-card__meta">
+            {{ with $page.Params.duration }}
+            <span>{{ . }}</span>
+            {{ end }}
+            {{ with $page.Params.price }}
+            <span>{{ . }}</span>
+            {{ end }}
+          </div>
+          <h3>{{ $page.Title }}</h3>
+          <p>{{ $page.Params.description }}</p>
+          <div class="course-card__footer">
+            <a href="{{ $page.RelPermalink }}" class="btn btn_primary btn-pill">{{ $featured.cta_label }}</a>
+            <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="course-card__link">Enquiry</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

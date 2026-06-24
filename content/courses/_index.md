@@ -1,16 +1,16 @@
 ---
-title: "Iraivi's courses for celebrating Motherhood"
+title: "Iraivi Courses"
 image: "images/logo.png"
 tags: ["courseintro"]
-description: ""
-keywords: ""
+description: "Evidence-based pregnancy, birth, breastfeeding, and postpartum education for growing families."
+keywords: "pregnancy courses, childbirth education, breastfeeding support, postpartum care"
 date: 2022-04-03T12:54:59+05:30
 draft: false
 ---
 
-## Online Sessions
+## Support for every stage
 
-We provide the following services to best accompany you on your journey:
+Choose a course based on where you are in your journey:
 
 - [Pregnancy Wellness](/courses/pregnancy-wellness/)
 - [Preparing for Birth](/courses/preparing-for-birth/)
@@ -19,4 +19,4 @@ We provide the following services to best accompany you on your journey:
 - [Lactation Consultation](/courses/lactation-consultation/)
 - [Pregnancy to Parenthood Complete Package](/courses/pregnancy-to-parenthood-complete-package/)
 
-Expectant parents can attend personalized & group childbirth education classes.
+Expectant parents can attend personalized and small-group childbirth education classes online.

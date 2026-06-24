@@ -1,39 +1,61 @@
 {{ define "main" }}
-<section class="course-single py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-7">
-                <p class="text-uppercase small mb-2">Course</p>
-                <h1 class="mb-3">{{ .Title }}</h1>
-                {{ with .Params.description }}
-                <p class="lead">{{ . }}</p>
-                {{ end }}
-                <div class="d-flex flex-wrap gap-3 mb-4">
-                    {{ with .Params.price }}
-                    <span class="badge bg-light text-dark border">{{ . }}</span>
-                    {{ end }}
-                    {{ with .Params.qatar_price }}
-                    <span class="badge bg-light text-dark border">{{ . }}</span>
-                    {{ end }}
-                </div>
-                {{ with .Params.image }}
-                <img src="{{ . | relURL }}" class="img-fluid rounded-3 mb-4" alt="{{ $.Title }}">
-                {{ end }}
-                <div class="content">
-                    {{ .Content }}
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="card border-0 shadow-sm sticky-top" style="top: 1.5rem;">
-                    <div class="card-body p-4">
-                        <h2 class="h5">Need help choosing the right session?</h2>
-                        <p class="mb-4">Start with the enquiry form and we will guide you to the right course or package.</p>
-                        <a href="{{ "/enquiry/" | relURL }}" class="btn btn_primary w-100 mb-3">Go to enquiry</a>
-                        <a href="{{ "/enquiry/course-enrollment-form/" | relURL }}" class="btn btn-outline-secondary w-100">Open booking form</a>
-                    </div>
-                </div>
-            </div>
+{{ $courseCategory := default "pregnancy" .Params.category }}
+{{ $enquiryAnchor := "#course-enrollment-form" }}
+{{ if eq .Params.slug "lactation-consultation" }}
+{{ $enquiryAnchor = "#lactation-consultation-form" }}
+{{ end }}
+<section class="course-detail-hero section section--major">
+  <div class="container">
+    <div class="course-detail-hero__grid">
+      <div class="course-detail-hero__content">
+        <p class="section-kicker">Course detail</p>
+        <h1 class="section-title">{{ .Title }}</h1>
+        {{ with .Params.description }}<p class="section-copy">{{ . }}</p>{{ end }}
+        <div class="course-detail-hero__chips">
+          {{ with .Params.duration }}<span>{{ . }}</span>{{ end }}
+          {{ with .Params.category }}<span>{{ title . }}</span>{{ end }}
         </div>
+        <div class="course-detail-hero__actions">
+          <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="btn btn_primary btn-pill">Enquiry</a>
+          <a href="{{ "/courses/" | relURL }}" class="btn btn-outline-rose btn-pill">Back to Courses</a>
+        </div>
+      </div>
+      <div class="course-detail-hero__media">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
+        {{ end }}
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="course-detail-body section section--medium">
+  <div class="container">
+    <div class="course-detail-layout">
+      <div class="course-detail-main">
+        <div class="course-detail-panel">
+          <p class="section-kicker">Overview</p>
+          <h2>What this course gives you</h2>
+          <div class="course-detail-summary">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      <aside class="course-detail-sidebar">
+        <div class="course-detail-panel course-detail-panel--sticky">
+          <p class="section-kicker">Quick enquiry</p>
+          <h2>Need help choosing the right session?</h2>
+          <p>Use the enquiry form and we’ll guide you to the best course for your stage.</p>
+          <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="btn btn_primary btn-pill w-100">Enquiry</a>
+          <div class="course-detail-facts">
+            <div><span>Duration</span><strong>{{ .Params.duration }}</strong></div>
+            {{ with .Params.price }}<div><span>Price</span><strong>{{ . }}</strong></div>{{ end }}
+            {{ with .Params.qatar_price }}<div><span>Qatar</span><strong>{{ . }}</strong></div>{{ end }}
+            <div><span>Category</span><strong>{{ title $courseCategory }}</strong></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
 </section>
 {{ end }}

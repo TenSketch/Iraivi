@@ -1,0 +1,49 @@
+<script>
+(function () {
+  const buttons = document.querySelectorAll('[data-course-filter]');
+  const cards = document.querySelectorAll('[data-course-card]');
+  const activeClass = 'category-card--active';
+
+  if (!buttons.length || !cards.length) {
+    return;
+  }
+
+  const setActiveButton = (button) => {
+    buttons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle(activeClass, isActive);
+      item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  };
+
+  const applyFilter = (filter) => {
+    cards.forEach((card) => {
+      const cardCategory = (card.dataset.courseCategory || '').toLowerCase();
+      const shouldShow = filter === 'all' || cardCategory === filter;
+      card.hidden = !shouldShow;
+    });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = (button.dataset.courseFilter || 'all').toLowerCase();
+      setActiveButton(button);
+      applyFilter(filter);
+
+      const target = button.dataset.scrollTarget;
+      if (target) {
+        const element = document.querySelector(target);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  const defaultButton = document.querySelector('[data-course-filter="all"]');
+  if (defaultButton) {
+    setActiveButton(defaultButton);
+  }
+  applyFilter('all');
+})();
+</script>

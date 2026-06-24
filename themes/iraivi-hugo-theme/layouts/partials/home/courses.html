@@ -1,0 +1,85 @@
+{{ $homeCourses := site.Data.home.courses }}
+{{ with $homeCourses }}
+{{ if .enable }}
+{{ $section := site.GetPage "section" "courses" }}
+{{ $featured := first (default 3 .featured_limit) $section.RegularPages.ByWeight }}
+<section id="courses" class="section section--major courses-minimal">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Courses</p>
+      <h2 class="section-title">{{ .title }}</h2>
+      <p class="section-copy">{{ .intro }}</p>
+    </div>
+
+    <div class="swiper course-swiper" data-home-courses-swiper>
+      <div class="swiper-wrapper">
+        {{ range $page := $featured }}
+        {{ $category := default "pregnancy" $page.Params.category }}
+        <div class="swiper-slide">
+          <article class="course-minimal-card" data-course-card data-course-category="{{ $category }}">
+            <div class="course-minimal-card__image">
+              {{ with $page.Params.image }}
+              <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+              {{ end }}
+            </div>
+            <div class="course-minimal-card__body">
+              <h3>{{ $page.Title }}</h3>
+              {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
+              <div class="course-minimal-card__meta">
+                {{ with $page.Params.duration }}<span>{{ . }}</span>{{ end }}
+              </div>
+              <a href="{{ $page.RelPermalink }}" class="btn btn-outline-rose btn-pill">{{ $homeCourses.cta_label }}</a>
+            </div>
+          </article>
+        </div>
+        {{ end }}
+      </div>
+      <div class="swiper-pagination course-swiper__pagination"></div>
+    </div>
+
+    <div class="courses-minimal__footer">
+      <a href="{{ "/courses/" | relURL }}" class="btn btn_primary btn-pill">{{ .view_all_label }}</a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+(function () {
+  const swiperEl = document.querySelector('[data-home-courses-swiper]');
+  if (!swiperEl || typeof Swiper === 'undefined') {
+    return;
+  }
+
+  new Swiper(swiperEl, {
+    loop: true,
+    speed: 800,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3800,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    pagination: {
+      el: swiperEl.querySelector('.swiper-pagination'),
+      clickable: true
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.02
+      },
+      640: {
+        slidesPerView: 1.4
+      },
+      992: {
+        slidesPerView: 2.15
+      },
+      1200: {
+        slidesPerView: 3
+      }
+    }
+  });
+})();
+</script>
+{{ end }}
+{{ end }}

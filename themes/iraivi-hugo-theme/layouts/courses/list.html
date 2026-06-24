@@ -1,47 +1,47 @@
 {{ define "main" }}
-<section class="courses-page py-5">
-    <div class="container">
-        <div class="row align-items-end">
-            <div class="col-lg-8">
-                <p class="text-uppercase small mb-2">Courses</p>
-                <h1 class="mb-3">{{ .Title }}</h1>
-                {{ with .Content }}
-                <div class="lead">
-                    {{ . }}
-                </div>
-                {{ end }}
-            </div>
-            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                <a href="{{ "/enquiry/" | relURL }}" class="btn btn_primary">Start your enquiry</a>
-            </div>
-        </div>
-
-        <div class="row g-4 mt-4">
-            {{ range $page := .RegularPages.ByWeight }}
-            <div class="col-md-6 col-xl-4">
-                <article class="card h-100 border-0 shadow-sm">
-                    {{ with $page.Params.image }}
-                    <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $page.Title }}">
-                    {{ end }}
-                    <div class="card-body d-flex flex-column">
-                        <h2 class="h5">{{ $page.Title }}</h2>
-                        {{ with $page.Params.description }}
-                        <p class="card-text">{{ . }}</p>
-                        {{ end }}
-                        <div class="mt-auto">
-                            {{ with $page.Params.price }}
-                            <p class="fw-semibold mb-1">{{ . }}</p>
-                            {{ end }}
-                            {{ with $page.Params.qatar_price }}
-                            <p class="text-muted small mb-3">{{ . }}</p>
-                            {{ end }}
-                            <a href="{{ $page.RelPermalink }}" class="btn btn_primary">View details</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            {{ end }}
-        </div>
+<section class="courses-page section section--major">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Courses</p>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-copy">Choose the course that fits your stage and feel supported from pregnancy to early parenthood.</p>
     </div>
+
+    {{ $categories := slice
+      (dict "label" "All" "value" "all")
+      (dict "label" "Pregnancy" "value" "pregnancy")
+      (dict "label" "Birth" "value" "birth")
+      (dict "label" "Breastfeeding" "value" "breastfeeding")
+      (dict "label" "Parenthood" "value" "parenthood")
+    }}
+
+    <div class="course-filter-pills" aria-label="Filter courses">
+      {{ range $categories }}
+      <button type="button" class="course-filter-pills__item {{ if eq .value "all" }}is-active{{ end }}" data-course-filter="{{ .value }}">{{ .label }}</button>
+      {{ end }}
+    </div>
+
+    <div class="course-grid" data-course-grid>
+      {{ range $page := .RegularPages.ByWeight }}
+      {{ $category := default "pregnancy" $page.Params.category }}
+      <article class="course-grid__card" data-course-card data-course-category="{{ $category }}">
+        <div class="course-grid__media">
+          {{ with $page.Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+          {{ end }}
+        </div>
+        <div class="course-grid__body">
+          <h2>{{ $page.Title }}</h2>
+          {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
+          <div class="course-grid__meta">
+            {{ with $page.Params.duration }}<span>{{ . }}</span>{{ end }}
+          </div>
+          <a href="{{ $page.RelPermalink }}" class="btn btn_primary btn-pill">View Course</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
 </section>
+{{ partial "courses/filter-script.html" . }}
 {{ end }}

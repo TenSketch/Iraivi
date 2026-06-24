@@ -36,6 +36,37 @@
   }
 
   function validateForm(form) {
+    // Reset any previous custom validation messages
+    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
+      input.setCustomValidity('');
+    });
+
+    // Group checkbox and radio inputs by name
+    const groups = {};
+    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
+      if (input.name) {
+        if (!groups[input.name]) {
+          groups[input.name] = [];
+        }
+        groups[input.name].push(input);
+      }
+    });
+
+    // For each group, check if it's required (label has '*') and has at least one checked option
+    for (const name in groups) {
+      const inputs = groups[name];
+      const firstInput = inputs[0];
+      const container = firstInput.closest('div');
+      const label = container ? container.querySelector('label') : null;
+      
+      if (label && label.textContent.includes('*')) {
+        const hasChecked = inputs.some((input) => input.checked);
+        if (!hasChecked) {
+          firstInput.setCustomValidity('Please select at least one option.');
+        }
+      }
+    }
+
     if (!form.checkValidity()) {
       form.reportValidity();
       return false;
@@ -118,6 +149,16 @@
 
     form.addEventListener('submit', handleSubmit);
     whatsappBtn.addEventListener('click', handleWhatsappClick);
+    form.addEventListener('change', (event) => {
+      if (event.target.type === 'checkbox' || event.target.type === 'radio') {
+        const name = event.target.name;
+        if (name) {
+          form.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+            input.setCustomValidity('');
+          });
+        }
+      }
+    });
   }
 
   document.querySelectorAll('[data-enquiry-form]').forEach(initEnquiryForm);

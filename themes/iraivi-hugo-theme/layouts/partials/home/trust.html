@@ -1,0 +1,40 @@
+{{ with site.Data.home.trust }}
+<section id="trust" class="section trust-section">
+  <div class="container">
+    <div class="section-heading text-center mx-auto">
+      <span class="section-kicker">Trust & credibility</span>
+      <h2>{{ .title }}</h2>
+      <p>{{ .intro }}</p>
+    </div>
+    <div class="row g-4 mt-2">
+      {{ range .items }}
+      <div class="col-md-6 col-xl-3">
+        <article class="info-card h-100">
+          <div class="info-card__icon">✦</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+    <div class="trust-strip mt-4">
+      <div class="trust-strip__item">
+        <span class="trust-strip__label">Families supported</span>
+        <strong>500+</strong>
+      </div>
+      <div class="trust-strip__item">
+        <span class="trust-strip__label">Experience</span>
+        <strong>10+ years</strong>
+      </div>
+      <div class="trust-strip__item">
+        <span class="trust-strip__label">Average rating</span>
+        <strong>4.9/5</strong>
+      </div>
+      <div class="trust-strip__item trust-strip__item--cta">
+        <span class="trust-strip__label">Quick contact</span>
+        <a href="https://wa.me/{{ site.Params.whatsapp }}" target="_blank" rel="noopener noreferrer">WhatsApp support</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

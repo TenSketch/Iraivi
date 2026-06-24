@@ -1,28 +1,68 @@
-// @use '../abstracts' as *;
 @use 'colors' as *;
-.p-0{
-    padding: 0;
+
+.p-0 {
+  padding: 0;
 }
-.m-1{
-    margin: 1;
+
+.mx-auto {
+  margin-inline: auto;
 }
-.mx-auto{
-    margin-inline: auto;
+
+.ml-auto {
+  margin-left: auto;
 }
-.ml-auto{
-    margin-left: auto;
-}
-.py-section{
-    padding-block: 5rem;
+
+.py-section {
+  padding-block: 7.5rem;
 }
 
 .container {
-    width: min(991px, 80%);
-    @extend .mx-auto;
-    // background-color: blue;
-    // border: 1px solid red;
+  width: min(1280px, 92%);
+  @extend .mx-auto;
+}
+
+.bg_primary {
+  background-color: $clr-primary-500;
+}
+
+.section {
+  padding-block: 4.5rem;
+
+  @media (min-width: 992px) {
+    padding-block: 7.5rem;
   }
-// bootstrap modified
-.bg_primary{
-    background-color: $clr-primary-500;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-kicker {
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: $clr-primary;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.section-copy {
+  max-width: 720px;
+  color: rgba($clr-dark, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.72;
+  margin-top: 0.75rem;
+}
+
+.btn-pill {
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
 }
