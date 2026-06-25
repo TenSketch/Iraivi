@@ -1,18 +1,26 @@
 {{ define "main" }}
-{{ $forms := .RegularPages.ByWeight }}
+{{ $forms := where .RegularPages.ByWeight "Params.show_in_enquiry" "ne" false }}
 
 <section class="enquiry section section--major">
   <div class="container">
-    <div class="section-heading text-center mx-auto">
-      <span class="section-kicker">Enquiry</span>
-      <h1 class="section-title">{{ .Title }}</h1>
-      <p class="section-copy">Choose the right form below and start your enquiry in one step.</p>
-    </div>
-
-    <div class="enquiry-quick-links">
-      <a href="#course-enrollment-form" class="btn btn-outline-rose btn-pill">Course enquiry</a>
-      <a href="#lactation-consultation-form" class="btn btn-outline-rose btn-pill">Lactation consultation</a>
-      <a href="https://wa.me/{{ site.Params.whatsapp }}" class="btn btn_primary btn-pill" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <div class="enquiry-hero">
+      <div class="enquiry-hero__content">
+        <span class="section-kicker">Enquiry</span>
+        <h1 class="section-title">{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="section-copy">{{ . }}</p>
+        {{ else }}
+        <p class="section-copy">Use the course enrollment form below to book the right session for your stage.</p>
+        {{ end }}
+        <div class="enquiry-hero__actions">
+          <a href="#course-enrollment-form" class="btn btn_primary btn-pill">Course Enrollment Form</a>
+        </div>
+      </div>
+      {{ with .Params.image }}
+      <div class="enquiry-hero__media">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
+      </div>
+      {{ end }}
     </div>
 
     <div class="enquiry-stack">
@@ -20,9 +28,6 @@
       {{ $slug := default $page.Slug $page.Params.slug }}
       <section id="{{ $slug }}" class="enquiry-form-panel">
         <div class="enquiry-form-panel__header">
-          {{ with $page.Params.image }}
-          <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
-          {{ end }}
           <div>
             <p class="section-kicker">Form</p>
             <h2>{{ $page.Title }}</h2>

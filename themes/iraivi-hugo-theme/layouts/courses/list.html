@@ -7,13 +7,7 @@
       <p class="section-copy">Choose the course that fits your stage and feel supported from pregnancy to early parenthood.</p>
     </div>
 
-    {{ $categories := slice
-      (dict "label" "All" "value" "all")
-      (dict "label" "Pregnancy" "value" "pregnancy")
-      (dict "label" "Birth" "value" "birth")
-      (dict "label" "Breastfeeding" "value" "breastfeeding")
-      (dict "label" "Parenthood" "value" "parenthood")
-    }}
+    {{ $categories := slice (dict "label" "All" "value" "all") (dict "label" "Pregnancy" "value" "pregnancy") (dict "label" "Birth" "value" "birth") (dict "label" "Breastfeeding" "value" "breastfeeding") (dict "label" "Parenthood" "value" "parenthood") }}
 
     <div class="course-filter-pills" aria-label="Filter courses">
       {{ range $categories }}
@@ -24,6 +18,7 @@
     <div class="course-grid" data-course-grid>
       {{ range $page := .RegularPages.ByWeight }}
       {{ $category := default "pregnancy" $page.Params.category }}
+      {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($page.Title | urlquery) }}
       <article class="course-grid__card" data-course-card data-course-category="{{ $category }}">
         <div class="course-grid__media">
           {{ with $page.Params.image }}
@@ -36,7 +31,10 @@
           <div class="course-grid__meta">
             {{ with $page.Params.duration }}<span>{{ . }}</span>{{ end }}
           </div>
-          <a href="{{ $page.RelPermalink }}" class="btn btn_primary btn-pill">View Course</a>
+          <div class="course-grid__actions">
+            <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="{{ $page.RelPermalink }}" class="btn btn-outline-rose btn-pill">View Course</a>
+          </div>
         </div>
       </article>
       {{ end }}

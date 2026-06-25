@@ -114,15 +114,23 @@ faq:
   title: "FAQ"
   items:
     - question: "How do I register?"
-      answer: "Book a consultation or WhatsApp us for the right course path."
+      answer: "Book through the course enrollment form or the lactation consultation page, depending on your need."
     - question: "Are sessions online?"
       answer: "Yes, sessions are online and easy to join."
     - question: "When should I start?"
       answer: "You can start anytime, but many parents begin in the second trimester."
     - question: "Is this one-on-one or group based?"
       answer: "Both options are available depending on the course."
-    - question: "Can I get WhatsApp support?"
-      answer: "Yes, quick WhatsApp support is available for follow-up questions."
+    - question: "How will I hear back after booking?"
+      answer: "We will respond to your submission by email with the next steps."
+
+lactation_promo:
+  enable: true
+  title: "Need one-to-one lactation support?"
+  intro: "Get focused guidance for latch issues, supply concerns, pumping questions, and feeding confidence with a dedicated consultation page and booking form."
+  image: "images/mother-feeding-baby-with-breast.jpg"
+  cta_label: "Get Consultation"
+  cta_link: "/lactation-consultation/"
 
 final_banner:
   enable: true

@@ -1,11 +1,5 @@
 <script>
 (function() {
-  function titleize(key) {
-    return key
-      .replace(/_/g, ' ')
-      .replace(/\b\w/g, function(ch) { return ch.toUpperCase(); });
-  }
-
   function getFormData(form) {
     const formData = new FormData(form);
     const data = {};
@@ -19,29 +13,11 @@
     return data;
   }
 
-  function formatWhatsappMessage(prefix, data) {
-    const lines = [`*${prefix}*`, ''];
-    Object.keys(data).forEach((key) => {
-      if (key === 'hp_field') {
-        return;
-      }
-
-      const value = Array.isArray(data[key]) ? data[key].join(', ') : data[key];
-      if (value === undefined || value === null || value === '') {
-        return;
-      }
-      lines.push(`*${titleize(key)}:* ${value}`);
-    });
-    return lines.join('\n');
-  }
-
   function validateForm(form) {
-    // Reset any previous custom validation messages
     form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
       input.setCustomValidity('');
     });
 
-    // Group checkbox and radio inputs by name
     const groups = {};
     form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
       if (input.name) {
@@ -52,18 +28,14 @@
       }
     });
 
-    // For each group, check if it's required (label has '*') and has at least one checked option
     for (const name in groups) {
       const inputs = groups[name];
       const firstInput = inputs[0];
-      const container = firstInput.closest('div');
-      const label = container ? container.querySelector('label') : null;
-      
-      if (label && label.textContent.includes('*')) {
-        const hasChecked = inputs.some((input) => input.checked);
-        if (!hasChecked) {
-          firstInput.setCustomValidity('Please select at least one option.');
-        }
+      const groupRequired = inputs.some((input) => input.required);
+      const hasChecked = inputs.some((input) => input.checked);
+
+      if (groupRequired && !hasChecked) {
+        firstInput.setCustomValidity('Please select an option.');
       }
     }
 
@@ -89,17 +61,29 @@
   function initEnquiryForm(container) {
     const form = container.querySelector('[data-enquiry-form-element]');
     const submitBtn = container.querySelector('[data-enquiry-submit]');
-    const whatsappBtn = container.querySelector('[data-enquiry-whatsapp]');
     const statusDiv = container.querySelector('[data-enquiry-status]');
-    const whatsappNumber = container.dataset.whatsappNumber || '917550114682';
     const formType = container.dataset.formType || 'course-enquiry';
     const clientEndpoint = container.dataset.endpoint || '/api/send-email';
     const successMessage = container.dataset.successMessage || 'Success! Your enquiry has been sent.';
     const errorMessage = container.dataset.errorMessage || 'Error sending your enquiry. Please try again.';
-    const whatsappPrefix = container.dataset.whatsappPrefix || 'New Enquiry';
 
-    if (!form || !submitBtn || !whatsappBtn || !statusDiv) {
+    if (!form || !submitBtn || !statusDiv) {
       return;
+    }
+
+    function applyPresetSelections() {
+      const params = new URLSearchParams(window.location.search);
+      const session = params.get('session');
+
+      if (!session) {
+        return;
+      }
+
+      form.querySelectorAll('input[name="session"]').forEach((input) => {
+        if (input.value === session) {
+          input.checked = true;
+        }
+      });
     }
 
     async function handleSubmit(event) {
@@ -107,8 +91,8 @@
       if (!validateForm(form)) return;
 
       setBusy(submitBtn, 'Sending...', true);
-      setBusy(whatsappBtn, 'Preparing...', true);
       statusDiv.style.display = 'none';
+      statusDiv.classList.remove('is-success', 'is-error');
 
       try {
         const data = getFormData(form);
@@ -123,32 +107,19 @@
         }
 
         statusDiv.innerText = successMessage;
-        statusDiv.style.backgroundColor = '#d4edda';
-        statusDiv.style.color = '#155724';
+        statusDiv.classList.add('is-success');
         statusDiv.style.display = 'block';
         form.reset();
       } catch (error) {
         statusDiv.innerText = errorMessage;
-        statusDiv.style.backgroundColor = '#f8d7da';
-        statusDiv.style.color = '#721c24';
+        statusDiv.classList.add('is-error');
         statusDiv.style.display = 'block';
       } finally {
         setBusy(submitBtn, 'Sending...', false);
-        setBusy(whatsappBtn, 'Preparing...', false);
       }
     }
 
-    function handleWhatsappClick() {
-      if (!validateForm(form)) return;
-
-      const data = getFormData(form);
-      const message = formatWhatsappMessage(whatsappPrefix, data);
-      const encodedMsg = encodeURIComponent(message);
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
-    }
-
     form.addEventListener('submit', handleSubmit);
-    whatsappBtn.addEventListener('click', handleWhatsappClick);
     form.addEventListener('change', (event) => {
       if (event.target.type === 'checkbox' || event.target.type === 'radio') {
         const name = event.target.name;
@@ -159,6 +130,8 @@
         }
       }
     });
+
+    applyPresetSelections();
   }
 
   document.querySelectorAll('[data-enquiry-form]').forEach(initEnquiryForm);

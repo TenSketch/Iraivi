@@ -1,3 +1,4 @@
+{{ $path := .RelPermalink }}
 <nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
     <a class="navbar-brand" href="{{ "/" | relURL }}">
@@ -8,13 +9,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="{{ "/" | relURL }}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ "/about-me/" | relURL }}">Gayathri</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ "/courses/" | relURL }}">Courses</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ "/enquiry/" | relURL }}">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ "/" | relURL }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link {{ if eq $path "/about-me/" }}active{{ end }}" href="{{ "/about-me/" | relURL }}">Gayathri</a></li>
+        <li class="nav-item"><a class="nav-link {{ if hasPrefix $path "/courses/" }}active{{ end }}" href="{{ "/courses/" | relURL }}">Courses</a></li>
+        <li class="nav-item"><a class="nav-link {{ if or (eq $path "/lactation-consultation/") (eq $path "/courses/lactation-consultation/") }}active{{ end }}" href="{{ "/lactation-consultation/" | relURL }}">Lactation Consultation</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ "/#faq" | relURL }}">FAQ</a></li>
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="btn btn_primary btn-pill nav-cta" href="{{ "/enquiry/" | relURL }}">Enquiry</a>
+          <a class="btn btn_primary btn-pill w-100 {{ if or (eq $path "/enquiry/") (eq $path "/enquiry/course-enrollment-form/") }}active{{ end }}" href="{{ "/enquiry/" | relURL }}">Enquiry</a>
         </li>
       </ul>
     </div>

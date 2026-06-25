@@ -8,11 +8,11 @@
     </div>
     <div class="gallery-grid">
       {{ range .items }}
-      <a href="{{ .link | relURL }}" class="gallery-card">
-        <img src="{{ .image | relURL }}" alt="{{ .title }}">
+      <div class="gallery-card">
+        <img src="{{ .image | relURL }}" alt="{{ .title }}" loading="lazy" decoding="async">
         <span>{{ .title }}</span>
         <em>{{ .caption }}</em>
-      </a>
+      </div>
       {{ end }}
     </div>
   </div>

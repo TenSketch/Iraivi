@@ -1,4 +1,5 @@
 <footer class="site-footer">
+  {{ $coursesSection := site.GetPage "section" "courses" }}
   <div class="container">
     <div class="footer-simple footer-accordion">
       <div>
@@ -11,10 +12,23 @@
           <ul class="list-unstyled footer-simple__links mt-3">
             <li><a href="{{ "/" | relURL }}">Home</a></li>
             <li><a href="{{ "/about-me/" | relURL }}">Gayathri</a></li>
+            <li><a href="{{ "/courses/" | relURL }}">Courses</a></li>
             <li><a href="{{ "/enquiry/" | relURL }}">Enquiry</a></li>
           </ul>
         </details>
       </div>
+      {{ with $coursesSection }}
+      <div>
+        <details open>
+          <summary>Courses</summary>
+          <ul class="list-unstyled footer-simple__links mt-3">
+            {{ range .RegularPages.ByWeight }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          </ul>
+        </details>
+      </div>
+      {{ end }}
       <div>
         <details open>
           <summary>Contact</summary>
@@ -32,7 +46,7 @@
   <div class="container">
     <div class="copyrights__inner">
       <p>&#169; Iraivi 2026</p>
-      <p>Website delivered by <a href="{{ site.Params.tensketch_url }}" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
+      <p>Website delivered by <a href="https://www.tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
     </div>
   </div>
 </div>

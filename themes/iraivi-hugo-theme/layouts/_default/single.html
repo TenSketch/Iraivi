@@ -1,4 +1,36 @@
 {{ define "main" }}
+{{ if or (eq .Slug "course-enrollment-form") (eq .File.BaseFileName "course-enrollment-form") }}
+<section class="booking-shell booking-shell--compact">
+    <div class="container booking-shell__container">
+        <div class="booking-header">
+            {{ with .Params.image }}
+            <div class="booking-header__media">
+                <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+            </div>
+            {{ end }}
+            <div class="booking-header__content">
+                <p class="booking-breadcrumb"><a href="{{ "/" | relURL }}">Home</a> <span>/</span> <a href="{{ "/enquiry/" | relURL }}">Enquiry</a> <span>/</span> Course Enrollment</p>
+                <p class="section-kicker booking-header__kicker">Enrollment</p>
+                <h1 class="booking-header__title">{{ .Title }}</h1>
+                {{ with .Params.description }}
+                <p class="booking-header__copy">{{ . }}</p>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="booking-form-card">
+            <div class="booking-form-card__intro">
+                <p>Complete the form below and we'll contact you shortly.</p>
+                <span>All fields are required.</span>
+            </div>
+            <div class="booking-form-card__divider"></div>
+            <div class="content">
+                {{ .Content | safeHTML }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ else }}
 <section class="py-5">
     <div class="container">
         <div class="row">
@@ -14,4 +46,6 @@
         </div>
     </div>
 </section>
+{{ end }}
+{{ partial "enquiry-form-script.html" . }}
 {{ end }}

@@ -39,7 +39,7 @@ A comprehensive program designed to support you through pregnancy, birth, breast
 - 📍 Suitable for pregnant mothers and their birth partners
 
 ##### Additional Support Included
-- Continuous WhatsApp Support Throughout Your Pregnancy Journey
+- Continuous Guidance Throughout Your Pregnancy Journey
 - Two Weeks of Postpartum Support After Birth
 - Session Notes & Educational Handouts
 - Positive Pregnancy, Birth & Breastfeeding Affirmations

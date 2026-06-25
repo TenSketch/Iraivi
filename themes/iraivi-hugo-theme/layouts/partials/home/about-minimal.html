@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
-        <img src="{{ .image | relURL }}" class="img-fluid about-minimal__image" alt="{{ .title }}">
+        <img src="{{ .image | relURL }}" class="img-fluid about-minimal__image" alt="{{ .title }}" loading="lazy" decoding="async">
       </div>
       <div class="col-lg-5">
         <p class="section-kicker">About Gayathri</p>
@@ -15,7 +15,7 @@
           <span>{{ . }}</span>
           {{ end }}
         </div>
-        <a href="{{ .cta_link | relURL }}" class="btn btn_primary btn-pill">Enquiry</a>
+        <a href="{{ .cta_link | relURL }}" class="btn btn_primary btn-pill">Read more</a>
       </div>
     </div>
   </div>

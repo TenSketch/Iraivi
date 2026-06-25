@@ -1,4 +1,4 @@
-{{ with site.Data.home.testimonials }}
+{{ with site.Data.testimonials }}
 {{ if .enable }}
 <section class="section section--medium testimonials-minimal">
   <div class="container">
@@ -7,7 +7,7 @@
       <h2 class="section-title">{{ .title }}</h2>
     </div>
     <div class="testimonial-minimal-grid">
-      {{ range .items }}
+      {{ range .featured }}
       <article class="testimonial-minimal-card">
         <img src="{{ .image | relURL }}" alt="{{ .name }}">
         <div class="testimonial-minimal-card__body">

@@ -16,7 +16,6 @@ Choose a course based on where you are in your journey:
 - [Preparing for Birth](/courses/preparing-for-birth/)
 - [Breastfeeding Preparation](/courses/breastfeeding-preparation/)
 - [Fourth Trimester Care](/courses/fourth-trimester-care/)
-- [Lactation Consultation](/courses/lactation-consultation/)
 - [Pregnancy to Parenthood Complete Package](/courses/pregnancy-to-parenthood-complete-package/)
 
 Expectant parents can attend personalized and small-group childbirth education classes online.

@@ -44,7 +44,8 @@
 
     
 </head>
-<body><nav class="navbar navbar-expand-lg navbar-light site-header">
+<body>
+<nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
     <a class="navbar-brand" href="/">
       <img class="img-fluid" src="https://birthwithiraivi.com/images/Iraivi_logo-1.png" alt="Iraivi | Celebrating Motherhood">
@@ -54,13 +55,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about-me/">Gayathri</a></li>
-        <li class="nav-item"><a class="nav-link" href="/courses/">Courses</a></li>
-        <li class="nav-item"><a class="nav-link" href="/enquiry/">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link " href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="/about-me/">Gayathri</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/courses/">Courses</a></li>
+        <li class="nav-item"><a class="nav-link " href="/lactation-consultation/">Lactation Consultation</a></li>
         <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="btn btn_primary btn-pill nav-cta" href="/enquiry/">Enquiry</a>
+          <a class="btn btn_primary btn-pill w-100 " href="/enquiry/">Enquiry</a>
         </li>
       </ul>
     </div>
@@ -94,6 +95,7 @@
     <div class="course-grid" data-course-grid>
       
       
+      
       <article class="course-grid__card" data-course-card data-course-category="pregnancy">
         <div class="course-grid__media">
           
@@ -106,9 +108,13 @@
           <div class="course-grid__meta">
             <span>2 hours</span>
           </div>
-          <a href="/courses/pregnancy-wellness/" class="btn btn_primary btn-pill">View Course</a>
+          <div class="course-grid__actions">
+            <a href="/enquiry/course-enrollment-form/?session=Pregnancy&#43;Wellness" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="/courses/pregnancy-wellness/" class="btn btn-outline-rose btn-pill">View Course</a>
+          </div>
         </div>
       </article>
+      
       
       
       <article class="course-grid__card" data-course-card data-course-category="birth">
@@ -123,9 +129,13 @@
           <div class="course-grid__meta">
             <span>2 hours</span>
           </div>
-          <a href="/courses/preparing-for-birth/" class="btn btn_primary btn-pill">View Course</a>
+          <div class="course-grid__actions">
+            <a href="/enquiry/course-enrollment-form/?session=Preparing&#43;for&#43;Birth" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="/courses/preparing-for-birth/" class="btn btn-outline-rose btn-pill">View Course</a>
+          </div>
         </div>
       </article>
+      
       
       
       <article class="course-grid__card" data-course-card data-course-category="breastfeeding">
@@ -140,9 +150,13 @@
           <div class="course-grid__meta">
             <span>90 minutes</span>
           </div>
-          <a href="/courses/breastfeeding-preparation/" class="btn btn_primary btn-pill">View Course</a>
+          <div class="course-grid__actions">
+            <a href="/enquiry/course-enrollment-form/?session=Breastfeeding&#43;Preparation" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="/courses/breastfeeding-preparation/" class="btn btn-outline-rose btn-pill">View Course</a>
+          </div>
         </div>
       </article>
+      
       
       
       <article class="course-grid__card" data-course-card data-course-category="postpartum">
@@ -157,26 +171,13 @@
           <div class="course-grid__meta">
             <span>90 minutes</span>
           </div>
-          <a href="/courses/fourth-trimester-care/" class="btn btn_primary btn-pill">View Course</a>
-        </div>
-      </article>
-      
-      
-      <article class="course-grid__card" data-course-card data-course-category="breastfeeding">
-        <div class="course-grid__media">
-          
-          <img src="/images/mother-feeding-baby-with-breast.jpg" alt="Lactation Consultation" loading="lazy">
-          
-        </div>
-        <div class="course-grid__body">
-          <h2>Lactation Consultation</h2>
-          <p>Expert guidance to resolve breastfeeding challenges and ensure a healthy feeding experience for both mother and baby.</p>
-          <div class="course-grid__meta">
-            <span>60 minutes</span>
+          <div class="course-grid__actions">
+            <a href="/enquiry/course-enrollment-form/?session=Fourth&#43;Trimester&#43;Care" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="/courses/fourth-trimester-care/" class="btn btn-outline-rose btn-pill">View Course</a>
           </div>
-          <a href="/courses/lactation-consultation/" class="btn btn_primary btn-pill">View Course</a>
         </div>
       </article>
+      
       
       
       <article class="course-grid__card" data-course-card data-course-category="parenthood">
@@ -191,7 +192,10 @@
           <div class="course-grid__meta">
             <span>4 guided sessions</span>
           </div>
-          <a href="/courses/pregnancy-to-parenthood-complete-package/" class="btn btn_primary btn-pill">View Course</a>
+          <div class="course-grid__actions">
+            <a href="/enquiry/course-enrollment-form/?session=Pregnancy&#43;to&#43;Parenthood&#43;Complete&#43;Package" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="/courses/pregnancy-to-parenthood-complete-package/" class="btn btn-outline-rose btn-pill">View Course</a>
+          </div>
         </div>
       </article>
       
@@ -235,6 +239,7 @@
 
 
     </div><footer class="site-footer">
+  
   <div class="container">
     <div class="footer-simple footer-accordion">
       <div>
@@ -247,10 +252,31 @@
           <ul class="list-unstyled footer-simple__links mt-3">
             <li><a href="/">Home</a></li>
             <li><a href="/about-me/">Gayathri</a></li>
+            <li><a href="/courses/">Courses</a></li>
             <li><a href="/enquiry/">Enquiry</a></li>
           </ul>
         </details>
       </div>
+      
+      <div>
+        <details open>
+          <summary>Courses</summary>
+          <ul class="list-unstyled footer-simple__links mt-3">
+            
+            <li><a href="/courses/pregnancy-wellness/">Pregnancy Wellness</a></li>
+            
+            <li><a href="/courses/preparing-for-birth/">Preparing for Birth</a></li>
+            
+            <li><a href="/courses/breastfeeding-preparation/">Breastfeeding Preparation</a></li>
+            
+            <li><a href="/courses/fourth-trimester-care/">Fourth Trimester Care</a></li>
+            
+            <li><a href="/courses/pregnancy-to-parenthood-complete-package/">Pregnancy to Parenthood Complete Package</a></li>
+            
+          </ul>
+        </details>
+      </div>
+      
       <div>
         <details open>
           <summary>Contact</summary>
@@ -268,7 +294,7 @@
   <div class="container">
     <div class="copyrights__inner">
       <p>&#169; Iraivi 2026</p>
-      <p>Website delivered by <a href="https://tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
+      <p>Website delivered by <a href="https://www.tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
     </div>
   </div>
 </div>

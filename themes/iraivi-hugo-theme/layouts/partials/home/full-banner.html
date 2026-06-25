@@ -3,7 +3,7 @@
 <section class="full-banner section section--major">
   <div class="container">
     <div class="full-banner__panel">
-      <img src="{{ .image | relURL }}" class="full-banner__image" alt="{{ .text }}">
+      <img src="{{ .image | relURL }}" class="full-banner__image" alt="{{ .text }}" loading="lazy" decoding="async">
       <div class="full-banner__overlay">
         <p>{{ .text }}</p>
         <a href="{{ .cta_link | relURL }}" class="btn btn-outline-rose btn-pill">{{ .cta_label }}</a>

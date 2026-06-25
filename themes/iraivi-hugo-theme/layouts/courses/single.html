@@ -1,61 +1,201 @@
 {{ define "main" }}
 {{ $courseCategory := default "pregnancy" .Params.category }}
-{{ $enquiryAnchor := "#course-enrollment-form" }}
-{{ if eq .Params.slug "lactation-consultation" }}
-{{ $enquiryAnchor = "#lactation-consultation-form" }}
+{{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) (.Title | urlquery) }}
+{{ $raw := .RawContent | strings.TrimSpace }}
+{{ $parts := split $raw "\n##### " }}
+{{ $overview := "" }}
+{{ if gt (len $parts) 0 }}
+  {{ $overview = index $parts 0 | strings.TrimSpace }}
 {{ end }}
-<section class="course-detail-hero section section--major">
-  <div class="container">
-    <div class="course-detail-hero__grid">
-      <div class="course-detail-hero__content">
-        <p class="section-kicker">Course detail</p>
-        <h1 class="section-title">{{ .Title }}</h1>
-        {{ with .Params.description }}<p class="section-copy">{{ . }}</p>{{ end }}
-        <div class="course-detail-hero__chips">
-          {{ with .Params.duration }}<span>{{ . }}</span>{{ end }}
-          {{ with .Params.category }}<span>{{ title . }}</span>{{ end }}
-        </div>
-        <div class="course-detail-hero__actions">
-          <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="btn btn_primary btn-pill">Enquiry</a>
-          <a href="{{ "/courses/" | relURL }}" class="btn btn-outline-rose btn-pill">Back to Courses</a>
-        </div>
-      </div>
-      <div class="course-detail-hero__media">
-        {{ with .Params.image }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
+{{ $contentSections := after 1 $parts }}
+{{ $bulletHighlights := first 5 (findRE `(?m)^- .+$` $raw) }}
 
-<section class="course-detail-body section section--medium">
-  <div class="container">
-    <div class="course-detail-layout">
-      <div class="course-detail-main">
-        <div class="course-detail-panel">
-          <p class="section-kicker">Overview</p>
-          <h2>What this course gives you</h2>
-          <div class="course-detail-summary">
-            {{ .Content }}
+<div class="course-page">
+  <section class="course-hero">
+    <div class="container">
+      <div class="course-hero__card">
+        <div class="course-hero__content">
+          <p class="section-kicker">Course Detail</p>
+          <div class="course-hero__badges">
+            {{ with .Params.duration }}<span>{{ . }}</span>{{ end }}
+            {{ with .Params.category }}<span>{{ title . }}</span>{{ end }}
           </div>
+          <h1 class="section-title">{{ .Title }}</h1>
+          {{ with .Params.description }}<p class="section-copy">{{ . }}</p>{{ end }}
+          <div class="course-hero__actions">
+            <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+          </div>
+        </div>
+        <div class="course-hero__media">
+          {{ with .Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
+          {{ end }}
         </div>
       </div>
-      <aside class="course-detail-sidebar">
-        <div class="course-detail-panel course-detail-panel--sticky">
-          <p class="section-kicker">Quick enquiry</p>
-          <h2>Need help choosing the right session?</h2>
-          <p>Use the enquiry form and we’ll guide you to the best course for your stage.</p>
-          <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="btn btn_primary btn-pill w-100">Enquiry</a>
-          <div class="course-detail-facts">
-            <div><span>Duration</span><strong>{{ .Params.duration }}</strong></div>
-            {{ with .Params.price }}<div><span>Price</span><strong>{{ . }}</strong></div>{{ end }}
-            {{ with .Params.qatar_price }}<div><span>Qatar</span><strong>{{ . }}</strong></div>{{ end }}
-            <div><span>Category</span><strong>{{ title $courseCategory }}</strong></div>
+    </div>
+  </section>
+
+  <section class="section section--medium">
+    <div class="container">
+      <div class="course-layout">
+        <div class="course-main">
+          {{ if gt (len $bulletHighlights) 0 }}
+          <div class="course-card course-card--highlights">
+            <p class="section-kicker course-card__eyebrow">Perfect For</p>
+            <h2 class="course-card__title">Who this course supports best</h2>
+            <div class="course-highlight-grid">
+              {{ range $bulletHighlights }}
+              <div class="course-highlight">
+                <span class="course-highlight__dot" aria-hidden="true"></span>
+                <span>{{ replaceRE `^- ` "" . | strings.TrimSpace }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+          <div class="course-card">
+            <p class="section-kicker course-card__eyebrow">Overview</p>
+            <h2 class="course-card__title">Everything organized for quick reading</h2>
+            <div class="course-accordion">
+              {{ if $overview }}
+              <details class="course-accordion__item" open>
+                <summary class="course-accordion__summary">
+                  <span>Course Overview</span>
+                  <span class="course-accordion__toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="course-accordion__body">
+                  {{ $overview | markdownify }}
+                </div>
+              </details>
+              {{ end }}
+
+              {{ range $contentSections }}
+              {{ $lines := split . "\n" }}
+              {{ $heading := index $lines 0 | replaceRE `:$` "" | strings.TrimSpace }}
+              {{ $body := delimit (after 1 $lines) "\n" | strings.TrimSpace }}
+              {{ if and $heading $body }}
+              <details class="course-accordion__item">
+                <summary class="course-accordion__summary">
+                  <span>{{ $heading }}</span>
+                  <span class="course-accordion__toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="course-accordion__body">
+                  {{ $body | markdownify }}
+                </div>
+              </details>
+              {{ end }}
+              {{ end }}
+
+              <details class="course-accordion__item">
+                <summary class="course-accordion__summary">
+                  <span>Duration & Pricing</span>
+                  <span class="course-accordion__toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="course-accordion__body">
+                  <div class="course-pricing-grid">
+                    {{ with .Params.duration }}
+                    <div><span>Estimated Session Duration</span><strong>{{ . }}</strong></div>
+                    {{ end }}
+                    {{ with .Params.price }}
+                    <div><span>India Price</span><strong>{{ . }}</strong></div>
+                    {{ end }}
+                    {{ with .Params.qatar_price }}
+                    <div><span>Qatar Price</span><strong>{{ . }}</strong></div>
+                    {{ end }}
+                    {{ if findRE `(?i)session` (.Params.duration | default "") }}
+                    <div><span>Session Count</span><strong>{{ .Params.duration }}</strong></div>
+                    {{ end }}
+                  </div>
+                </div>
+              </details>
+
+              {{ with .Params.faqs }}
+              <details class="course-accordion__item">
+                <summary class="course-accordion__summary">
+                  <span>FAQs</span>
+                  <span class="course-accordion__toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="course-accordion__body">
+                  {{ range . }}
+                  <div class="course-faq">
+                    {{ with .question }}<strong>{{ . }}</strong>{{ end }}
+                    {{ with .answer }}<p>{{ . | markdownify }}</p>{{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </details>
+              {{ end }}
+            </div>
           </div>
         </div>
-      </aside>
+
+        <aside class="course-sidebar">
+          <div class="course-card course-card--info">
+            <p class="section-kicker course-card__eyebrow">Course Information</p>
+            <h2 class="course-card__title">Quick details at a glance</h2>
+            <div class="course-details">
+              {{ with .Params.duration }}
+              <div class="course-detail">
+                <span class="course-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <div><span class="course-detail__label">Duration</span><strong class="course-detail__value">{{ . }}</strong></div>
+              </div>
+              {{ end }}
+              {{ with .Params.price }}
+              <div class="course-detail">
+                <span class="course-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 9.5c0-1.9 1.6-3.5 3.5-3.5h7c1.9 0 3.5 1.6 3.5 3.5v5c0 1.9-1.6 3.5-3.5 3.5h-7C6.6 18 5 16.4 5 14.5z" stroke="currentColor" stroke-width="1.8"/><path d="M15 12h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5.5 10.5h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <div><span class="course-detail__label">Price</span><strong class="course-detail__value">{{ . }}</strong></div>
+              </div>
+              {{ end }}
+              <div class="course-detail">
+                <span class="course-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 8.5h13M5.5 12h13M5.5 15.5h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <div><span class="course-detail__label">Category</span><strong class="course-detail__value">{{ title $courseCategory }}</strong></div>
+              </div>
+              {{ with .Params.mode }}
+              <div class="course-detail">
+                <span class="course-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 9.5a4 4 0 1 1 8 0v5a4 4 0 1 1-8 0z" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v-2.5M12 18v2.5M18 12h2.5M3.5 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                <div><span class="course-detail__label">Mode</span><strong class="course-detail__value">{{ . }}</strong></div>
+              </div>
+              {{ end }}
+              {{ if findRE `(?i)session` (.Params.duration | default "") }}
+              <div class="course-detail">
+                <span class="course-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 6.5h10M7 12h10M7 17.5h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="4.5" y="4.5" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/></svg></span>
+                <div><span class="course-detail__label">Sessions</span><strong class="course-detail__value">{{ .Params.duration }}</strong></div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
+  </section>
+
+  <div class="course-sticky-cta" data-course-sticky>
+    <a href="{{ $bookLink }}" class="btn btn_primary btn-pill w-100">Book Course</a>
   </div>
-</section>
+</div>
+
+<script>
+  (function() {
+    const stickyCta = document.querySelector('[data-course-sticky]');
+    if (!stickyCta) return;
+
+    const toggleSticky = () => {
+      if (window.innerWidth > 991) {
+        stickyCta.classList.remove('is-visible');
+        return;
+      }
+
+      if (window.scrollY > 320) {
+        stickyCta.classList.add('is-visible');
+      } else {
+        stickyCta.classList.remove('is-visible');
+      }
+    };
+
+    toggleSticky();
+    window.addEventListener('scroll', toggleSticky, { passive: true });
+    window.addEventListener('resize', toggleSticky);
+  })();
+</script>
 {{ end }}

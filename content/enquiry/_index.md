@@ -8,4 +8,4 @@ date: 2022-04-10T11:03:56+05:30
 draft: false
 ---
 
-Please use the form that best matches your need. If you are unsure, send a WhatsApp message and we will guide you.
+Please use the form below to book the right course for your stage. If you need lactation support, use the dedicated Lactation Consultation page.

@@ -1,0 +1,19 @@
+{{ with site.Data.home.lactation_promo }}
+{{ if .enable }}
+<section class="section section--medium lactation-promo">
+  <div class="container">
+    <div class="lactation-promo__panel">
+      <div class="lactation-promo__content">
+        <p class="section-kicker">Lactation Consultation</p>
+        <h2 class="section-title">{{ .title }}</h2>
+        <p class="section-copy">{{ .intro }}</p>
+        <a href="{{ .cta_link | relURL }}" class="btn btn_primary btn-pill">{{ .cta_label }}</a>
+      </div>
+      <div class="lactation-promo__media">
+        <img src="{{ .image | relURL }}" alt="{{ .title }}" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

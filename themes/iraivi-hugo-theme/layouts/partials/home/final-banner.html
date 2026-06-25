@@ -3,7 +3,7 @@
 <section class="section section--major final-banner">
   <div class="container">
     <div class="final-banner__panel">
-      <img src="{{ .image | relURL }}" alt="{{ .text }}">
+      <img src="{{ .image | relURL }}" alt="{{ .text }}" loading="lazy" decoding="async">
       <div class="final-banner__overlay">
         <p>{{ .text }}</p>
         <span>{{ .subtext }}</span>

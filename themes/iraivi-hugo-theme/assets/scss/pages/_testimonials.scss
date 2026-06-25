@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.testimonials-page__intro {
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+}
+
+.testimonials-page__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-page-card {
+  background: rgba($white, 0.9);
+  border-radius: 24px;
+  padding: 1.35rem;
+  box-shadow: 0 12px 28px rgba($clr-dark, 0.06);
+
+  h2 {
+    font-size: 1.28rem;
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0;
+    color: rgba($clr-dark, 0.78);
+    line-height: 1.8;
+  }
+}
+
+.testimonial-page-card__meta {
+  margin-bottom: 0.8rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.8rem;
+    border-radius: 999px;
+    background: rgba($clr-primary-500, 0.14);
+    color: $clr-accent;
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+}

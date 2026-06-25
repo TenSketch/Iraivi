@@ -24,7 +24,7 @@
               </div>
               <div class="col-lg-7 order-1 order-lg-2">
                 <div class="hero-image-wrap">
-                  <img src="{{ $slide.image | relURL }}" class="img-fluid hero-image" alt="{{ $slide.headline }}">
+                  <img src="{{ $slide.image | relURL }}" class="img-fluid hero-image" alt="{{ $slide.headline }}" {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy" decoding="async"{{ end }}>
                 </div>
               </div>
             </div>

@@ -1,0 +1,358 @@
+@use "../abstracts" as *;
+
+.lactation-page {
+  .section--medium {
+    padding-block: 2.5rem;
+
+    @media (min-width: 992px) {
+      padding-block: 3rem;
+    }
+  }
+}
+
+.lactation-hero {
+  padding-block: 1.5rem 1rem;
+
+  @media (min-width: 992px) {
+    padding-block: 2rem 1.25rem;
+  }
+}
+
+.lactation-hero__card {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 34px;
+  background: rgba($white, 0.8);
+  border: 1px solid rgba($clr-accent, 0.08);
+  box-shadow: 0 16px 36px rgba($clr-dark, 0.06);
+
+  @media (min-width: 992px) {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 2rem;
+  }
+}
+
+.lactation-hero__content {
+  display: grid;
+  gap: 0.75rem;
+  align-content: center;
+  padding: 0.75rem;
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .section-copy {
+    max-width: 40rem;
+    margin-bottom: 0;
+  }
+}
+
+.lactation-hero__actions {
+  margin-top: 0.25rem;
+}
+
+.lactation-hero__media {
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 220px;
+  box-shadow: 0 18px 38px rgba($clr-dark, 0.08);
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 991px) {
+    order: -1;
+  }
+}
+
+.lactation-layout {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 992px) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+}
+
+.lactation-card {
+  background: rgba($white, 0.9);
+  border: 1px solid rgba($clr-accent, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 16px 34px rgba($clr-dark, 0.06);
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1.25rem;
+  }
+}
+
+.lactation-card__eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.lactation-card__title {
+  font-size: 1.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.lactation-details {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.lactation-detail {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.95rem 1rem;
+  border-radius: 20px;
+  background: rgba($clr-primary-500, 0.18);
+}
+
+.lactation-detail__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba($white, 0.9);
+  color: $clr-accent;
+  box-shadow: inset 0 0 0 1px rgba($clr-accent, 0.08);
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+}
+
+.lactation-detail__label {
+  display: block;
+  color: rgba($clr-dark, 0.56);
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.lactation-detail__value {
+  display: block;
+  margin-top: 0.18rem;
+  color: $clr-accent;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.consultation-accordion {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.consultation-accordion__item {
+  background: rgba($white, 0.92);
+  border: 1px solid rgba($clr-accent, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba($clr-dark, 0.05);
+  overflow: hidden;
+
+  &[open] {
+    box-shadow: 0 18px 34px rgba($clr-dark, 0.07);
+  }
+}
+
+.consultation-accordion__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  font-weight: 800;
+  color: $clr-accent;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.consultation-accordion__toggle {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba($clr-primary-500, 0.3);
+  color: $clr-accent;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.consultation-accordion__item[open] .consultation-accordion__toggle {
+  transform: rotate(45deg);
+  background: rgba($clr-primary-500, 0.5);
+}
+
+.consultation-accordion__body {
+  padding: 0 1.1rem 1.1rem;
+  color: rgba($clr-dark, 0.76);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+  }
+
+  li + li {
+    margin-top: 0.35rem;
+  }
+}
+
+.lactation-booking {
+  padding-top: 0.5rem;
+}
+
+.lactation-booking__container {
+  width: min(860px, 92%);
+}
+
+.lactation-booking__heading {
+  text-align: center;
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 0;
+  }
+
+  .section-copy {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+.lactation-booking__card {
+  background: rgba($white, 0.92);
+  border: 1px solid rgba($clr-accent, 0.08);
+  border-radius: 34px;
+  box-shadow: 0 18px 38px rgba($clr-dark, 0.06);
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.lactation-booking__intro {
+  display: grid;
+  gap: 0.25rem;
+
+  p {
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+
+  span {
+    color: rgba($clr-dark, 0.62);
+    font-size: 0.9rem;
+  }
+}
+
+.lactation-booking__divider {
+  height: 1px;
+  margin: 0.9rem 0 1rem;
+  background: linear-gradient(90deg, rgba($clr-accent, 0.12), rgba($clr-accent, 0.03));
+}
+
+.booking-form__helper {
+  margin-bottom: 0;
+  color: rgba($clr-dark, 0.58);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.booking-form__textarea {
+  min-height: 7.5rem;
+  padding-block: 0.95rem;
+  resize: vertical;
+}
+
+.booking-choice-grid--three {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.booking-choice-grid--two-tight {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.booking-choice--card-compact {
+  min-height: 100%;
+  padding: 1rem;
+
+  .booking-choice__meta {
+    margin-top: 0.2rem;
+  }
+}
+
+.booking-choice--pill-multi {
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .lactation-hero__card {
+    gap: 0.75rem;
+    padding: 0.4rem;
+  }
+
+  .lactation-hero__content {
+    padding: 0.5rem 0.6rem 0.8rem;
+  }
+
+  .lactation-hero__media {
+    min-height: 190px;
+
+    img {
+      min-height: 190px;
+    }
+  }
+
+  .lactation-card,
+  .lactation-booking__card {
+    border-radius: 26px;
+    padding: 0.95rem;
+  }
+
+  .consultation-accordion__summary {
+    padding: 0.95rem 1rem;
+  }
+
+  .consultation-accordion__body {
+    padding: 0 1rem 1rem;
+  }
+
+  .booking-choice-grid--three,
+  .booking-choice-grid--two-tight {
+    grid-template-columns: 1fr;
+  }
+}

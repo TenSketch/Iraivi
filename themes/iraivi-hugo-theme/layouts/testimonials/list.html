@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $testimonials := site.Data.testimonials }}
+<section class="testimonials-page section section--major">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-kicker">Testimonials</p>
+      <h1 class="section-title">{{ .Title }}</h1>
+      {{ with $testimonials.intro }}<p class="section-copy">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="testimonials-page__intro content-card">
+      {{ .Content }}
+    </div>
+
+    <div class="testimonials-page__grid">
+      {{ range $testimonials.items }}
+      <article id="{{ .slug }}" class="testimonial-page-card">
+        <div class="testimonial-page-card__meta">
+          <span>{{ .focus }}</span>
+        </div>
+        <h2>{{ .name }}</h2>
+        <p>{{ .quote }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -14,10 +14,7 @@
     <div class="featured-track mt-4" data-course-grid>
       {{ range $page := $courses.RegularPages.ByWeight }}
       {{ $category := default "general" $page.Params.category }}
-      {{ $enquiryAnchor := "#course-enrollment-form" }}
-      {{ if eq $page.Params.slug "lactation-consultation" }}
-      {{ $enquiryAnchor = "#lactation-consultation-form" }}
-      {{ end }}
+      {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($page.Title | urlquery) }}
       <article class="course-card" data-course-card data-course-category="{{ $category }}">
         <div class="course-card__media">
           {{ with $page.Params.image }}
@@ -37,8 +34,8 @@
           <h3>{{ $page.Title }}</h3>
           <p>{{ $page.Params.description }}</p>
           <div class="course-card__footer">
-            <a href="{{ $page.RelPermalink }}" class="btn btn_primary btn-pill">{{ $featured.cta_label }}</a>
-            <a href="{{ printf "%s%s" ("/enquiry/" | relURL) $enquiryAnchor }}" class="course-card__link">Enquiry</a>
+            <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+            <a href="{{ $page.RelPermalink }}" class="btn btn-outline-rose btn-pill">View Course</a>
           </div>
         </div>
       </article>

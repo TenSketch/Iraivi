@@ -44,7 +44,8 @@
 
     
 </head>
-<body><nav class="navbar navbar-expand-lg navbar-light site-header">
+<body>
+<nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
     <a class="navbar-brand" href="/">
       <img class="img-fluid" src="https://birthwithiraivi.com/images/Iraivi_logo-1.png" alt="Iraivi | Celebrating Motherhood">
@@ -54,101 +55,265 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about-me/">Gayathri</a></li>
-        <li class="nav-item"><a class="nav-link" href="/courses/">Courses</a></li>
-        <li class="nav-item"><a class="nav-link" href="/enquiry/">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link " href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="/about-me/">Gayathri</a></li>
+        <li class="nav-item"><a class="nav-link " href="/courses/">Courses</a></li>
+        <li class="nav-item"><a class="nav-link " href="/lactation-consultation/">Lactation Consultation</a></li>
         <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
         <li class="nav-item mt-3 mt-lg-0">
-          <a class="btn btn_primary btn-pill nav-cta" href="/enquiry/">Enquiry</a>
+          <a class="btn btn_primary btn-pill w-100 active" href="/enquiry/">Enquiry</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <div id="content">
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h1 class="mb-3">Course Enrollment Form</h1>
+
+<section class="booking-shell booking-shell--compact">
+    <div class="container booking-shell__container">
+        <div class="booking-header">
+            
+            <div class="booking-header__media">
+                <img src="/images/baby-smiling.jpg" alt="Course Enrollment Form">
+            </div>
+            
+            <div class="booking-header__content">
+                <p class="booking-breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/enquiry/">Enquiry</a> <span>/</span> Course Enrollment</p>
+                <p class="section-kicker booking-header__kicker">Enrollment</p>
+                <h1 class="booking-header__title">Course Enrollment Form</h1>
                 
-                <img src="/images/baby-smiling.jpg" class="img-fluid rounded-3 mb-4" alt="Course Enrollment Form">
+                <p class="booking-header__copy">Enroll for Iraivi&#39;s Motherhood Courses</p>
                 
-                <div class="content">
-                    <div data-enquiry-form data-form-type="course-enquiry" data-whatsapp-prefix="New Course Enquiry" data-success-message="Success! Your enquiry has been sent.">
-<form data-enquiry-form-element class="needs-validation">
+            </div>
+        </div>
+
+        <div class="booking-form-card">
+            <div class="booking-form-card__intro">
+                <p>Complete the form below and we'll contact you shortly.</p>
+                <span>All fields are required.</span>
+            </div>
+            <div class="booking-form-card__divider"></div>
+            <div class="content">
+                <div data-enquiry-form data-form-type="course-enquiry" data-success-message="Success! Your enquiry has been sent.">
+<form data-enquiry-form-element class="needs-validation booking-form">
 <!-- Honeypot -->
 <input type="text" name="hp_field" style="display:none" tabindex="-1" autocomplete="off">
-<div class="mb-3">
-<label for="name" class="form-label fw-bold">Name *</label>
+<div class="booking-form__grid booking-form__grid--two">
+<div class="booking-form__field">
+<label for="course-name" class="form-label">Name</label>
 <input type="text" id="course-name" name="name" required class="form-control">
 </div>
-<div class="mb-3">
-<label for="mobile" class="form-label fw-bold">Mobile *</label>
+<div class="booking-form__field">
+<label for="course-mobile" class="form-label">Mobile</label>
 <input type="tel" id="course-mobile" name="mobile" required class="form-control">
 </div>
-<div class="mb-3">
-<label for="email" class="form-label fw-bold">Email *</label>
+</div>
+<div class="booking-form__grid booking-form__grid--two">
+<div class="booking-form__field">
+<label for="course-email" class="form-label">Email</label>
 <input type="email" id="course-email" name="email" required class="form-control">
 </div>
-<div class="mb-3">
-<label for="location" class="form-label fw-bold">Location *</label>
+<div class="booking-form__field">
+<label for="course-location" class="form-label">Location</label>
 <input type="text" id="course-location" name="location" required class="form-control">
 </div>
-<div class="mb-3">
-<label class="form-label fw-bold d-block">Which trimester are you currently in? *</label>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" name="trimester" value="1st Trimester" id="course-trim1">
-  <label class="form-check-label" for="course-trim1">1st Trimester</label>
 </div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" name="trimester" value="2nd Trimester" id="course-trim2">
-  <label class="form-check-label" for="course-trim2">2nd Trimester</label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" name="trimester" value="3rd Trimester" id="course-trim3">
-  <label class="form-check-label" for="course-trim3">3rd Trimester</label>
+<div class="booking-form__section">
+<label class="form-label booking-form__section-label">Which trimester are you currently in?</label>
+<div class="booking-choice-group booking-choice-group--trimester">
+  <input class="booking-choice__input" type="radio" name="trimester" value="1st Trimester" id="course-trim1" required>
+  <label class="booking-choice booking-choice--pill" for="course-trim1">1st Trimester</label>
+  <input class="booking-choice__input" type="radio" name="trimester" value="2nd Trimester" id="course-trim2">
+  <label class="booking-choice booking-choice--pill" for="course-trim2">2nd Trimester</label>
+  <input class="booking-choice__input" type="radio" name="trimester" value="3rd Trimester" id="course-trim3">
+  <label class="booking-choice booking-choice--pill" for="course-trim3">3rd Trimester</label>
 </div>
 </div>
-<div class="mb-4">
-<label class="form-label fw-bold d-block">Session *</label>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="session" value="Pregnancy Wellness" id="course-sess1" required>
-  <label class="form-check-label" for="course-sess1">Pregnancy Wellness</label>
+<div class="booking-form__section">
+<label class="form-label booking-form__section-label">Choose your course</label>
+<div class="booking-choice-grid">
+  <input class="booking-choice__input" type="radio" name="session" value="Pregnancy Wellness" id="course-sess1" required>
+  <label class="booking-choice booking-choice--card" for="course-sess1">
+    <span class="booking-choice__title">Pregnancy Wellness</span>
+    <span class="booking-choice__meta">Gentle guidance for pregnancy, movement, nutrition, and mental readiness.</span>
+  </label>
+  <input class="booking-choice__input" type="radio" name="session" value="Preparing for Birth" id="course-sess2">
+  <label class="booking-choice booking-choice--card" for="course-sess2">
+    <span class="booking-choice__title">Preparing for Birth</span>
+    <span class="booking-choice__meta">Labour preparation, comfort techniques, and confidence for birth.</span>
+  </label>
+  <input class="booking-choice__input" type="radio" name="session" value="Breastfeeding Preparation" id="course-sess3">
+  <label class="booking-choice booking-choice--card" for="course-sess3">
+    <span class="booking-choice__title">Breastfeeding Preparation</span>
+    <span class="booking-choice__meta">Latch, feeding rhythms, and early breastfeeding support.</span>
+  </label>
+  <input class="booking-choice__input" type="radio" name="session" value="Fourth Trimester Care" id="course-sess4">
+  <label class="booking-choice booking-choice--card" for="course-sess4">
+    <span class="booking-choice__title">Fourth Trimester Care</span>
+    <span class="booking-choice__meta">Postpartum recovery and newborn care for the first tender weeks.</span>
+  </label>
+  <input class="booking-choice__input" type="radio" name="session" value="Pregnancy to Parenthood Complete Package" id="course-sess5">
+  <label class="booking-choice booking-choice--card" for="course-sess5">
+    <span class="booking-choice__title">Pregnancy to Parenthood Complete Package</span>
+    <span class="booking-choice__meta">Comprehensive support across pregnancy, birth, feeding, and early parenting.</span>
+  </label>
 </div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="session" value="Preparing for Birth" id="course-sess2">
-  <label class="form-check-label" for="course-sess2">Preparing for Birth</label>
 </div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="session" value="Breastfeeding Preparation" id="course-sess3">
-  <label class="form-check-label" for="course-sess3">Breastfeeding Preparation</label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="session" value="Fourth Trimester (Postpartum & Newborn Care)" id="course-sess4">
-  <label class="form-check-label" for="course-sess4">Fourth Trimester (Postpartum & Newborn Care)</label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="session" value="Pregnancy to Parenthood Package" id="course-sess5">
-  <label class="form-check-label" for="course-sess5">Pregnancy to Parenthood Package</label>
-</div>
-</div>
-<div class="d-flex gap-3 mt-4 flex-wrap">
-<button type="submit" data-enquiry-submit class="btn btn_primary py-2 px-4">Submit via Email</button>
-<!-- <button type="button" data-enquiry-whatsapp class="btn btn-outline-success py-2 px-4">Send via WhatsApp</button> -->
+<div class="booking-form__actions">
+<button type="submit" data-enquiry-submit class="btn btn_primary booking-form__submit"><span>Book My Course</span><span aria-hidden="true" class="booking-form__submit-icon">→</span></button>
 </div>
 </form>
-<div data-enquiry-status class="mt-3 p-3 rounded" style="display: none;"></div>
+<div data-enquiry-status class="booking-form__status" style="display: none;"></div>
 </div>
 
-                </div>
             </div>
         </div>
     </div>
 </section>
 
+<script>
+(function() {
+  function getFormData(form) {
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      if (!data[key]) {
+        data[key] = value;
+      } else {
+        data[key] = Array.isArray(data[key]) ? [...data[key], value] : [data[key], value];
+      }
+    });
+    return data;
+  }
+
+  function validateForm(form) {
+    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
+      input.setCustomValidity('');
+    });
+
+    const groups = {};
+    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
+      if (input.name) {
+        if (!groups[input.name]) {
+          groups[input.name] = [];
+        }
+        groups[input.name].push(input);
+      }
+    });
+
+    for (const name in groups) {
+      const inputs = groups[name];
+      const firstInput = inputs[0];
+      const groupRequired = inputs.some((input) => input.required);
+      const hasChecked = inputs.some((input) => input.checked);
+
+      if (groupRequired && !hasChecked) {
+        firstInput.setCustomValidity('Please select an option.');
+      }
+    }
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return false;
+    }
+    return true;
+  }
+
+  function setBusy(button, busyLabel, isBusy) {
+    if (!button) return;
+    if (isBusy) {
+      button.dataset.originalLabel = button.dataset.originalLabel || button.innerText;
+      button.disabled = true;
+      button.innerText = busyLabel;
+    } else {
+      button.disabled = false;
+      button.innerText = button.dataset.originalLabel || button.innerText;
+    }
+  }
+
+  function initEnquiryForm(container) {
+    const form = container.querySelector('[data-enquiry-form-element]');
+    const submitBtn = container.querySelector('[data-enquiry-submit]');
+    const statusDiv = container.querySelector('[data-enquiry-status]');
+    const formType = container.dataset.formType || 'course-enquiry';
+    const clientEndpoint = container.dataset.endpoint || '/api/send-email';
+    const successMessage = container.dataset.successMessage || 'Success! Your enquiry has been sent.';
+    const errorMessage = container.dataset.errorMessage || 'Error sending your enquiry. Please try again.';
+
+    if (!form || !submitBtn || !statusDiv) {
+      return;
+    }
+
+    function applyPresetSelections() {
+      const params = new URLSearchParams(window.location.search);
+      const session = params.get('session');
+
+      if (!session) {
+        return;
+      }
+
+      form.querySelectorAll('input[name="session"]').forEach((input) => {
+        if (input.value === session) {
+          input.checked = true;
+        }
+      });
+    }
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      if (!validateForm(form)) return;
+
+      setBusy(submitBtn, 'Sending...', true);
+      statusDiv.style.display = 'none';
+      statusDiv.classList.remove('is-success', 'is-error');
+
+      try {
+        const data = getFormData(form);
+        const response = await fetch(clientEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, formType })
+        });
+
+        if (!response.ok) {
+          throw new Error('Submission failed');
+        }
+
+        statusDiv.innerText = successMessage;
+        statusDiv.classList.add('is-success');
+        statusDiv.style.display = 'block';
+        form.reset();
+      } catch (error) {
+        statusDiv.innerText = errorMessage;
+        statusDiv.classList.add('is-error');
+        statusDiv.style.display = 'block';
+      } finally {
+        setBusy(submitBtn, 'Sending...', false);
+      }
+    }
+
+    form.addEventListener('submit', handleSubmit);
+    form.addEventListener('change', (event) => {
+      if (event.target.type === 'checkbox' || event.target.type === 'radio') {
+        const name = event.target.name;
+        if (name) {
+          form.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+            input.setCustomValidity('');
+          });
+        }
+      }
+    });
+
+    applyPresetSelections();
+  }
+
+  document.querySelectorAll('[data-enquiry-form]').forEach(initEnquiryForm);
+})();
+</script>
+
+
     </div><footer class="site-footer">
+  
   <div class="container">
     <div class="footer-simple footer-accordion">
       <div>
@@ -161,10 +326,31 @@
           <ul class="list-unstyled footer-simple__links mt-3">
             <li><a href="/">Home</a></li>
             <li><a href="/about-me/">Gayathri</a></li>
+            <li><a href="/courses/">Courses</a></li>
             <li><a href="/enquiry/">Enquiry</a></li>
           </ul>
         </details>
       </div>
+      
+      <div>
+        <details open>
+          <summary>Courses</summary>
+          <ul class="list-unstyled footer-simple__links mt-3">
+            
+            <li><a href="/courses/pregnancy-wellness/">Pregnancy Wellness</a></li>
+            
+            <li><a href="/courses/preparing-for-birth/">Preparing for Birth</a></li>
+            
+            <li><a href="/courses/breastfeeding-preparation/">Breastfeeding Preparation</a></li>
+            
+            <li><a href="/courses/fourth-trimester-care/">Fourth Trimester Care</a></li>
+            
+            <li><a href="/courses/pregnancy-to-parenthood-complete-package/">Pregnancy to Parenthood Complete Package</a></li>
+            
+          </ul>
+        </details>
+      </div>
+      
       <div>
         <details open>
           <summary>Contact</summary>
@@ -182,7 +368,7 @@
   <div class="container">
     <div class="copyrights__inner">
       <p>&#169; Iraivi 2026</p>
-      <p>Website delivered by <a href="https://tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
+      <p>Website delivered by <a href="https://www.tensketch.com/" target="_blank" rel="noopener noreferrer">TenSketch</a></p>
     </div>
   </div>
 </div>
