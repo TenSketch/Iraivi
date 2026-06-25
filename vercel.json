@@ -1,9 +1,4 @@
 {
   "buildCommand": "hugo --gc --minify",
-  "outputDirectory": "public",
-  "functions": {
-    "api/send-email.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "outputDirectory": "public"
 }
