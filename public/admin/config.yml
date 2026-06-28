@@ -3,7 +3,6 @@ backend:
   repo: TenSketch/Iraivi
   branch: main
   site_url: https://birthwithiraivi.com
-  auth_endpoint: /admin/implicit-auth.html
 
 local_backend: true
 publish_mode: editorial_workflow
