@@ -1,13 +1,13 @@
 ---
-title: "About Me"
-image: "images/about.jpg"
-tags: ["about"]
+title: About Me
+image: images/about.jpg
+tags:
+  - about
 description: ""
 keywords: ""
 date: 2022-04-03T12:54:59+05:30
 draft: false
 ---
-
 I'm Gayathri Suresh. An engineer by profession and now childbirth educator by passion.
 Iraivi is the result of my interest to assist pregnant couples in preparing for labor, delivery, and postpartum adjustment with confidence. Iraivi is here to assist with the transition, laying the groundwork for confident childbirth and parenthood. <!--more-->
 Pregnancy is both an exciting and nerve-wracking experience. It's the same with postpartum. I'm here to support you to manage your dreams and worries about starting a family.
@@ -20,15 +20,17 @@ I consider it an honor and a pleasure to work with you and I eagerly await the o
 
 ### We provide the following services to best accompany you on your journey
 
-- Pregnancy nutrition
-- Prenatal bonding
-- Labor & birth
-- Pre & postnatal fitness
-- Breastfeeding
-- Newborn care
-- Postpartum care
+* Pregnancy nutrition
+* Prenatal bonding
+* Labor & birth
+* Pre & postnatal fitness
+* Breastfeeding
+* Newborn care
+* Postpartum care
 
 Expectant parents can attend personalized & group childbirth education classes.
+
+hi. I'm testing CMS
 
 <!-- ## MY CORE VALUES
 
