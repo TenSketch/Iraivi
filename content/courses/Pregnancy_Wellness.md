@@ -1,7 +1,7 @@
 ---
 title: "Pregnancy Wellness"
 description: "Nurture your body, mind, and baby throughout pregnancy with practical guidance on healthy living, nutrition, movement, relaxation, and emotional well-being."
-duration: "2 hours"
+duration: "2.5 hours"
 price: "Rs 1299"
 qatar_price: "QAR 125"
 image: "images/pregnant-smiling-woman-eating-salad.jpg"

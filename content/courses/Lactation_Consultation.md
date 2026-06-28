@@ -1,7 +1,7 @@
 ---
 title: "Lactation Consultation"
 description: "Expert guidance to resolve breastfeeding challenges and ensure a healthy feeding experience for both mother and baby."
-duration: "60 minutes"
+duration: "45 to 60 minutes"
 price: "Rs 799"
 qatar_price: "QAR 100"
 image: "images/mother-feeding-baby-with-breast.jpg"

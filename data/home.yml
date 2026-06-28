@@ -30,7 +30,8 @@ about:
   intro: "Certified Childbirth Educator helping parents prepare for pregnancy, birth, breastfeeding and early parenthood with calm, practical support."
   credentials:
     - "ICEA Certified Childbirth Educator"
-    - "Lactation consultation support"
+    # - "Lactation consultation support"
+    - Advanced Certified Lactation Professional (ACLP) – Begin Ed India
     - "Online guidance for couples and families"
   cta_label: "Meet Gayathri"
   cta_link: "/about-me/"

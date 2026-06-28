@@ -363,8 +363,17 @@
   }
 
   .booking-header__media {
-    height: 196px;
+    height: auto;
+    min-height: 0;
     border-radius: 24px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: initial;
+      object-position: center;
+    }
   }
 
   .booking-header__content {

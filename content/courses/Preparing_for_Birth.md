@@ -1,7 +1,7 @@
 ---
 title: "Preparing for Birth"
 description: "Feel confident and prepared for your baby's birth with practical guidance on labor, birth, and comfort techniques."
-duration: "2 hours"
+duration: "4 hours"
 price: "Rs 1999"
 qatar_price: "QAR 175"
 image: "images/labour_and_birth.jpg"
