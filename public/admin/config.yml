@@ -2,12 +2,12 @@ backend:
   name: github
   repo: TenSketch/Iraivi
   branch: main
+  base_url: https://oauth.birthwithiraivi.com
 
 local_backend: true
 publish_mode: editorial_workflow
 
-# Vercel does not provide Netlify Identity/Git Gateway.
-# Connect Decap CMS to a GitHub OAuth bridge or auth endpoint for production.
+# Decap CMS authenticates through the GitHub OAuth bridge hosted on the VPS.
 site_url: https://birthwithiraivi.com
 display_url: https://birthwithiraivi.com
 

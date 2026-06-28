@@ -1,5 +1,15 @@
 {
+  "name": "iraivi",
+  "private": true,
+  "scripts": {
+    "oauth-proxy": "node oauth-proxy/server.js"
+  },
   "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
     "nodemailer": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
