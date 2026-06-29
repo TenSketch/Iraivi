@@ -45,6 +45,7 @@
     
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light site-header">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -55,14 +56,87 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link " href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link " href="/about-me/">Gayathri</a></li>
-        <li class="nav-item"><a class="nav-link " href="/courses/">Courses</a></li>
-        <li class="nav-item"><a class="nav-link " href="/lactation-consultation/">Lactation Consultation</a></li>
-        <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
-        <li class="nav-item mt-3 mt-lg-0">
-          <a class="btn btn_primary btn-pill w-100 " href="/enquiry/">Enquiry</a>
-        </li>
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/about-me/">Gayathri</a>
+            </li>
+            
+          
+        
+          
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/courses/">Courses</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/lactation-consultation/">Lactation Consultation</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/#faq">FAQ</a>
+            </li>
+            
+          
+        
+          
+            
+            
+              
+            
+
+            
+            <li class="nav-item mt-3 mt-lg-0">
+              <a class="btn btn_primary btn-pill w-100 " href="/enquiry/">Enquiry</a>
+            </li>
+            
+          
+        
       </ul>
     </div>
   </div>
@@ -242,146 +316,6 @@
     </div>
 </section>
 
-<script>
-(function() {
-  function getFormData(form) {
-    const formData = new FormData(form);
-    const data = {};
-    formData.forEach((value, key) => {
-      if (!data[key]) {
-        data[key] = value;
-      } else {
-        data[key] = Array.isArray(data[key]) ? [...data[key], value] : [data[key], value];
-      }
-    });
-    return data;
-  }
-
-  function validateForm(form) {
-    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
-      input.setCustomValidity('');
-    });
-
-    const groups = {};
-    form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((input) => {
-      if (input.name) {
-        if (!groups[input.name]) {
-          groups[input.name] = [];
-        }
-        groups[input.name].push(input);
-      }
-    });
-
-    for (const name in groups) {
-      const inputs = groups[name];
-      const firstInput = inputs[0];
-      const groupRequired = inputs.some((input) => input.required);
-      const hasChecked = inputs.some((input) => input.checked);
-
-      if (groupRequired && !hasChecked) {
-        firstInput.setCustomValidity('Please select an option.');
-      }
-    }
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return false;
-    }
-    return true;
-  }
-
-  function setBusy(button, busyLabel, isBusy) {
-    if (!button) return;
-    if (isBusy) {
-      button.dataset.originalLabel = button.dataset.originalLabel || button.innerText;
-      button.disabled = true;
-      button.innerText = busyLabel;
-    } else {
-      button.disabled = false;
-      button.innerText = button.dataset.originalLabel || button.innerText;
-    }
-  }
-
-  function initEnquiryForm(container) {
-    const form = container.querySelector('[data-enquiry-form-element]');
-    const submitBtn = container.querySelector('[data-enquiry-submit]');
-    const statusDiv = container.querySelector('[data-enquiry-status]');
-    const formType = container.dataset.formType || 'course-enquiry';
-    const clientEndpoint = container.dataset.endpoint || '/api/send-email';
-    const successMessage = container.dataset.successMessage || 'Success! Your enquiry has been sent.';
-    const errorMessage = container.dataset.errorMessage || 'Error sending your enquiry. Please try again.';
-
-    if (!form || !submitBtn || !statusDiv) {
-      return;
-    }
-
-    function applyPresetSelections() {
-      const params = new URLSearchParams(window.location.search);
-      const session = params.get('session');
-
-      if (!session) {
-        return;
-      }
-
-      form.querySelectorAll('input[name="session"]').forEach((input) => {
-        if (input.value === session) {
-          input.checked = true;
-        }
-      });
-    }
-
-    async function handleSubmit(event) {
-      event.preventDefault();
-      if (!validateForm(form)) return;
-
-      setBusy(submitBtn, 'Sending...', true);
-      statusDiv.style.display = 'none';
-      statusDiv.classList.remove('is-success', 'is-error');
-
-      try {
-        const data = getFormData(form);
-        const response = await fetch(clientEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...data, formType })
-        });
-
-        if (!response.ok) {
-          throw new Error('Submission failed');
-        }
-
-        statusDiv.innerText = successMessage;
-        statusDiv.classList.add('is-success');
-        statusDiv.style.display = 'block';
-        form.reset();
-      } catch (error) {
-        statusDiv.innerText = errorMessage;
-        statusDiv.classList.add('is-error');
-        statusDiv.style.display = 'block';
-      } finally {
-        setBusy(submitBtn, 'Sending...', false);
-      }
-    }
-
-    form.addEventListener('submit', handleSubmit);
-    form.addEventListener('change', (event) => {
-      if (event.target.type === 'checkbox' || event.target.type === 'radio') {
-        const name = event.target.name;
-        if (name) {
-          form.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
-            input.setCustomValidity('');
-          });
-        }
-      }
-    });
-
-    applyPresetSelections();
-  }
-
-  document.querySelectorAll('[data-enquiry-form]').forEach(initEnquiryForm);
-})();
-</script>
-
 
     </div><footer class="site-footer">
   
@@ -444,9 +378,9 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
-<script src="https://birthwithiraivi.com/plugins/js/main.js"></script>
+<script src="https://birthwithiraivi.com/plugins/js/main.js" defer></script>
 
 </body>
 </html>

@@ -1,13 +1,31 @@
 {{ define "main" }}
+{{ $payload := partial "sanity/query-result.html" (dict "query" `{
+  "page": *[_type == "page" && slug.current == "enquiry" && !(_id in path("drafts.**"))][0]{title,description,image,body},
+  "forms": *[_type == "enquiryForm" && showInEnquiry == true && !(_id in path("drafts.**"))] | order(weight asc){
+    title,
+    description,
+    image,
+    slug,
+    weight,
+    body
+  }
+}`) | transform.Unmarshal }}
+{{ $pageData := dict }}
 {{ $forms := where .RegularPages.ByWeight "Params.show_in_enquiry" "ne" false }}
+{{ if $payload.result }}
+  {{ with $payload.result.page }}{{ $pageData = . }}{{ end }}
+  {{ with $payload.result.forms }}{{ $forms = . }}{{ end }}
+{{ end }}
 
 <section class="enquiry section section--major">
   <div class="container">
     <div class="enquiry-hero">
       <div class="enquiry-hero__content">
         <span class="section-kicker">Enquiry</span>
-        <h1 class="section-title">{{ .Title }}</h1>
-        {{ with .Params.description }}
+        <h1 class="section-title">{{ default .Title $pageData.title }}</h1>
+        {{ with $pageData.description }}
+        <p class="section-copy">{{ . }}</p>
+        {{ else with .Params.description }}
         <p class="section-copy">{{ . }}</p>
         {{ else }}
         <p class="section-copy">Use the course enrollment form below to book the right session for your stage.</p>
@@ -16,7 +34,7 @@
           <a href="#course-enrollment-form" class="btn btn_primary btn-pill">Course Enrollment Form</a>
         </div>
       </div>
-      {{ with .Params.image }}
+      {{ with default .Params.image $pageData.image }}
       <div class="enquiry-hero__media">
         <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
       </div>
@@ -24,24 +42,39 @@
     </div>
 
     <div class="enquiry-stack">
-      {{ range $page := $forms }}
-      {{ $slug := default $page.Slug $page.Params.slug }}
-      <section id="{{ $slug }}" class="enquiry-form-panel">
-        <div class="enquiry-form-panel__header">
-          <div>
-            <p class="section-kicker">Form</p>
-            <h2>{{ $page.Title }}</h2>
-            {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
+      {{ with $payload.result.forms }}
+        {{ range $form := . }}
+        <section id="{{ $form.slug.current }}" class="enquiry-form-panel">
+          <div class="enquiry-form-panel__header">
+            <div>
+              <p class="section-kicker">Form</p>
+              <h2>{{ $form.title }}</h2>
+              {{ with $form.description }}<p>{{ . }}</p>{{ end }}
+            </div>
           </div>
-        </div>
-        <div class="enquiry-form-panel__content">
-          {{ $page.Content }}
-        </div>
-      </section>
+          <div class="enquiry-form-panel__content">
+            {{ $form.body | safeHTML }}
+          </div>
+        </section>
+        {{ end }}
+      {{ else }}
+        {{ range $page := $forms }}
+        {{ $slug := default $page.Slug $page.Params.slug }}
+        <section id="{{ $slug }}" class="enquiry-form-panel">
+          <div class="enquiry-form-panel__header">
+            <div>
+              <p class="section-kicker">Form</p>
+              <h2>{{ $page.Title }}</h2>
+              {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
+            </div>
+          </div>
+          <div class="enquiry-form-panel__content">
+            {{ $page.Content }}
+          </div>
+        </section>
+        {{ end }}
       {{ end }}
     </div>
   </div>
 </section>
-
-{{ partial "enquiry-form-script.html" . }}
 {{ end }}

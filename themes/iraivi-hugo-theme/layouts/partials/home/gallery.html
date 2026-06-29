@@ -1,4 +1,6 @@
-{{ with site.Data.home.gallery }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ with $home.gallery }}
 {{ if .enable }}
 <section class="section section--medium gallery-section">
   <div class="container">

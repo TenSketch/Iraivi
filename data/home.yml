@@ -30,7 +30,6 @@ about:
   intro: "Certified Childbirth Educator helping parents prepare for pregnancy, birth, breastfeeding and early parenthood with calm, practical support."
   credentials:
     - "ICEA Certified Childbirth Educator"
-    # - "Lactation consultation support"
     - Advanced Certified Lactation Professional (ACLP) – Begin Ed India
     - "Online guidance for couples and families"
   cta_label: "Meet Gayathri"
@@ -75,40 +74,15 @@ journey:
   image: "images/newborn-baby.jpg"
   steps:
     - title: "Connect"
-      image: "images/baby-smiling.jpg"
       text: "Reach out, ask questions, and feel supported from the very first step."
     - title: "Learn"
-      image: "images/pregnancy_nutrition.jpg"
       text: "Understand what matters most with simple, practical guidance."
     - title: "Prepare"
-      image: "images/labour_and_birth1.jpg"
       text: "Build calm confidence for birth, breastfeeding, and the early days."
     - title: "Welcome Baby"
-      image: "images/newborn-baby.jpg"
       text: "Meet your baby with reassurance, care, and a gentle plan."
     - title: "Thrive Together"
-      image: "images/mature-woman-comforting-adult-daughter-with-baby_1398-3898.webp"
       text: "Grow together as a family with support that continues beyond birth."
-
-testimonials:
-  enable: true
-  title: "Stories from mothers"
-  items:
-    - name: "Kowsalya Balamurugan"
-      image: "images/baby-smiling.jpg"
-      quote: "The sessions made me feel prepared and calm."
-      link_label: "Read Story"
-      link: "#faq"
-    - name: "Tamilarasi Mangalaraj"
-      image: "images/mother-feeding-baby-with-breast.jpg"
-      quote: "Everything was explained in a detailed and understandable way."
-      link_label: "Read Story"
-      link: "#faq"
-    - name: "Priya Karthik"
-      image: "images/newborn_care.jpg"
-      quote: "It gave me a positive approach to pregnancy, birth and breastfeeding."
-      link_label: "Read Story"
-      link: "#faq"
 
 faq:
   enable: true

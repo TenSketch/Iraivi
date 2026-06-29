@@ -1,4 +1,6 @@
-{{ with site.Data.home.journey }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ with $home.journey }}
 {{ if .enable }}
 <section class="section section--medium journey-minimal" data-journey-section>
   <div class="container">
@@ -26,32 +28,5 @@
     </div>
   </div>
 </section>
-<script>
-(function () {
-  const section = document.querySelector('[data-journey-section]');
-  const visual = document.querySelector('[data-journey-visual]');
-  const cards = document.querySelectorAll('[data-journey-card]');
-
-  if (!section || !visual || !cards.length || typeof IntersectionObserver === 'undefined') {
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries, instance) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      section.classList.add('is-visible');
-      instance.disconnect();
-    });
-  }, {
-    threshold: 0.18,
-    rootMargin: '0px 0px -12% 0px'
-  });
-
-  observer.observe(section);
-})();
-</script>
 {{ end }}
 {{ end }}

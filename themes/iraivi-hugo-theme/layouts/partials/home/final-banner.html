@@ -1,4 +1,6 @@
-{{ with site.Data.home.final_banner }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ with $home.final_banner }}
 {{ if .enable }}
 <section class="section section--major final-banner">
   <div class="container">

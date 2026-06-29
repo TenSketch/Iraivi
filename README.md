@@ -5,4 +5,4 @@ BirthWithIraivi website
 
 ## CMS Admin
 
-Decap CMS uses a GitHub OAuth proxy on the VPS instead of Netlify Identity. See [`doc/decap-cms-oauth-proxy.md`](/home/bala/Desktop/Iraivi/doc/decap-cms-oauth-proxy.md) for the setup and deployment notes.
+Sanity Studio lives in [`studio-iraivi/`](studio-iraivi/). See [`studio-iraivi/README.md`](studio-iraivi/README.md) for setup notes and the required project/dataset env vars.

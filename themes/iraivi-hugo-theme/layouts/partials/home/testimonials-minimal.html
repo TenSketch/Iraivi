@@ -1,13 +1,41 @@
-{{ with site.Data.testimonials }}
-{{ if .enable }}
+{{ $pagePayload := partial "sanity/query-result.html" (dict "query" `{
+  "home": *[_type == "homeSettings" && !(_id in path("drafts.**"))][0]{
+    testimonials{
+      enable,
+      title
+    }
+  },
+  "items": *[_type == "testimonial" && featured == true && !(_id in path("drafts.**"))]{
+    name,
+    image,
+    quote,
+    "link_label": coalesce(link_label, linkLabel),
+    link,
+    slug
+  }
+}`) | transform.Unmarshal }}
+{{ $testimonials := site.Data.testimonials }}
+{{ $settings := dict "enable" $testimonials.enable "title" $testimonials.title }}
+{{ $featured := $testimonials.featured }}
+{{ with $pagePayload.result }}
+  {{ with .home }}
+    {{ with .testimonials }}
+      {{ $settings = . }}
+    {{ end }}
+  {{ end }}
+  {{ with .items }}
+    {{ $featured = . }}
+  {{ end }}
+{{ end }}
+{{ if $settings.enable }}
 <section class="section section--medium testimonials-minimal">
   <div class="container">
     <div class="section-heading">
       <p class="section-kicker">Stories from mothers</p>
-      <h2 class="section-title">{{ .title }}</h2>
+      <h2 class="section-title">{{ $settings.title }}</h2>
     </div>
     <div class="testimonial-minimal-grid">
-      {{ range .featured }}
+      {{ range $featured }}
       <article class="testimonial-minimal-card">
         <img src="{{ .image | relURL }}" alt="{{ .name }}">
         <div class="testimonial-minimal-card__body">
@@ -16,9 +44,14 @@
           <a href="{{ .link | relURL }}">{{ .link_label }}</a>
         </div>
       </article>
+      {{ else }}
+      <article class="testimonial-minimal-card">
+        <div class="testimonial-minimal-card__body">
+          <h3>Testimonials will appear here once they are published in Sanity.</h3>
+        </div>
+      </article>
       {{ end }}
     </div>
   </div>
 </section>
-{{ end }}
 {{ end }}

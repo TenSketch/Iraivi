@@ -1,19 +1,43 @@
 {{ define "main" }}
+{{ $payload := partial "sanity/query-result.html" (dict "query" `{
+  "home": *[_type == "homeSettings" && !(_id in path("drafts.**"))][0]{
+    testimonials{
+      title
+    }
+  },
+  "page": *[_type == "page" && slug.current == "testimonials" && !(_id in path("drafts.**"))][0]{title,description,body},
+  "items": *[_type == "testimonial" && !(_id in path("drafts.**"))] | order(name asc){
+    slug,
+    name,
+    focus,
+    quote
+  }
+}`) | transform.Unmarshal }}
+{{ $pageData := dict }}
 {{ $testimonials := site.Data.testimonials }}
+{{ $homeTestimonials := dict "title" $testimonials.title }}
+{{ $items := $testimonials.items }}
+{{ if $payload.result }}
+  {{ with $payload.result.home }}
+    {{ with .testimonials }}{{ $homeTestimonials = . }}{{ end }}
+  {{ end }}
+  {{ with $payload.result.page }}{{ $pageData = . }}{{ end }}
+  {{ with $payload.result.items }}{{ $items = . }}{{ end }}
+{{ end }}
 <section class="testimonials-page section section--major">
   <div class="container">
     <div class="section-heading">
       <p class="section-kicker">Testimonials</p>
-      <h1 class="section-title">{{ .Title }}</h1>
-      {{ with $testimonials.intro }}<p class="section-copy">{{ . }}</p>{{ end }}
+      <h1 class="section-title">{{ default (default .Title $pageData.title) $homeTestimonials.title }}</h1>
+      {{ with $pageData.description }}<p class="section-copy">{{ . }}</p>{{ else with $testimonials.intro }}<p class="section-copy">{{ . }}</p>{{ end }}
     </div>
 
     <div class="testimonials-page__intro content-card">
-      {{ .Content }}
+      {{ with $pageData.body }}{{ . | markdownify }}{{ else }}{{ .Content }}{{ end }}
     </div>
 
     <div class="testimonials-page__grid">
-      {{ range $testimonials.items }}
+      {{ range $items }}
       <article id="{{ .slug }}" class="testimonial-page-card">
         <div class="testimonial-page-card__meta">
           <span>{{ .focus }}</span>

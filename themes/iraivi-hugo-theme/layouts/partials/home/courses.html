@@ -1,8 +1,26 @@
-{{ $homeCourses := site.Data.home.courses }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ $homeCourses := $home.courses }}
+{{ $coursesPayload := partial "sanity/query-result.html" (dict "query" `*[_type == "course" && !(_id in path("drafts.**"))] | order(weight asc){
+  title,
+  description,
+  duration,
+  image,
+  slug,
+  category,
+  featured
+}`) | transform.Unmarshal }}
+{{ $sanityCourses := $coursesPayload.result }}
 {{ with $homeCourses }}
 {{ if .enable }}
 {{ $section := site.GetPage "section" "courses" }}
 {{ $featured := first (default 3 .featured_limit) $section.RegularPages.ByWeight }}
+{{ if gt (len $sanityCourses) 0 }}
+  {{ $featured = first (default 3 .featured_limit) (where $sanityCourses "featured" true) }}
+  {{ if eq (len $featured) 0 }}
+    {{ $featured = first (default 3 .featured_limit) $sanityCourses }}
+  {{ end }}
+{{ end }}
 <section id="courses" class="section section--major courses-minimal">
   <div class="container">
     <div class="section-heading">
@@ -13,6 +31,32 @@
 
     <div class="swiper course-swiper" data-home-courses-swiper>
       <div class="swiper-wrapper">
+        {{ if gt (len $sanityCourses) 0 }}
+        {{ range $item := $featured }}
+        {{ $category := default "pregnancy" $item.category }}
+        {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($item.title | urlquery) }}
+        <div class="swiper-slide">
+          <article class="course-minimal-card" data-course-card data-course-category="{{ $category }}">
+            <div class="course-minimal-card__image">
+              {{ with $item.image }}
+              <img src="{{ . | relURL }}" alt="{{ $item.title }}" loading="lazy">
+              {{ end }}
+            </div>
+            <div class="course-minimal-card__body">
+              <h3>{{ $item.title }}</h3>
+              {{ with $item.description }}<p>{{ . }}</p>{{ end }}
+              <div class="course-minimal-card__meta">
+                {{ with $item.duration }}<span>{{ . }}</span>{{ end }}
+              </div>
+              <div class="course-minimal-card__actions">
+                <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+                <a href="{{ printf "/courses/%s/" $item.slug.current | relURL }}" class="btn btn-outline-rose btn-pill">View Course</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        {{ end }}
+        {{ else }}
         {{ range $page := $featured }}
         {{ $category := default "pregnancy" $page.Params.category }}
         {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($page.Title | urlquery) }}
@@ -37,6 +81,7 @@
           </article>
         </div>
         {{ end }}
+        {{ end }}
       </div>
       <div class="swiper-pagination course-swiper__pagination"></div>
     </div>
@@ -46,44 +91,6 @@
     </div>
   </div>
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-(function () {
-  const swiperEl = document.querySelector('[data-home-courses-swiper]');
-  if (!swiperEl || typeof Swiper === 'undefined') {
-    return;
-  }
-
-  new Swiper(swiperEl, {
-    loop: true,
-    speed: 800,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 3800,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
-    },
-    pagination: {
-      el: swiperEl.querySelector('.swiper-pagination'),
-      clickable: true
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.02
-      },
-      640: {
-        slidesPerView: 1.4
-      },
-      992: {
-        slidesPerView: 2.15
-      },
-      1200: {
-        slidesPerView: 3
-      }
-    }
-  });
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 {{ end }}
 {{ end }}

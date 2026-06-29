@@ -2,12 +2,16 @@
   "name": "iraivi",
   "private": true,
   "scripts": {
-    "oauth-proxy": "node oauth-proxy/server.js"
+    "build:site": "hugo",
+    "cms:dev": "npm --prefix studio-iraivi run dev",
+    "cms:build": "npm --prefix studio-iraivi run build",
+    "images:optimize": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "dotenv": "^16.4.5",
-    "nodemailer": "^9.0.1"
+    "nodemailer": "^9.0.1",
+    "sharp": "^0.34.2"
   },
   "engines": {
     "node": ">=18"

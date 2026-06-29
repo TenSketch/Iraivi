@@ -1,20 +1,52 @@
 {{ define "main" }}
+{{ $payload := partial "sanity/query-result.html" (dict "query" `{
+  "page": *[_type == "consultationPage" && slug.current == "lactation-consultation" && !(_id in path("drafts.**"))][0]{
+    title,
+    description,
+    image,
+    duration,
+    price,
+    "qatar_price": coalesce(qatar_price, qatarPrice),
+    mode,
+    "accordion_sections": coalesce(accordion_sections, accordionSections),
+    body
+  },
+  "form": *[_type == "enquiryForm" && slug.current == "lactation-consultation-form" && !(_id in path("drafts.**"))][0]{
+    title,
+    description,
+    body
+  }
+}`) | transform.Unmarshal }}
+{{ $pageData := dict }}
+{{ $formData := dict }}
+{{ if $payload.result }}
+  {{ with $payload.result.page }}{{ $pageData = . }}{{ end }}
+  {{ with $payload.result.form }}{{ $formData = . }}{{ end }}
+{{ end }}
 {{ $formPages := first 1 (where site.RegularPages "Params.slug" "lactation-consultation-form") }}
+{{ $title := default .Title $pageData.title }}
+{{ $description := default .Params.description $pageData.description }}
+{{ $image := default .Params.image $pageData.image }}
+{{ $duration := default .Params.duration $pageData.duration }}
+{{ $price := default .Params.price $pageData.price }}
+{{ $qatarPrice := default .Params.qatar_price $pageData.qatar_price }}
+{{ $mode := default .Params.mode $pageData.mode }}
+{{ $accordionSections := default .Params.accordion_sections $pageData.accordion_sections }}
 <div class="lactation-page">
 <section class="lactation-hero">
   <div class="container">
     <div class="lactation-hero__card">
       <div class="lactation-hero__content">
         <p class="section-kicker">Lactation Consultation</p>
-        <h1 class="section-title">{{ .Title }}</h1>
-        {{ with .Params.description }}<p class="section-copy">{{ . }}</p>{{ end }}
+        <h1 class="section-title">{{ $title }}</h1>
+        {{ with $description }}<p class="section-copy">{{ . }}</p>{{ end }}
         <div class="lactation-hero__actions">
           <a href="#lactation-booking-form" class="btn btn_primary btn-pill">Get Consultation</a>
         </div>
       </div>
       <div class="lactation-hero__media">
-        {{ with .Params.image }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="eager">
+        {{ with $image }}
+        <img src="{{ . | relURL }}" alt="{{ $title }}" loading="eager">
         {{ end }}
       </div>
     </div>
@@ -29,7 +61,7 @@
           <p class="section-kicker lactation-card__eyebrow">Overview</p>
           <h2 class="lactation-card__title">Everything organized for quick reading</h2>
           <div class="consultation-accordion">
-            {{ with .Params.accordion_sections }}
+            {{ with $accordionSections }}
             {{ range $index, $section := . }}
             <details class="consultation-accordion__item" {{ if eq $index 0 }}open{{ end }}>
               <summary class="consultation-accordion__summary">
@@ -48,7 +80,7 @@
                 <span class="consultation-accordion__toggle" aria-hidden="true">+</span>
               </summary>
               <div class="consultation-accordion__body">
-                {{ .Content }}
+                {{ with $pageData.body }}{{ . | markdownify }}{{ else }}{{ .Content }}{{ end }}
               </div>
             </details>
             {{ end }}
@@ -60,25 +92,25 @@
           <p class="section-kicker lactation-card__eyebrow">Consultation Details</p>
           <h2 class="lactation-card__title">Quick details at a glance</h2>
           <div class="lactation-details">
-            {{ with .Params.duration }}
+            {{ with $duration }}
             <div class="lactation-detail">
               <span class="lactation-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               <div><span class="lactation-detail__label">Duration</span><strong class="lactation-detail__value">{{ . }}</strong></div>
             </div>
             {{ end }}
-            {{ with .Params.price }}
+            {{ with $price }}
             <div class="lactation-detail">
               <span class="lactation-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 9.5c0-1.9 1.6-3.5 3.5-3.5h7c1.9 0 3.5 1.6 3.5 3.5v5c0 1.9-1.6 3.5-3.5 3.5h-7C6.6 18 5 16.4 5 14.5z" stroke="currentColor" stroke-width="1.8"/><path d="M15 12h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5.5 10.5h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
               <div><span class="lactation-detail__label">India Fee</span><strong class="lactation-detail__value">{{ . }}</strong></div>
             </div>
             {{ end }}
-            {{ with .Params.qatar_price }}
+            {{ with $qatarPrice }}
             <div class="lactation-detail">
               <span class="lactation-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8.5h12M6 12h12M6 15.5h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="4.5" y="5.5" width="15" height="13" rx="3" stroke="currentColor" stroke-width="1.8"/></svg></span>
               <div><span class="lactation-detail__label">Qatar Fee</span><strong class="lactation-detail__value">{{ . }}</strong></div>
             </div>
             {{ end }}
-            {{ with .Params.mode }}
+            {{ with $mode }}
             <div class="lactation-detail">
               <span class="lactation-detail__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 9.5a4 4 0 1 1 8 0v5a4 4 0 1 1-8 0z" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v-2.5M12 18v2.5M18 12h2.5M3.5 12H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
               <div><span class="lactation-detail__label">Mode</span><strong class="lactation-detail__value">{{ . }}</strong></div>
@@ -98,7 +130,7 @@
       <h2 class="section-title">Book your consultation</h2>
       <p class="section-copy">Complete the form below and we'll contact you via email with the next steps.</p>
     </div>
-    {{ range $formPages }}
+    {{ if or $formData.body (gt (len $formPages) 0) }}
     <div class="lactation-booking__card">
       <div class="lactation-booking__intro">
         <p>Book Your Consultation</p>
@@ -106,12 +138,11 @@
       </div>
       <div class="lactation-booking__divider"></div>
       <div class="content">
-        {{ .Content }}
+        {{ with $formData.body }}{{ . | safeHTML }}{{ else }}{{ (index $formPages 0).Content }}{{ end }}
       </div>
     </div>
     {{ end }}
   </div>
 </section>
-{{ partial "enquiry-form-script.html" . }}
  </div>
 {{ end }}

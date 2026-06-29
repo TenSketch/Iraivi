@@ -1,4 +1,6 @@
-{{ with site.Data.home.lactation_promo }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ with $home.lactation_promo }}
 {{ if .enable }}
 <section class="section section--medium lactation-promo">
   <div class="container">

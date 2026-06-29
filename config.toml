@@ -3,6 +3,63 @@ languageCode = 'en-us'
 title = 'Iraivi | Celebrating Motherhood'
 theme = 'iraivi-hugo-theme'
 
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 10
+identifier = "home"
+[menu.main.params]
+show = true
+
+[[menu.main]]
+name = "Gayathri"
+url = "/about-me/"
+weight = 20
+identifier = "about"
+[menu.main.params]
+show = true
+
+[[menu.main]]
+name = "Blog"
+url = "/blog/"
+weight = 30
+identifier = "blog"
+[menu.main.params]
+show = false
+
+[[menu.main]]
+name = "Courses"
+url = "/courses/"
+weight = 40
+identifier = "courses"
+[menu.main.params]
+show = true
+
+[[menu.main]]
+name = "Lactation Consultation"
+url = "/lactation-consultation/"
+weight = 50
+identifier = "lactation"
+[menu.main.params]
+show = true
+
+[[menu.main]]
+name = "FAQ"
+url = "/#faq"
+weight = 60
+identifier = "faq"
+[menu.main.params]
+show = true
+
+[[menu.main]]
+name = "Enquiry"
+url = "/enquiry/"
+weight = 70
+identifier = "enquiry"
+[menu.main.params]
+show = true
+variant = "button"
+
 
 #################### default parameters ################################
 [params]

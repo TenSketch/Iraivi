@@ -1,0 +1,9 @@
+{{- $projectId := default "g8mcplw1" .projectId -}}
+{{- $dataset := default "production" .dataset -}}
+{{- $query := .query -}}
+{{- $url := printf "https://%s.api.sanity.io/v2023-10-01/data/query/%s?query=%s" $projectId $dataset ($query | urlquery) -}}
+{{- $payload := dict "result" nil -}}
+{{- with resources.GetRemote $url -}}
+  {{- $payload = . | transform.Unmarshal -}}
+{{- end -}}
+{{- $payload | jsonify -}}

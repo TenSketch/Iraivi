@@ -1,20 +1,37 @@
 {{ define "main" }}
+{{ $payload := partial "sanity/query-result.html" (dict "query" `*[_type == "page" && slug.current == "about-me" && !(_id in path("drafts.**"))][0]{title,description,image,keywords,body,slug}`) | transform.Unmarshal }}
+{{ $sanityPage := default dict $payload.result }}
+{{ $title := .Title }}
+{{ $image := .Params.image }}
+{{ $content := .Content }}
+
+{{ with $sanityPage }}
+  {{ with .title }}
+    {{ $title = . }}
+  {{ end }}
+  {{ with .image }}
+    {{ $image = . }}
+  {{ end }}
+  {{ with .body }}
+    {{ $content = . | markdownify }}
+  {{ end }}
+{{ end }}
 
 <section class="about-page section">
     <div class="container">
         <div class="section-heading text-center mx-auto">
             <span class="section-kicker">About Gayathri</span>
-            <h1>{{ .Title }}</h1>
+            <h1>{{ $title }}</h1>
         </div>
         <div class="row g-5 align-items-center mt-2">
             <div class="col-lg-5">
-                {{ with .Params.image }}
-                <img src="{{ . | relURL }}" class="img-fluid about-page__image" alt="{{ $.Title }}">
+                {{ with $image }}
+                <img src="{{ . | relURL }}" class="img-fluid about-page__image" alt="{{ $title }}">
                 {{ end }}
             </div>
             <div class="col-lg-7">
                 <div class="content-card">
-                    {{ .Content }}
+                    {{ $content }}
                 </div>
             </div>
         </div>

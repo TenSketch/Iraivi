@@ -1,0 +1,83 @@
+{{- $query := `*[_type == "homeSettings" && !(_id in path("drafts.**"))][0]{
+  hero{
+    enable,
+    slides[]{
+      image,
+      headline,
+      caption,
+      "cta_link": coalesce(cta_link, ctaLink),
+      "cta_label": coalesce(cta_label, ctaLabel)
+    }
+  },
+  "story_banner": {
+    "enable": coalesce(story_banner.enable, storyBanner.enable),
+    "image": coalesce(story_banner.image, storyBanner.image),
+    "text": coalesce(story_banner.text, storyBanner.text),
+    "cta_label": coalesce(story_banner.cta_label, storyBanner.ctaLabel),
+    "cta_link": coalesce(story_banner.cta_link, storyBanner.ctaLink)
+  },
+  about{
+    enable,
+    image,
+    title,
+    intro,
+    credentials,
+    "cta_label": coalesce(cta_label, ctaLabel),
+    "cta_link": coalesce(cta_link, ctaLink)
+  },
+  gallery{
+    enable,
+    title,
+    items[]{
+      title,
+      image,
+      caption,
+      link
+    }
+  },
+  courses{
+    enable,
+    title,
+    intro,
+    "cta_label": coalesce(cta_label, ctaLabel),
+    "view_all_label": coalesce(view_all_label, viewAllLabel),
+    "featured_limit": coalesce(featured_limit, featuredLimit)
+  },
+  journey{
+    enable,
+    title,
+    image,
+    steps[]{
+      title,
+      image,
+      text
+    }
+  },
+  faq{
+    enable,
+    title,
+    items[]{
+      question,
+      answer
+    }
+  },
+  "lactation_promo": {
+    "enable": coalesce(lactation_promo.enable, lactationPromo.enable),
+    "title": coalesce(lactation_promo.title, lactationPromo.title),
+    "intro": coalesce(lactation_promo.intro, lactationPromo.intro),
+    "image": coalesce(lactation_promo.image, lactationPromo.image),
+    "cta_label": coalesce(lactation_promo.cta_label, lactationPromo.ctaLabel),
+    "cta_link": coalesce(lactation_promo.cta_link, lactationPromo.ctaLink)
+  },
+  "final_banner": {
+    "enable": coalesce(final_banner.enable, finalBanner.enable),
+    "image": coalesce(final_banner.image, finalBanner.image),
+    "text": coalesce(final_banner.text, finalBanner.text),
+    "subtext": coalesce(final_banner.subtext, finalBanner.subtext),
+    "cta_label": coalesce(final_banner.cta_label, finalBanner.ctaLabel),
+    "cta_link": coalesce(final_banner.cta_link, finalBanner.ctaLink),
+    "secondary_label": coalesce(final_banner.secondary_label, finalBanner.secondaryLabel),
+    "secondary_link": coalesce(final_banner.secondary_link, finalBanner.secondaryLink)
+  }
+}` -}}
+{{- partial "sanity/query-result.html" (dict "query" $query) -}}

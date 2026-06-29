@@ -1,10 +1,29 @@
 {{ define "main" }}
+{{ $payload := partial "sanity/query-result.html" (dict "query" `{
+  "page": *[_type == "page" && slug.current == "courses" && !(_id in path("drafts.**"))][0]{title,description,body},
+  "courses": *[_type == "course" && !(_id in path("drafts.**"))] | order(weight asc){
+    title,
+    description,
+    duration,
+    price,
+    image,
+    slug,
+    weight,
+    category
+  }
+}`) | transform.Unmarshal }}
+{{ $pageData := dict }}
+{{ $courses := .RegularPages.ByWeight }}
+{{ if $payload.result }}
+  {{ with $payload.result.page }}{{ $pageData = . }}{{ end }}
+  {{ with $payload.result.courses }}{{ $courses = . }}{{ end }}
+{{ end }}
 <section class="courses-page section section--major">
   <div class="container">
     <div class="section-heading">
       <p class="section-kicker">Courses</p>
-      <h1 class="section-title">{{ .Title }}</h1>
-      <p class="section-copy">Choose the course that fits your stage and feel supported from pregnancy to early parenthood.</p>
+      <h1 class="section-title">{{ default .Title $pageData.title }}</h1>
+      <p class="section-copy">{{ default "Choose the course that fits your stage and feel supported from pregnancy to early parenthood." $pageData.description }}</p>
     </div>
 
     {{ $categories := slice (dict "label" "All" "value" "all") (dict "label" "Pregnancy" "value" "pregnancy") (dict "label" "Birth" "value" "birth") (dict "label" "Breastfeeding" "value" "breastfeeding") (dict "label" "Parenthood" "value" "parenthood") }}
@@ -16,30 +35,54 @@
     </div>
 
     <div class="course-grid" data-course-grid>
-      {{ range $page := .RegularPages.ByWeight }}
-      {{ $category := default "pregnancy" $page.Params.category }}
-      {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($page.Title | urlquery) }}
-      <article class="course-grid__card" data-course-card data-course-category="{{ $category }}">
-        <div class="course-grid__media">
-          {{ with $page.Params.image }}
-          <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
-          {{ end }}
-        </div>
-        <div class="course-grid__body">
-          <h2>{{ $page.Title }}</h2>
-          {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
-          <div class="course-grid__meta">
-            {{ with $page.Params.duration }}<span>{{ . }}</span>{{ end }}
+      {{ with $payload.result.courses }}
+        {{ range $item := . }}
+        {{ $category := default "pregnancy" $item.category }}
+        {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($item.title | urlquery) }}
+        <article class="course-grid__card" data-course-card data-course-category="{{ $category }}">
+          <div class="course-grid__media">
+            {{ with $item.image }}
+            <img src="{{ . | relURL }}" alt="{{ $item.title }}" loading="lazy">
+            {{ end }}
           </div>
-          <div class="course-grid__actions">
-            <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
-            <a href="{{ $page.RelPermalink }}" class="btn btn-outline-rose btn-pill">View Course</a>
+          <div class="course-grid__body">
+            <h2>{{ $item.title }}</h2>
+            {{ with $item.description }}<p>{{ . }}</p>{{ end }}
+            <div class="course-grid__meta">
+              {{ with $item.duration }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <div class="course-grid__actions">
+              <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+              <a href="{{ printf "/courses/%s/" $item.slug.current | relURL }}" class="btn btn-outline-rose btn-pill">View Course</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+        {{ end }}
+      {{ else }}
+        {{ range $page := $courses }}
+        {{ $category := default "pregnancy" $page.Params.category }}
+        {{ $bookLink := printf "%s?session=%s" ("/enquiry/course-enrollment-form/" | relURL) ($page.Title | urlquery) }}
+        <article class="course-grid__card" data-course-card data-course-category="{{ $category }}">
+          <div class="course-grid__media">
+            {{ with $page.Params.image }}
+            <img src="{{ . | relURL }}" alt="{{ $page.Title }}" loading="lazy">
+            {{ end }}
+          </div>
+          <div class="course-grid__body">
+            <h2>{{ $page.Title }}</h2>
+            {{ with $page.Params.description }}<p>{{ . }}</p>{{ end }}
+            <div class="course-grid__meta">
+              {{ with $page.Params.duration }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <div class="course-grid__actions">
+              <a href="{{ $bookLink }}" class="btn btn_primary btn-pill">Book Course</a>
+              <a href="{{ $page.RelPermalink }}" class="btn btn-outline-rose btn-pill">View Course</a>
+            </div>
+          </div>
+        </article>
+        {{ end }}
       {{ end }}
     </div>
   </div>
 </section>
-{{ partial "courses/filter-script.html" . }}
 {{ end }}

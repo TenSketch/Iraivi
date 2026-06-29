@@ -1,4 +1,6 @@
-{{ with site.Data.home.faq }}
+{{ $homeData := partial "sanity/home-settings.html" . | transform.Unmarshal }}
+{{ $home := cond $homeData.result $homeData.result site.Data.home }}
+{{ with $home.faq }}
 {{ if .enable }}
 <section id="faq" class="section section--medium faq-minimal">
   <div class="container">
